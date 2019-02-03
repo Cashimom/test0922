@@ -99,7 +99,7 @@ public class playerController : Character {
             }
             
         }
-        if(/*Input.GetButtonDown("Jump")*/Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetButtonDown("Jump")&&Input.GetKey(KeyCode.LeftShift))
         {
             JumpFlg = true;
             boostMove(x, z);
@@ -159,10 +159,6 @@ public class playerController : Character {
         transform.eulerAngles = b;
     }
 
-    private void debugText(string str)
-    {
-        var tmp = GameObject.Find("Canvas/kasokudo").GetComponent<TextMeshProUGUI>();
-        tmp.text = str;
-    }
+    
 
 }
