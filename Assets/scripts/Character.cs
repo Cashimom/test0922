@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Character : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class Character : MonoBehaviour {
     protected Rigidbody rb;
     public Vector3 vector;
     public bool JumpFlg=false;
+    private bool boostFlg = false;
     public float HP = 100;
     public Weapon Weapon;
     public Transform rightWeaponTransform;
@@ -53,20 +55,27 @@ public class Character : MonoBehaviour {
         {
             impulseForce += transform.right * -JumpForce;
         }
+
         if (x == 0 && z == 0)
         {
             impulseForce += new Vector3(0, JumpForce, 0);
         }
+
         if (impulseForce != new Vector3(0, 0, 0))
         {
             rb.AddForce(impulseForce, ForceMode.Impulse);
+            boostFlg = true;
+            StartCoroutine(DelayMethod2(0.1f, () =>
+            {
+                boostFlg = false;
+                //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
+                rb.velocity = new Vector3(0, 0, 0);
+                /*var vel = rb.velocity;
+                vel.x = vel.z = 0;
+                rb.velocity = vel;*/
+                JumpFlg = false;
+            }));
         }
-        StartCoroutine(DelayMethod(0.1f, () =>
-        {
-            //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-            rb.velocity = new Vector3(0, 0, 0);
-            JumpFlg = false;
-        }));
     }
 
     public void flyMove(float x, float z)
@@ -93,18 +102,32 @@ public class Character : MonoBehaviour {
         {
             flyForce += new Vector3(0, (JumpForce * reg), 0);
         }
-        if (flyForce != new Vector3(0, 0, 0))
+        debugText(boostFlg.ToString());
+        if (flyForce != new Vector3(0, 0, 0)&&!boostFlg)
         {
-            rb.AddForce(flyForce, ForceMode.Impulse);
+            rb.AddForce(flyForce, ForceMode.Force);
+
         }
         StartCoroutine(DelayMethod(0.1f, () =>
         {
-            //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-            rb.velocity = new Vector3(0, 0, 0);
+            
+            if (!boostFlg)
+                //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
+                rb.velocity = new Vector3(0, 0, 0);
+                /*var vel = rb.velocity;
+                vel.x = vel.z = 0;
+                rb.velocity = vel;*/
         }));
+
     }
 
     public IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
+    }
+
+    public IEnumerator DelayMethod2(float waitTime, Action action)
     {
         yield return new WaitForSeconds(waitTime);
         action();
@@ -120,5 +143,11 @@ public class Character : MonoBehaviour {
     {
         Destroy(gameObject);
         return true;
+    }
+
+    protected void debugText(string str)
+    {
+        var tmp = GameObject.Find("Canvas/kasokudo").GetComponent<TextMeshProUGUI>();
+        tmp.text = str;
     }
 }
