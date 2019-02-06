@@ -7,7 +7,7 @@ using TMPro;
 public class Character : MonoBehaviour {
 
     [SerializeField] protected float moveSpeed = 5.0f;
-    [SerializeField] private float JumpForce = 0.00003f;
+    [SerializeField] private float JumpForce = 200;
     protected Rigidbody rb;
     public Vector3 vector;
     public bool JumpFlg=false;
@@ -141,6 +141,10 @@ public class Character : MonoBehaviour {
 
     public virtual bool die()
     {
+        if (Weapon != null)
+        {
+            Weapon.DropWeapon();
+        }
         Destroy(gameObject);
         return true;
     }

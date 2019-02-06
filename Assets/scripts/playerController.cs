@@ -88,13 +88,13 @@ public class playerController : Character {
         {
             if ((Math.Abs(rb.velocity.y) < 0.0005))
             {
-                rb.AddForce(0, 0.00025f, 0);
+                rb.AddForce(0, 50, 0,ForceMode.Impulse);
                 secondJumpFlg = false;
             }
             else if (!secondJumpFlg)
             {
                 rb.velocity = new Vector3(0, 0, 0);
-                rb.AddForce(0, 0.00025f, 0);
+                rb.AddForce(0, 50, 0, ForceMode.Impulse);
                 secondJumpFlg = true;
             }
             
@@ -121,7 +121,7 @@ public class playerController : Character {
         }
         if (Input.GetKeyDown("z"))
         {
-            rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, -100f, 0), ForceMode.Impulse);
             StartCoroutine(DelayMethod(0.1f, () =>
             {
                 //rb.AddForce(new Vector3(0, 0.00003f, 0), ForceMode.Impulse);

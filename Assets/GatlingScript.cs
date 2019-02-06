@@ -17,22 +17,31 @@ public class GatlingScript : Weapon {
         base.Update();
         if (isHave)
         {
-            transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
+            if(isPlayer)
+                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
+            else 
+                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 10;
+
             transform.rotation= character.rightWeaponTransform.rotation;
             transform.Rotate(0, -90, 0);
 
-            if (Input.GetButton("Fire1"))
+            if (isPlayer && Input.GetButton("Fire1"))
             {
-                fireTime += Time.deltaTime;
-                if (fireTime > fireTick)
-                {
-                    fireTime = 0.0f;
-                    var rs = Fire();
-                    rs.moveSpeed = 5;
-
-
-                }
+                Fire1();
             }
         }
 	}
+
+    public override void Fire1()
+    {
+        fireTime += Time.deltaTime;
+        if (fireTime > fireTick)
+        {
+            fireTime = 0.0f;
+            var rs = Fire();
+            rs.moveSpeed = 5;
+
+
+        }
+    }
 }

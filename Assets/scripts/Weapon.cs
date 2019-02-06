@@ -12,11 +12,15 @@ public class Weapon : MonoBehaviour
     protected bool near = false;
     public Character character;
     public TextMeshProUGUI pressButton;
+    public bool isPlayer = false;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        if (character is playerController)
+        {
+            isPlayer = true;
+        }
+    }
 	
 	// Update is called once per frame
 	public void Update () {
@@ -24,6 +28,10 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetKeyDown("f"))
             {
+                if(character is playerController)
+                {
+                    isPlayer = true;
+                }
                 character.Weapon.DropWeapon();
                 HaveWeapon();
                 near = false;
@@ -39,9 +47,14 @@ public class Weapon : MonoBehaviour
         return fire.GetComponent<RocketScript>();
     }
 
+    public virtual void Fire1()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Character")
+        if (other.gameObject.tag == "Character"&&!isHave)
         {
             near = true;
             character = other.gameObject.GetComponent<Character>();
@@ -51,7 +64,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Character")
+        if (other.gameObject.tag == "Character"&& !isHave)
         {
             near = false;
             //character = null;
