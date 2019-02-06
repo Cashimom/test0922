@@ -14,6 +14,25 @@ public class Weapon : MonoBehaviour
     public TextMeshProUGUI pressButton;
     public bool isPlayer = false;
 
+    /*
+     エネミーに武器を持たせる方法
+         .3Dオブジェクトをどっかに置く
+         .tagをUntagからCharacterにする
+         .EnemyControllerをadd Component
+         .HPとかプロパティをいじくる
+
+         .stage2_set -> Weapon　から武器のプレハブをインスタンス化する
+         .
+
+         .武器を持たせたいEnemyControllerのweaponに武器のオブジェクトをD&D
+         .EnemyControllerのtargetにプレイヤーのインスタンスをD&D
+
+         .武器のオブジェクトのcharacterにさっきのEnemyをD&D
+         .武器のisHaveをにチェック
+         終わり
+         
+    */
+
     // Use this for initialization
     void Start () {
         if (character is playerController)
