@@ -68,6 +68,12 @@ public class playerController : Character {
         }
         //transform.Rotate(rotY, rotX, 0.0f);
         head.transform.Rotate(rotY, 0.0f, 0.0f);
+        if (head.transform.localRotation.eulerAngles.y > 0)
+        {
+            var a = head.transform.localRotation.eulerAngles;
+            a.y = -0.0005f;
+            head.transform.localRotation = Quaternion.Euler(a);
+        }
         transform.Rotate(0, rotX, 0);
 
         //wasdとかで動かす
