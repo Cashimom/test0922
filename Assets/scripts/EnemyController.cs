@@ -9,12 +9,16 @@ public class EnemyController : Character {
     private float time = 0.0f;
     private int wayFlg = 0;
     public Vector3 moveVec=new Vector3(1,0,0);
+    public GameObject target;
+    private int delayCnt = 0;
+    public int delay = 2;
     //public float HP = 100;
 
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        rightWeaponTransform = transform;
     }
 	
 	// Update is called once per frame
@@ -32,6 +36,31 @@ public class EnemyController : Character {
         else if (wayFlg == 1)
         {
             move(-moveVec, 1);
+        }
+
+        if (target != null)
+        {
+            if (Weapon != null)
+            {
+                transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+
+            }
+        }
+
+        if(Weapon != null)
+        {
+
+            delayCnt++;
+            if (delayCnt >= delay)
+            {
+                delayCnt = 0;
+                Weapon.Fire1();
+            }
         }
 
 	}

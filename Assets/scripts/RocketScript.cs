@@ -27,17 +27,21 @@ public class RocketScript : MonoBehaviour {
         //transform.Rotate(rotX, rotY, rotZ);
         rb = GetComponent<Rigidbody>();
         destroyTime = destroyParticle.main.duration;
+        rb.AddForce(transform.forward * 50 * moveSpeed, ForceMode.Impulse);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(!isCollisionEntered)
-            transform.Translate(0, 0, 1 * moveSpeed);
+        if (!isCollisionEntered)
+        {
+            //transform.Translate(0, 0, 1 * moveSpeed);
+            rb.AddForce(transform.forward*10*moveSpeed);
+        }
         else
         {
             t += Time.deltaTime;
-            float sc= (1 - t / destroyTime);
+            float sc = (1 - t / destroyTime);
             //transform.localScale = defaultScale * (sc);
         }
     }
