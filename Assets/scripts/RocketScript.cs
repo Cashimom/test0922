@@ -7,23 +7,23 @@ using TMPro;
 
 public class RocketScript : MonoBehaviour {
 
-    public float moveSpeed = 1.0f;
+    [SerializeField] private float moveSpeed = 1.0f;
+    [SerializeField] private ParticleSystem destroyParticle;
+    [SerializeField] private float explodeDamageValue = 10.0f;
+    [SerializeField] private float explodeDelay = 5 / 6;
     //public float rotY = 0.0f, rotX = 0.0f, rotZ = 0.0f;
-    public ParticleSystem destroyParticle;
     private Rigidbody rb;
     private bool isCollisionEntered = false;
     private float destroyTime = 0;
     private float t=0;
     private Vector3 defaultScale;
-    public float explodeDamageValue = 10.0f;
-    public float explodeDelay = 5 / 6;
     //public showHP showHP;
-    public TextMeshProUGUI tmp;
+    //private TextMeshProUGUI tmp;
     
 
 	// Use this for initialization
 	void Start ()
-    { 
+    {
         //transform.Rotate(rotX, rotY, rotZ);
         rb = GetComponent<Rigidbody>();
         destroyTime = destroyParticle.main.duration;
@@ -55,7 +55,7 @@ public class RocketScript : MonoBehaviour {
             if (otherObj.tag == "Character")
             {
                 otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
-                tmp = GameObject.Find("Canvas/showHP Text").GetComponent<TextMeshProUGUI>();
+                var tmp = GameObject.Find("Canvas/showHP Text").GetComponent<TextMeshProUGUI>();
                 tmp.GetComponent<showHP>().character = otherObj.GetComponent<Character>();
 
             }

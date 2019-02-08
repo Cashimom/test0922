@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GatlingScript : Weapon {
 
+    [SerializeField] private float fireTick = 0.1f;
     private float fireTime = 0.0f;
-    public float fireTick = 0.1f;
 
     // Use this for initialization
     void Start () {
-		
+        base.Start();
 	}
 	
 	// Update is called once per frame
@@ -39,7 +39,7 @@ public class GatlingScript : Weapon {
         {
             fireTime = 0.0f;
             var rs = Fire();
-            rs.moveSpeed = 5;
+            //rs.moveSpeed = 5;
 
 
         }

@@ -8,13 +8,13 @@ public class Character : MonoBehaviour {
 
     [SerializeField] protected float moveSpeed = 5.0f;
     [SerializeField] private float JumpForce = 200;
+    [SerializeField] public float HP = 100;
+    [SerializeField] public Weapon Weapon;
+    [NonSerialized] public Vector3 vector;
+    [NonSerialized] public Transform rightWeaponTransform;
     protected Rigidbody rb;
-    public Vector3 vector;
-    public bool JumpFlg=false;
+    protected bool JumpFlg = false;
     private bool boostFlg = false;
-    public float HP = 100;
-    public Weapon Weapon;
-    public Transform rightWeaponTransform;
     // Use this for initialization
     void Start () {
 		

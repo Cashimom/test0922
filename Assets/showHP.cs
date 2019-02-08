@@ -1,23 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 public class showHP : MonoBehaviour {
 
-    TextMeshProUGUI tmp;
+    [SerializeField] private TextMeshProUGUI tmp;
+    [NonSerialized] public Character character;
     private Text targetText;
-    public Character character;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+        if (tmp == null) ;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         //targetText = this.GetComponent<Text>();
-        tmp = GetComponent<TextMeshProUGUI>();
-        tmp.text = character.HP.ToString();
+
+        if (character != null)
+        {
+            tmp = GetComponent<TextMeshProUGUI>();
+            tmp.text = character.HP.ToString();
+        }
 	}
 }

@@ -5,14 +5,11 @@ using UnityEngine;
 using TMPro;
 
 public class playerController : Character {
-    
-    public float RotationSensitivity = 1000f;// 感度
-    public float rotX=0.0f, rotY=0.0f;
-    //private bool JumpFlg = false;
-    //public Vector3 vector;
-    //public GameObject rocket;
-    public GameObject body;
-    public GameObject head;
+
+    [SerializeField] private float RotationSensitivity = 1000f;// 感度
+    [SerializeField] private GameObject body;
+    [SerializeField] private GameObject head;
+    private float rotX = 0.0f, rotY = 0.0f;
     private bool secondJumpFlg = false;
     //void Update()
     //{
@@ -56,8 +53,8 @@ public class playerController : Character {
     {
 
         //マウスで方向を変える
-        rotX += Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
-        rotY += -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
+        rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
+        rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         if (head.transform.forward.y > 0.90f && rotY < 0)
         {
             rotY = 0;

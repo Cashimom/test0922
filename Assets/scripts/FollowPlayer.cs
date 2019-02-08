@@ -36,13 +36,13 @@ public class FollowPlayer : MonoBehaviour {
     //    // player位置から距離distanceだけ手前に引いた位置を設定します(位置補正版)
     //    transform.position = player.position + new Vector3(0, 3, 0) - transform.rotation * Vector3.forward * distance;
     //}
-    public Transform Target;
-    public float DistanceToPlayerM = 2f;    // カメラとプレイヤーとの距離[m]
-    public float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
-    public float HeightM = 1.2f;            // 注視点の高さ[m]
-    public float RotationSensitivity = 100f;// 感度
-    [SerializeField] public Quaternion hRotation;      // カメラの水平回転
-    public playerController playerController;
+    [SerializeField] private Transform Target;
+    [SerializeField] private float DistanceToPlayerM = 2f;    // カメラとプレイヤーとの距離[m]
+    [SerializeField] private float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
+    [SerializeField] private float HeightM = 1.2f;            // 注視点の高さ[m]
+    [SerializeField] private playerController playerController;
+    //public float RotationSensitivity = 100f;// 感度
+    private Quaternion hRotation;      // カメラの水平回転
 
     void Start()
     {
@@ -59,8 +59,8 @@ public class FollowPlayer : MonoBehaviour {
 
         //var rotX = playerController.rotX;//Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
         //var rotY = playerController.rotY;// -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
-        playerController.rotX = 0.0f;
-        playerController.rotY = 0.0f;
+        //playerController.rotX = 0.0f;
+        //playerController.rotY = 0.0f;
         hRotation = transform.rotation;
 
         var lookAt = Target.position + Vector3.up * HeightM;

@@ -6,13 +6,13 @@ using TMPro;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] protected GameObject rocket;
+    [SerializeField] public Transform ShotTransform;
+    [SerializeField] public Character character;
+    [SerializeField] private TextMeshProUGUI pressButton;
     public bool isHave = false;
-    public GameObject rocket;
-    public Transform ShotTransform;
     protected bool near = false;
-    public Character character;
-    public TextMeshProUGUI pressButton;
-    public bool isPlayer = false;
+    protected bool isPlayer = false;
 
     /*
      エネミーに武器を持たせる方法
@@ -34,11 +34,13 @@ public class Weapon : MonoBehaviour
     */
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
         if (character is playerController)
         {
             isPlayer = true;
         }
+
+        isHave = (character != null);
     }
 	
 	// Update is called once per frame

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShotRocket : Weapon
 {
+    [SerializeField] private float fireTick = 0.1f;
+    [SerializeField] private GameObject raser;
     private float fireTime = 0.0f;
-    public float fireTick = 0.1f;
-    public GameObject raser;
 
     // Use this for initialization
     void Start () {
-		
+        base.Start();
 	}
 	
 	// Update is called once per frame
@@ -46,7 +46,7 @@ public class ShotRocket : Weapon
         {
             fireTime = 0.0f;
             var rs = Fire();
-            rs.moveSpeed = 10;
+            //rs.moveSpeed = 10;
 
 
         }

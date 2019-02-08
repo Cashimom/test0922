@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class warp : MonoBehaviour {
 
-    public GameObject WarpTarget;
-    float count = 0.0f;
-    bool cameON = false;
+    [SerializeField] private GameObject WarpTarget;
+    [SerializeField] private float nextWarpDelay=5;
+    [SerializeField] private float warpHigh = 20;
+    private float count = 0.0f;
+    private bool cameON = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,7 +20,7 @@ public class warp : MonoBehaviour {
         if (cameON)
         {
             count += Time.deltaTime;
-            if (count > 5)
+            if (count > nextWarpDelay)
             {
                 count = 0.0f;
                 cameON = false;
@@ -37,7 +39,7 @@ public class warp : MonoBehaviour {
     void warpHere(GameObject gameObject)
     {
         Vector3 position = transform.position;
-        position.y += 20;
+        position.y += warpHigh;
         gameObject.transform.position = position;
         cameON = true;
     }

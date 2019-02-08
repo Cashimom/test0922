@@ -212,11 +212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 1000
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
   target: {fileID: 0}
@@ -1026,12 +1023,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e323ba6bec274147a34ac013eabf928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHave: 1
   rocket: {fileID: 1321379527952672, guid: aa82ffa3f223ff747af1dc677e6e7f54, type: 2}
   ShotTransform: {fileID: 1068448061}
   character: {fileID: 528248297}
   pressButton: {fileID: 1423191604}
-  isPlayer: 0
+  isHave: 0
   fireTick: 0.5
   raser: {fileID: 2140029448}
 --- !u!65 &378910967
@@ -1220,11 +1216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -1261,11 +1254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 1, y: 0, z: 1}
   target: {fileID: 0}
@@ -1466,11 +1456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 1, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 378910966}
-  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -1801,11 +1788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -1907,6 +1891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarpTarget: {fileID: 950493400}
+  nextWarpDelay: 5
+  warpHigh: 20
 --- !u!136 &711807770
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7170,11 +7156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
   target: {fileID: 0}
@@ -7371,6 +7354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarpTarget: {fileID: 711807767}
+  nextWarpDelay: 5
+  warpHigh: 20
 --- !u!136 &950493403
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12639,12 +12624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2335beae0ac35a940b6203339a9c5444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHave: 1
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 2}
   ShotTransform: {fileID: 1912432257}
   character: {fileID: 1647068117}
   pressButton: {fileID: 1423191604}
-  isPlayer: 0
+  isHave: 0
   fireTick: 0.1
 --- !u!65 &1257585925
 BoxCollider:
@@ -12815,11 +12799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 1000
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
   target: {fileID: 0}
@@ -13482,6 +13463,11 @@ Prefab:
       propertyPath: m_Name
       value: showHP Text
       objectReference: {fileID: 0}
+    - target: {fileID: 114798550109995868, guid: 171ceee9812a87345ba49f3dd1333719,
+        type: 2}
+      propertyPath: tmp
+      value: 
+      objectReference: {fileID: 1660021294}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 171ceee9812a87345ba49f3dd1333719, type: 2}
   m_IsPrefabAsset: 0
@@ -13889,11 +13875,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -13930,11 +13913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 200
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 1257585924}
-  rightWeaponTransform: {fileID: 0}
   cycle: 1
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -14178,7 +14158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a16415f0e7d5d439cd194ceef02b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 904481896}
+  tmp: {fileID: 1660021294}
 --- !u!4 &1678981263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744368151897796, guid: 4bc2adde9e9f41c4c95734e358790e58,
@@ -14443,11 +14423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 1000
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -14587,14 +14564,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   JumpForce: 100
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 451671853}
-  rightWeaponTransform: {fileID: 0}
   RotationSensitivity: 500
-  rotX: 0
-  rotY: 0
   body: {fileID: 1840487839}
   head: {fileID: 517433660}
 --- !u!114 &1840487845
@@ -14742,6 +14714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarpTarget: {fileID: 1477690061}
+  nextWarpDelay: 5
+  warpHigh: 20
 --- !u!4 &1850404443
 Transform:
   m_ObjectHideFlags: 0
@@ -14859,11 +14833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 2
   moveVec: {x: 0, y: 1, z: 0}
   target: {fileID: 0}
@@ -15125,11 +15096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
   HP: 100
   Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
   target: {fileID: 0}

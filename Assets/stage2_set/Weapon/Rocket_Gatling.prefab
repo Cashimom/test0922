@@ -129,4 +129,3 @@ MonoBehaviour:
     type: 2}
   explodeDamageValue: 3
   explodeDelay: 0.3
-  tmp: {fileID: 0}

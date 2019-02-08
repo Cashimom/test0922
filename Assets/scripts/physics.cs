@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class physics : MonoBehaviour {
 
-    public Vector3 localGravity;
-
+    [SerializeField] private Vector3 localGravity;
     private Rigidbody rb;
 
     // Use this for initialization

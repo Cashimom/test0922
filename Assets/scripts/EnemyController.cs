@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyController : Character {
 
     //[SerializeField] private float moveSpeed = 5.0f;
-    public float cycle = 10.0f;
+    [SerializeField] private float cycle = 10.0f;
+    [SerializeField] private Vector3 moveVec=new Vector3(1,0,0);
+    [SerializeField] private GameObject target;
+    [SerializeField] private int delay = 2;
     private float time = 0.0f;
     private int wayFlg = 0;
-    public Vector3 moveVec=new Vector3(1,0,0);
-    public GameObject target;
     private int delayCnt = 0;
-    public int delay = 2;
     //public float HP = 100;
 
     // Use this for initialization
