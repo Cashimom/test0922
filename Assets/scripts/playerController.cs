@@ -12,7 +12,7 @@ public class playerController : Character {
     private float rotX = 0.0f, rotY = 0.0f;
     private bool secondJumpFlg = false;
 
-    //Eとかesc押したらポーズ
+    //E押したらポーズ
     public bool pause = false;
 
     //void Update()
@@ -77,7 +77,6 @@ public class playerController : Character {
         }
         transform.Rotate(0, rotX, 0);
 
-        //マウスを中心にしたい---
         //Eが押されたらpause状態をswitch
         if (Input.GetKeyDown(KeyCode.E))
         {
