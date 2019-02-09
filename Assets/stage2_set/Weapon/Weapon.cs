@@ -6,12 +6,43 @@ using TMPro;
 
 public class Weapon : MonoBehaviour
 {
+    /// <summary>
+    /// 発射するロケットのゲームオブジェクト
+    /// (include <see cref="RocketScript"/> )
+    /// </summary>
     [SerializeField] protected GameObject rocket;
+
+    /// <summary>
+    /// <see cref="rocket"/> を発射するTransform
+    /// </summary>
     [SerializeField] public Transform ShotTransform;
+
+    /// <summary>
+    /// 武器を持っている<see cref="Character"/>
+    /// </summary>
     [SerializeField] public Character character;
+
+    /// <summary>
+    /// "Press F"って表示させるためのテキスト
+    /// </summary>
     [SerializeField] private TextMeshProUGUI pressButton;
-    public bool isHave = false;
+
+    /// <summary>
+    /// <see cref="character"/>が持っているかどうか。
+    /// (character!=nullでよくね、そのうち消す)
+    /// </summary>
+    protected bool isHave = false;
+
+    /// <summary>
+    /// 近くにCharacterがいるかどうか。
+    /// Changed by <seealso cref="Weapon.OnTriggerEnter(Collider)"/>
+    /// or <seealso cref="Weapon.OnTriggerExit(Collider)"/>
+    /// </summary>
     protected bool near = false;
+
+    /// <summary>
+    /// <see cref="character"/>がプレイヤーかどうか
+    /// </summary>
     protected bool isPlayer = false;
 
     /*
@@ -28,7 +59,6 @@ public class Weapon : MonoBehaviour
          .EnemyControllerのtargetにプレイヤーのインスタンスをD&D
 
          .武器のオブジェクトのcharacterにさっきのEnemyをD&D
-         .武器のisHaveをにチェック
          終わり
          
     */
@@ -49,10 +79,7 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetKeyDown("f"))
             {
-                if(character is playerController)
-                {
-                    isPlayer = true;
-                }
+                isPlayer = (character is playerController);
                 character.Weapon.DropWeapon();
                 HaveWeapon();
                 near = false;
@@ -62,12 +89,21 @@ public class Weapon : MonoBehaviour
         }
 	}
 
+    /// <summary>
+    /// <see cref="rocket"/>を<see cref="ShotTransform"/>に生成する
+    /// </summary>
+    /// <returns>
+    /// 生成したロケットのゲームオブジェクト
+    /// </returns>
     public RocketScript Fire()
     {
         var fire = Instantiate(rocket, ShotTransform.position + ShotTransform.forward * 2, ShotTransform.rotation);
         return fire.GetComponent<RocketScript>();
     }
 
+    /// <summary>
+    /// Fire1 (左クリック)が押されているときの処理を書く
+    /// </summary>
     public virtual void Fire1()
     {
 
@@ -93,12 +129,19 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// キャラクターから<see cref="this"/>をドロップする
+    /// </summary>
     public void DropWeapon()
     {
         isHave = false;
+        character = null;
         GetComponent<BoxCollider>().enabled = true;
     }
 
+    /// <summary>
+    /// キャラクターに<see cref="this"/>を持たせる
+    /// </summary>
     public void HaveWeapon()
     {
         isHave = true;

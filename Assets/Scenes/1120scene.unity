@@ -1027,7 +1027,6 @@ MonoBehaviour:
   ShotTransform: {fileID: 1068448061}
   character: {fileID: 528248297}
   pressButton: {fileID: 1423191604}
-  isHave: 0
   fireTick: 0.5
   raser: {fileID: 2140029448}
 --- !u!65 &378910967
@@ -12628,7 +12627,6 @@ MonoBehaviour:
   ShotTransform: {fileID: 1912432257}
   character: {fileID: 1647068117}
   pressButton: {fileID: 1423191604}
-  isHave: 0
   fireTick: 0.1
 --- !u!65 &1257585925
 BoxCollider:
