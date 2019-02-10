@@ -2,15 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : Character {
 
-    //[SerializeField] private float moveSpeed = 5.0f;
-    [SerializeField] private float cycle = 10.0f;
-    [SerializeField] private Vector3 moveVec=new Vector3(1,0,0);
+/// <summary>
+/// エネミーの処理を実装しているクラス
+/// extends <see cref="Character"/>
+/// </summary>
+public class EnemyController : Character
+{
+    /// <summary>
+    /// 動きのサイクル時間
+    /// </summary>
+    [SerializeField] private float cycle = 5.0f;
+
+    /// <summary>
+    /// 移動する方向
+    /// </summary>
+    [SerializeField] private Vector3 moveVec=new Vector3(0,0,0);
+
+    /// <summary>
+    /// 弾を撃ったりする目標のゲームオブジェクト
+    /// </summary>
     [SerializeField] private GameObject target;
+
+    /// <summary>
+    /// 武器を使う時間(delay倍される)
+    /// </summary>
     [SerializeField] private int delay = 2;
+
+    /// <summary>
+    /// 時間カウント用変数
+    /// </summary>
     private float time = 0.0f;
+
+    /// <summary>
+    /// 移動している方向が正か負か
+    /// </summary>
     private int wayFlg = 0;
+
+    /// <summary>
+    /// <see cref="delay"/>のカウント用変数
+    /// </summary>
     private int delayCnt = 0;
     //public float HP = 100;
 
@@ -65,6 +96,12 @@ public class EnemyController : Character {
 
 	}
 
+    /// <summary>
+    /// 爆発によるダメージの処理をする。
+    /// see <see cref="Character.explodeDamage(float)"/>
+    /// </summary>
+    /// <param name="damage">ダメージ量</param>
+    /// <returns></returns>
     public override bool explodeDamage(float damage)
     {
         HP -= damage;

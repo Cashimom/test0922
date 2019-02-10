@@ -5,20 +5,56 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class RocketScript : MonoBehaviour {
+/// <summary>
+/// Weaponから発射するロケット用のクラス
+/// </summary>
+public class RocketScript : MonoBehaviour
+{
 
+    /// <summary>
+    /// 移動スピード
+    /// </summary>
     [SerializeField] private float moveSpeed = 1.0f;
+
+    /// <summary>
+    /// ヒットした時に出すパーティクル
+    /// </summary>
     [SerializeField] private ParticleSystem destroyParticle;
+
+    /// <summary>
+    /// characterにヒットした時のダメージ
+    /// </summary>
     [SerializeField] private float explodeDamageValue = 10.0f;
+
+    /// <summary>
+    /// ヒットしたあと弾が残る時間
+    /// </summary>
     [SerializeField] private float explodeDelay = 5 / 6;
-    //public float rotY = 0.0f, rotX = 0.0f, rotZ = 0.0f;
+    
+    /// <summary>
+    /// Rigidbodyが保存されてる変数
+    /// </summary>
     private Rigidbody rb;
+
+    /// <summary>
+    /// ヒットしたかどうか
+    /// </summary>
     private bool isCollisionEntered = false;
+
+    /// <summary>
+    /// <see cref="destroyParticle"/>の動作時間
+    /// </summary>
     private float destroyTime = 0;
+
+    /// <summary>
+    /// 時間カウント用変数
+    /// </summary>
     private float t=0;
+
+    /// <summary>
+    /// サイズ変更時の元のサイズ
+    /// </summary>
     private Vector3 defaultScale;
-    //public showHP showHP;
-    //private TextMeshProUGUI tmp;
     
 
 	// Use this for initialization
@@ -62,6 +98,9 @@ public class RocketScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// ヒットした時の処理
+    /// </summary>
     public void Hit()
     {
         isCollisionEntered = true;

@@ -2,12 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ワープの処理をするクラス
+/// </summary>
 public class warp : MonoBehaviour {
 
+    /// <summary>
+    /// ワープ先の<see cref="warp"/>を持つゲームオブジェクト
+    /// </summary>
     [SerializeField] private GameObject WarpTarget;
+
+    /// <summary>
+    /// 次にワープできるようになるまでの時間
+    /// </summary>
     [SerializeField] private float nextWarpDelay=5;
+
+    /// <summary>
+    /// ワープして移動してくるときの高さ
+    /// </summary>
     [SerializeField] private float warpHigh = 20;
+
+    /// <summary>
+    /// 時間カウント用変数
+    /// </summary>
     private float count = 0.0f;
+
+    /// <summary>
+    /// <see cref="nextWarpDelay"/>のカウントをするためのフラグ
+    /// </summary>
     private bool cameON = false;
 
     // Use this for initialization
@@ -36,6 +58,11 @@ public class warp : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// <paramref name="gameObject"/>をここにワープさせるメソッド。
+    /// used in <see cref="warp.OnTriggerEnter(Collider)"/>
+    /// </summary>
+    /// <param name="gameObject"></param>
     void warpHere(GameObject gameObject)
     {
         Vector3 position = transform.position;

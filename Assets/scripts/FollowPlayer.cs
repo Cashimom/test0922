@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// カメラがプレイヤーを追いかけられるようにするクラス
+/// </summary>
 public class FollowPlayer : MonoBehaviour {
     //[SerializeField] private float turnSpeed = 10.0f;   // 回転速度
     //[SerializeField] private Transform player;          // 注視対象プレイヤー
@@ -36,17 +39,35 @@ public class FollowPlayer : MonoBehaviour {
     //    // player位置から距離distanceだけ手前に引いた位置を設定します(位置補正版)
     //    transform.position = player.position + new Vector3(0, 3, 0) - transform.rotation * Vector3.forward * distance;
     //}
+
+    /// <summary>
+    /// 追いかけるTransform
+    /// </summary>
     [SerializeField] private Transform Target;
-    [SerializeField] private float DistanceToPlayerM = 2f;    // カメラとプレイヤーとの距離[m]
-    [SerializeField] private float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
-    [SerializeField] private float HeightM = 1.2f;            // 注視点の高さ[m]
+
+    /// <summary>
+    /// カメラとプレイヤーとの距離[m]
+    /// </summary>
+    [SerializeField] private float DistanceToPlayerM = 2f;
+
+    /// <summary>
+    /// カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
+    /// </summary>
+    [SerializeField] private float SlideDistanceM = 0f;
+
+    /// <summary>
+    /// 注視点の高さ[m]
+    /// </summary>
+    [SerializeField] private float HeightM = 1.2f;
+
+    /// <summary>
+    /// カメラを回転させる用。
+    /// using <see cref="playerController.vector"/>
+    /// </summary>
     [SerializeField] private playerController playerController;
-    //public float RotationSensitivity = 100f;// 感度
-    private Quaternion hRotation;      // カメラの水平回転
 
     void Start()
     {
-        hRotation = Quaternion.identity;                // 水平回転(Y軸を軸とする回転)は、無回転
         if (Target == null)
         {
             Debug.LogError("ターゲットが設定されていない");
@@ -61,7 +82,6 @@ public class FollowPlayer : MonoBehaviour {
         //var rotY = playerController.rotY;// -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         //playerController.rotX = 0.0f;
         //playerController.rotY = 0.0f;
-        hRotation = transform.rotation;
 
         var lookAt = Target.position + Vector3.up * HeightM;
 

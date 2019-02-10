@@ -4,12 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class playerController : Character {
-
+/// <summary>
+/// プレイヤーの処理を実装しているクラス
+/// extends <see cref="Character"/>
+/// </summary>
+public class playerController : Character
+{
+    /// <summary>
+    /// マウスの感度
+    /// </summary>
     [SerializeField] private float RotationSensitivity = 1000f;// 感度
+
+    /// <summary>
+    /// 胴体のゲームオブジェクト
+    /// </summary>
     [SerializeField] private GameObject body;
+
+    /// <summary>
+    /// 頭のゲームオブジェクト
+    /// </summary>
     [SerializeField] private GameObject head;
-    private float rotX = 0.0f, rotY = 0.0f;
+    
+    /// <summary>
+    /// 2段ジャンプのフラグ
+    /// </summary>
     private bool secondJumpFlg = false;
 
     //E押したらポーズ
@@ -57,8 +75,8 @@ public class playerController : Character {
     {
 
         //マウスで方向を変える
-        rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
-        rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
+        var rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
+        var rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         if (head.transform.forward.y > 0.90f && rotY < 0)
         {
             rotY = 0;
@@ -162,6 +180,12 @@ public class playerController : Character {
         //rightWeaponTransform = head.transform;
     }
 
+    /// <summary>
+    /// 基本移動。RigidBodyを使った移動にしている。
+    /// see <see cref="Character.move(Vector3, float)"/>
+    /// </summary>
+    /// <param name="vector3">移動する方向</param>
+    /// <param name="shift">スピードの倍率</param>
     public override void move(Vector3 vector3, float shift)
     {
         //transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
