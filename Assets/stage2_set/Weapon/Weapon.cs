@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// 武器に継承させるクラス。
+/// <seealso cref="GatlingScript"/>
+/// <seealso cref="ShotRocket"/>
+/// </summary>
 public class Weapon : MonoBehaviour
 {
     /// <summary>

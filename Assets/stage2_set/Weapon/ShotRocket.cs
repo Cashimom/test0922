@@ -2,10 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// キャノンのスクリプト
+/// /// extends <see cref="Weapon"/>
+/// </summary>
 public class ShotRocket : Weapon
 {
+    /// <summary>
+    /// 弾を撃つ間隔
+    /// </summary>
     [SerializeField] private float fireTick = 0.1f;
+
+    /// <summary>
+    /// Fire2を押しているときに出すレーザーポインター
+    /// </summary>
     [SerializeField] private GameObject raser;
+
+    /// <summary>
+    /// 時間をカウントする変数
+    /// </summary>
     private float fireTime = 0.0f;
 
     // Use this for initialization
@@ -39,6 +54,10 @@ public class ShotRocket : Weapon
         }
     }
 
+    /// <summary>
+    /// Fire1が押されているときの処理。
+    /// see <see cref="Weapon.Fire1"/>
+    /// </summary>
     public override void Fire1()
     {
         fireTime += Time.deltaTime;

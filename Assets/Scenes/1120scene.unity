@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 1000
   Weapon: {fileID: 0}
   cycle: 5
@@ -1214,7 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 10
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 10
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 378910966}
   cycle: 5
@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 10
@@ -7154,7 +7154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 5
@@ -12796,7 +12796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 1000
   Weapon: {fileID: 0}
   cycle: 14
@@ -13872,7 +13872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 10
@@ -13910,7 +13910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 200
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 1257585924}
   cycle: 1
@@ -14420,7 +14420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 1000
   Weapon: {fileID: 0}
   cycle: 10
@@ -14561,7 +14561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  JumpForce: 100
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 451671853}
   RotationSensitivity: 500
@@ -14830,7 +14830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 2
@@ -15093,7 +15093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  JumpForce: 0.00003
+  FlyForce: 200
   HP: 100
   Weapon: {fileID: 0}
   cycle: 2

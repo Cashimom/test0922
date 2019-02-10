@@ -104,11 +104,10 @@ public class playerController : Character {
         }
         if(Input.GetButtonDown("Jump")&&Input.GetKey(KeyCode.LeftShift))
         {
-            JumpFlg = true;
             boostMove(x, z);
 
         }
-        if (/*Input.GetButton("Jump")*/Input.GetKey(KeyCode.LeftShift) && !JumpFlg)
+        if (/*Input.GetButton("Jump")*/Input.GetKey(KeyCode.LeftShift) && !boostFlg)
         {
             flyMove(x, z);
 
