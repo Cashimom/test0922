@@ -14960,6 +14960,7 @@ MonoBehaviour:
   RotationSensitivity: 500
   body: {fileID: 1840487839}
   head: {fileID: 517433660}
+  jumpForce: 50
   pause: 0
 --- !u!114 &1840487845
 MonoBehaviour:
