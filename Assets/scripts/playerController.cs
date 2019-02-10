@@ -29,6 +29,8 @@ public class playerController : Character
     /// <see cref="Jump"/>する強さ
     /// </summary>
     [SerializeField] private float jumpForce = 50;
+
+    private GameObject shield;
     
     /// <summary>
     /// 2段ジャンプのフラグ
@@ -42,20 +44,13 @@ public class playerController : Character
 
     //E押したらポーズ
     public bool pause = false;
-
-    //void Update()
-    //{
-    //    var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-    //    var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
-
-    //    transform.Rotate(0, x, 0);
-    //    transform.Translate(0, 0, z);
-    //}
+    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = head.transform;
+        shield = (GameObject)Resources.Load("Shield");
     }
 
     private void Update()
@@ -124,31 +119,19 @@ public class playerController : Character
         if (isJumpPressed)
         {
             Jump();
-
         }
 
         //ブーストする
         if(isJumpPressed&&Input.GetKey(KeyCode.LeftShift))
         {
             boostMove(mx, mz);
-
         }
 
         //滞空する
         if (Input.GetKey(KeyCode.LeftShift) && !boostFlg)
         {
             flyMove(mx, mz);
-
         }
-        //if (Input.GetKeyUp(KeyCode.LeftShift))
-        //{
-        //    StartCoroutine(DelayMethod(0.1f, () =>
-        //    {
-        //        //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-        //        rb.velocity = new Vector3(0, 0, 0);
-        //    }));
-
-        //}
 
         //降下する
         if (Input.GetKeyDown("z"))
@@ -158,6 +141,13 @@ public class playerController : Character
         if (Input.GetKey("z"))
         {
             rb.AddForce(new Vector3(0, -100f, 0), ForceMode.Force);
+        }
+
+        //バリア張る
+        if (Input.GetKeyDown("c"))
+        {
+            var shieldObj = Instantiate(shield, head.transform.position+head.transform.forward*10,transform.rotation*head.transform.localRotation);
+            //shieldObj.transform.rotation
         }
 
 
