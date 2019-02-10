@@ -11,6 +11,10 @@ public class playerController : Character {
     [SerializeField] private GameObject head;
     private float rotX = 0.0f, rotY = 0.0f;
     private bool secondJumpFlg = false;
+
+    //E押したらポーズ
+    public bool pause = false;
+
     //void Update()
     //{
     //    var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
@@ -72,6 +76,22 @@ public class playerController : Character {
             head.transform.localRotation = Quaternion.Euler(a);
         }
         transform.Rotate(0, rotX, 0);
+
+        //Eが押されたらpause状態をswitch
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pause = !pause;
+        }
+        //pause状態ならマウスカーソルをlock
+        if (pause) {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         //wasdとかで動かす
         float shiftValue = 1.0f;
