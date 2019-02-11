@@ -84,7 +84,6 @@ public class playerController : Character
 
     void FixedUpdate()
     {
-        debugText(secondJumpFlg.ToString());
 
         //マウスで方向を変える
         var rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
@@ -168,7 +167,6 @@ public class playerController : Character
         //rb.AddForce(vector3 * shift*0.00001f,ForceMode.Force);
         float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
         float mz= (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI) - (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
-        //debugText(((float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI)).ToString() + "\n" + ((float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI)).ToString());
         rb.MovePosition(rb.position + (new Vector3( mx, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, mz)));
         //transform.localPosition= new Vector3(0, 1.7f, 0);
         var a = head.transform.eulerAngles;
