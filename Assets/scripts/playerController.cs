@@ -42,6 +42,11 @@ public class playerController : Character
     /// </summary>
     private bool isJumpPressed = false;
 
+    /// <summary>
+    /// エネルギーのチャージ時間カウント用変数
+    /// </summary>
+    private float chargeTimeCnt = 0;
+
     //E押したらポーズ
     public bool pause = false;
     
@@ -75,11 +80,31 @@ public class playerController : Character
             Debug.Log("Did not Hit");
         }
 
+        //int onObject = 3 << 9;
+        RaycastHit objectHit;
+        bool isHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, 1.2f);
+        if (isHit)
+        {
+            chargeTimeCnt += Time.deltaTime;
+
+            if (chargeTimeCnt > 0.1)
+            {
+                if(Energy<MaxEnergy)
+                    Energy += 1;
+                chargeTimeCnt = 0;
+            }
+
+
+        }
+
+        ChangeEnergyText();
+
 
         if (Input.GetButtonDown("Jump"))
         {
             isJumpPressed = true;
         }
+
     }
 
     void FixedUpdate()
@@ -121,30 +146,35 @@ public class playerController : Character
         }
 
         //ブーストする
-        if(isJumpPressed&&Input.GetKey(KeyCode.LeftShift))
+        if(isJumpPressed&&Input.GetKey(KeyCode.LeftShift)&& Energy>=5)
         {
+            Energy -= 5;
             boostMove(mx, mz);
         }
 
         //滞空する
-        if (Input.GetKey(KeyCode.LeftShift) && !boostFlg)
+        if (Input.GetKey(KeyCode.LeftShift) && !boostFlg&& Energy>=5*Time.deltaTime)
         {
+            Energy -= (5 * Time.deltaTime);
             flyMove(mx, mz);
         }
 
         //降下する
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z")&& Energy>=5)
         {
+            Energy -= (5);
             rb.AddForce(new Vector3(0, -50f, 0), ForceMode.Impulse);
         }
-        if (Input.GetKey("z"))
+        if (Input.GetKey("z") && Energy >= 5*Time.deltaTime)
         {
+            Energy -= (5 * Time.deltaTime);
             rb.AddForce(new Vector3(0, -100f, 0), ForceMode.Force);
         }
 
         //バリア張る
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("c")&&Energy>=20)
         {
+            Energy -= 20;
             var shieldObj = Instantiate(shield, head.transform.position+head.transform.forward*10,transform.rotation*head.transform.localRotation);
             //shieldObj.transform.rotation
         }
@@ -240,5 +270,7 @@ public class playerController : Character
         }
         transform.Rotate(0, rotX, 0);
     }
+
+
 
 }
