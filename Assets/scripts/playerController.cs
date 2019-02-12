@@ -24,28 +24,33 @@ public class playerController : Character
     /// 頭のゲームオブジェクト
     /// </summary>
     [SerializeField] private GameObject head;
+
+    /// <summary>
+    /// <see cref="Jump"/>する強さ
+    /// </summary>
+    [SerializeField] private float jumpForce = 50;
+
+    private GameObject shield;
     
     /// <summary>
     /// 2段ジャンプのフラグ
     /// </summary>
     private bool secondJumpFlg = false;
 
+    /// <summary>
+    /// <see cref="Update"/>でJumpが押されていたか保持する変数
+    /// </summary>
+    private bool isJumpPressed = false;
+
     //E押したらポーズ
     public bool pause = false;
-
-    //void Update()
-    //{
-    //    var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-    //    var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
-
-    //    transform.Rotate(0, x, 0);
-    //    transform.Translate(0, 0, z);
-    //}
+    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = head.transform;
+        shield = (GameObject)Resources.Load("Shield");
     }
 
     private void Update()
@@ -69,6 +74,12 @@ public class playerController : Character
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             Debug.Log("Did not Hit");
         }
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumpPressed = true;
+        }
     }
 
     void FixedUpdate()
@@ -77,6 +88,140 @@ public class playerController : Character
         //マウスで方向を変える
         var rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
         var rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
+        Rotation(rotX, rotY);
+
+        //Eが押されたらpause状態をswitch
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pause = !pause;
+        }
+        //pause状態ならマウスカーソルをlock
+        CursorLock(pause);
+
+        //wasdとかで動かす
+        float shiftValue = 1.0f;
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            shiftValue = 2.0f;
+        }
+        var mx = Input.GetAxis("Horizontal");
+        var mz = Input.GetAxis("Vertical");
+        move(new Vector3(mx,0,mz), shiftValue);
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            //isJumpPressed = true;
+        }
+
+        //ジャンプする
+        if (isJumpPressed)
+        {
+            Jump();
+        }
+
+        //ブーストする
+        if(isJumpPressed&&Input.GetKey(KeyCode.LeftShift))
+        {
+            boostMove(mx, mz);
+        }
+
+        //滞空する
+        if (Input.GetKey(KeyCode.LeftShift) && !boostFlg)
+        {
+            flyMove(mx, mz);
+        }
+
+        //降下する
+        if (Input.GetKeyDown("z"))
+        {
+            rb.AddForce(new Vector3(0, -50f, 0), ForceMode.Impulse);
+        }
+        if (Input.GetKey("z"))
+        {
+            rb.AddForce(new Vector3(0, -100f, 0), ForceMode.Force);
+        }
+
+        //バリア張る
+        if (Input.GetKeyDown("c"))
+        {
+            var shieldObj = Instantiate(shield, head.transform.position+head.transform.forward*10,transform.rotation*head.transform.localRotation);
+            //shieldObj.transform.rotation
+        }
+
+
+        isJumpPressed = false;
+
+    }
+
+    /// <summary>
+    /// 基本移動。RigidBodyを使った移動にしている。
+    /// see <see cref="Character.move(Vector3, float)"/>
+    /// </summary>
+    /// <param name="vector3">移動する方向</param>
+    /// <param name="shift">スピードの倍率</param>
+    public override void move(Vector3 vector3, float shift)
+    {
+        //transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
+        //body.transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
+        //rb.AddForce(vector3 * shift*0.00001f,ForceMode.Force);
+        float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
+        float mz= (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI) - (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
+        rb.MovePosition(rb.position + (new Vector3( mx, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, mz)));
+        //transform.localPosition= new Vector3(0, 1.7f, 0);
+        var a = head.transform.eulerAngles;
+        a.z = 0.0f;
+        vector = a;
+        head.transform.eulerAngles = a;
+        var b = transform.eulerAngles;
+        b.z = 0.0f;
+        transform.eulerAngles = b;
+    }
+
+    /// <summary>
+    /// ジャンプする
+    /// </summary>
+    public void Jump()
+    {
+
+        if ((Math.Abs(rb.velocity.y) < 0.0005))
+        {
+            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            secondJumpFlg = false;
+        }
+        else if (!secondJumpFlg)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            secondJumpFlg = true;
+        }
+    }
+
+    /// <summary>
+    /// カーソルをロックする
+    /// </summary>
+    /// <param name="pause">ロックするか否か</param>
+    private void CursorLock(bool pause)
+    {
+        if (pause)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    /// <summary>
+    /// xの入力とyの入力によって回転させる
+    /// </summary>
+    /// <param name="rotX">Y軸の回転 ( input X ) </param>
+    /// <param name="rotY">X軸の回転 ( input Y )</param>
+    public void Rotation(float rotX,float rotY)
+    {
         if (head.transform.forward.y > 0.90f && rotY < 0)
         {
             rotY = 0;
@@ -94,117 +239,6 @@ public class playerController : Character
             head.transform.localRotation = Quaternion.Euler(a);
         }
         transform.Rotate(0, rotX, 0);
-
-        //Eが押されたらpause状態をswitch
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            pause = !pause;
-        }
-        //pause状態ならマウスカーソルをlock
-        if (pause) {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-        //wasdとかで動かす
-        float shiftValue = 1.0f;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            shiftValue = 2.0f;
-        }
-        var x = Input.GetAxis("Horizontal");
-        var z = Input.GetAxis("Vertical");
-        move(new Vector3(x,0,z), shiftValue);
-
-
-        //var tmp = GameObject.Find("Canvas/kasokudo").GetComponent<TextMeshProUGUI>();
-        //tmp.text = rb.velocity.y.ToString();
-        //ジャンプする
-        if (Input.GetButtonDown("Jump"))
-        {
-            if ((Math.Abs(rb.velocity.y) < 0.0005))
-            {
-                rb.AddForce(0, 50, 0,ForceMode.Impulse);
-                secondJumpFlg = false;
-            }
-            else if (!secondJumpFlg)
-            {
-                rb.velocity = new Vector3(0, 0, 0);
-                rb.AddForce(0, 50, 0, ForceMode.Impulse);
-                secondJumpFlg = true;
-            }
-            
-        }
-        if(Input.GetButtonDown("Jump")&&Input.GetKey(KeyCode.LeftShift))
-        {
-            boostMove(x, z);
-
-        }
-        if (/*Input.GetButton("Jump")*/Input.GetKey(KeyCode.LeftShift) && !boostFlg)
-        {
-            flyMove(x, z);
-
-        }
-        if (/*Input.GetButtonUp("Jump")*/Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            StartCoroutine(DelayMethod(0.1f, () =>
-            {
-                //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-                rb.velocity = new Vector3(0, 0, 0);
-            }));
-
-        }
-        if (Input.GetKeyDown("z"))
-        {
-            rb.AddForce(new Vector3(0, -100f, 0), ForceMode.Impulse);
-            StartCoroutine(DelayMethod(0.1f, () =>
-            {
-                //rb.AddForce(new Vector3(0, 0.00003f, 0), ForceMode.Impulse);
-                rb.velocity = new Vector3(0, 0, 0);
-            }));
-        }
-        //if (Input.GetButton("Fire1"))
-        //{
-        //    fireTime += Time.deltaTime;
-        //    if (fireTime > fireTick)
-        //    {
-        //        fireTime = 0.0f;
-        //        var fire = Instantiate(rocket, transform.position + transform.forward * 5, transform.rotation);
-        //    }
-        //}
-        //rightWeaponTransform = head.transform;
     }
-
-    /// <summary>
-    /// 基本移動。RigidBodyを使った移動にしている。
-    /// see <see cref="Character.move(Vector3, float)"/>
-    /// </summary>
-    /// <param name="vector3">移動する方向</param>
-    /// <param name="shift">スピードの倍率</param>
-    public override void move(Vector3 vector3, float shift)
-    {
-        //transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
-        //body.transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
-        //rb.AddForce(vector3 * shift*0.00001f,ForceMode.Force);
-        float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
-        float mz= (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI) - (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
-        //debugText(((float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI)).ToString() + "\n" + ((float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI)).ToString());
-        rb.MovePosition(rb.position + (new Vector3( mx, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, mz)));
-        //transform.localPosition= new Vector3(0, 1.7f, 0);
-        var a = head.transform.eulerAngles;
-        a.z = 0.0f;
-        vector = a;
-        head.transform.eulerAngles = a;
-        var b = transform.eulerAngles;
-        b.z = 0.0f;
-        transform.eulerAngles = b;
-    }
-
-    
 
 }

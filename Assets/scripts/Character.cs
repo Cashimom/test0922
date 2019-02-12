@@ -156,7 +156,6 @@ public class Character : MonoBehaviour
         {
             flyForce += new Vector3(0, (FlyForce * reg), 0);
         }
-        debugText(boostFlg.ToString());
         if (flyForce != new Vector3(0, 0, 0)&&!boostFlg)
         {
             rb.AddForce(flyForce, ForceMode.Force);
