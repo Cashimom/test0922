@@ -19,6 +19,7 @@ public class EnemyController : Character {
     {
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = transform;
+        Debug.Log(this.name);
     }
 	
 	// Update is called once per frame
