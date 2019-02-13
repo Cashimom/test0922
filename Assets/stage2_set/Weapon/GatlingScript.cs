@@ -31,7 +31,7 @@ public class GatlingScript : Weapon
             if(isPlayer)
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
             else 
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 8;
+                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
 
             transform.rotation= character.rightWeaponTransform.rotation;
             transform.Rotate(0, -90, 0);

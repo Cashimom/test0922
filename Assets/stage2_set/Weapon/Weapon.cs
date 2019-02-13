@@ -33,6 +33,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pressButton;
 
     /// <summary>
+    /// エネミーが武器持つときにを浮かせる位置
+    /// </summary>
+    [SerializeField] public float WeaponTransformDistance = 8;
+
+    /// <summary>
     /// <see cref="character"/>が持っているかどうか。
     /// (character!=nullでよくね、そのうち消す)
     /// </summary>
@@ -73,6 +78,11 @@ public class Weapon : MonoBehaviour
         if (character is playerController)
         {
             isPlayer = true;
+        }
+
+        if (pressButton == null)
+        {
+            pressButton= GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
         }
 
         isHave = (character != null);

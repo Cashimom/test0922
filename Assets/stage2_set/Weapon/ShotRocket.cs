@@ -36,7 +36,7 @@ public class ShotRocket : Weapon
             if (isPlayer)
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 3;
             else
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 10;
+                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
             transform.rotation = character.rightWeaponTransform.rotation;
 
             if (isPlayer&&Input.GetButton("Fire1"))

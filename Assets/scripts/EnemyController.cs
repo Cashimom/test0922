@@ -22,12 +22,17 @@ public class EnemyController : Character
     /// <summary>
     /// 弾を撃ったりする目標のゲームオブジェクト
     /// </summary>
-    [SerializeField] private GameObject target;
+    [SerializeField] public GameObject target;
 
     /// <summary>
     /// 武器を使う時間(delay倍される)
     /// </summary>
     [SerializeField] private int delay = 2;
+
+    /// <summary>
+    /// EDFモードの切り替え
+    /// </summary>
+    [SerializeField] private bool isEDF = false;
 
     /// <summary>
     /// 時間カウント用変数
@@ -43,7 +48,6 @@ public class EnemyController : Character
     /// <see cref="delay"/>のカウント用変数
     /// </summary>
     private int delayCnt = 0;
-    //public float HP = 100;
 
     // Use this for initialization
     void Start ()
@@ -80,6 +84,11 @@ public class EnemyController : Character
             {
                 transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
 
+            }
+
+            if (isEDF&&(target.transform.position - Weapon.ShotTransform.position).magnitude>75)
+            {
+                move(new Vector3(0, 0, 2), 1.6f);
             }
         }
 
