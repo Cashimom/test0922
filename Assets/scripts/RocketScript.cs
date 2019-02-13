@@ -91,9 +91,6 @@ public class RocketScript : MonoBehaviour
             if (otherObj.tag == "Character")
             {
                 otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
-                var tmp = GameObject.Find("Canvas/showHP Text").GetComponent<TextMeshProUGUI>();
-                tmp.GetComponent<showHP>().character = otherObj.GetComponent<Character>();
-
             }
         }
     }
