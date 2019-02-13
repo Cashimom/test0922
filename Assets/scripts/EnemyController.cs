@@ -92,29 +92,20 @@ public class EnemyController : Character
             if (delayCnt >= delay)
             {
                 delayCnt = 0;
-                // Bit shift the index of the layer (8) to get a bit mask
+                
+                //Raycastを使って向いてる方向に障害物がないかチェック
                 int layerMask = 3 << 9;
-
-                // This would cast rays only against colliders in layer 8.
-                // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-                //layerMask = ~layerMask;
-
                 RaycastHit hit;
-                // Does the ray intersect any objects excluding the player layer
                 if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||hit.collider.gameObject.layer==9))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    //Debug.Log("Did Hit");
                     Weapon.Fire1();
 
                 }
                 else
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                    //Debug.Log("Did not Hit");
                 }
-                if(hit.collider!=null)
-                    debugText((hit.collider.gameObject.layer).ToString());
                 
             }
         }

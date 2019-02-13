@@ -21,12 +21,17 @@ public class Character : MonoBehaviour
     /// <see cref="boostMove(float, float)"/>
     /// をするときの強さ
     /// </summary>
-    [SerializeField] private float FlyForce = 200;
+    [SerializeField] private float FlyForce = 100;
 
     /// <summary>
     /// キャラクターのHP
     /// </summary>
     [SerializeField] public float HP = 100;
+
+    /// <summary>
+    /// キャラクターのエネルギーの上限
+    /// </summary>
+    [SerializeField] public float MaxEnergy = 100;
 
     /// <summary>
     /// 持っている武器
@@ -43,6 +48,16 @@ public class Character : MonoBehaviour
     /// <see cref="Weapon"/>を置く場所、
     /// </summary>
     [NonSerialized] public Transform rightWeaponTransform;
+
+
+    private float energy=100;
+    /// <summary>
+    /// キャラクターの保持エネルギー
+    /// </summary> 
+    public float Energy {
+        set { this.energy = Math.Min(value , MaxEnergy); ChangeEnergyText(); }
+        get { return this.energy; }
+    }
 
     /// <summary>
     /// Rigidbodyを持っておく変数
@@ -119,7 +134,7 @@ public class Character : MonoBehaviour
             {
                 boostFlg = false;
                 //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-                rb.velocity = new Vector3(0, 0, 0);
+                //rb.velocity = new Vector3(0, 0, 0);
                 /*var vel = rb.velocity;
                 vel.x = vel.z = 0;
                 rb.velocity = vel;*/
@@ -221,6 +236,15 @@ public class Character : MonoBehaviour
         }
         Destroy(gameObject);
         return true;
+    }
+
+    /// <summary>
+    /// エネルギー量を表示しているテキストを更新する
+    /// </summary>
+    protected void ChangeEnergyText()
+    {
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
+        tmp.text = "Energy\n"+energy.ToString();
     }
 
     /// <summary>

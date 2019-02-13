@@ -219,6 +219,7 @@ MonoBehaviour:
   moveSpeed: 10
   FlyForce: 200
   HP: 1000
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
@@ -970,6 +971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warp_spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 1699209480916964, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4705391421137262, guid: 2d833e43935954f478972ecab48ea904, type: 3}
       propertyPath: m_LocalPosition.x
       value: -71.15308
@@ -1019,6 +1024,18 @@ PrefabInstance:
       propertyPath: WarpTarget
       value: 
       objectReference: {fileID: 1754913129}
+    - target: {fileID: 1574854027982936, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639392425546168, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814524264475162, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d833e43935954f478972ecab48ea904, type: 3}
 --- !u!1001 &378910963
@@ -1336,6 +1353,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -1479,6 +1497,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 378910966}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -1627,6 +1646,7 @@ RectTransform:
   - {fileID: 1423191603}
   - {fileID: 1682798601}
   - {fileID: 38051226}
+  - {fileID: 742808744}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1676,6 +1696,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 50599616}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -1762,7 +1783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614988440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Loby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1913,6 +1934,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 1576800339}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -2097,6 +2119,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -2221,6 +2244,166 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &742808743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742808744}
+  - component: {fileID: 742808746}
+  - component: {fileID: 742808745}
+  m_Layer: 0
+  m_Name: ShowEnergy Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &742808744
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742808743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 539426037}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &742808745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742808743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 742808745}
+    characterCount: 8
+    spriteCount: 0
+    spaceCount: 1
+    wordCount: 2
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &742808746
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742808743}
+  m_CullTransparentMesh: 0
 --- !u!1 &750881608
 GameObject:
   m_ObjectHideFlags: 0
@@ -7611,7 +7794,7 @@ GameObject:
   - component: {fileID: 962674294}
   - component: {fileID: 962674293}
   - component: {fileID: 962674292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13331,6 +13514,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 1000
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
@@ -14242,7 +14426,7 @@ GameObject:
   - component: {fileID: 1539849729}
   - component: {fileID: 1539849728}
   - component: {fileID: 1539849727}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14645,6 +14829,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -14685,6 +14870,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 1257585924}
   cycle: 1
   moveVec: {x: 0, y: 0, z: 0}
@@ -15124,6 +15310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warp_loby
       objectReference: {fileID: 0}
+    - target: {fileID: 1699209480916964, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4705391421137262, guid: 2d833e43935954f478972ecab48ea904, type: 3}
       propertyPath: m_LocalPosition.x
       value: -161.38257
@@ -15176,6 +15366,18 @@ PrefabInstance:
     - target: {fileID: 114347919188045636, guid: 2d833e43935954f478972ecab48ea904,
         type: 3}
       propertyPath: warpHigh
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574854027982936, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639392425546168, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814524264475162, guid: 2d833e43935954f478972ecab48ea904, type: 3}
+      propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15299,6 +15501,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 1000
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -15449,6 +15652,7 @@ MonoBehaviour:
   moveSpeed: 10
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 451671853}
   RotationSensitivity: 500
   body: {fileID: 1840487839}
@@ -15993,6 +16197,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 200
   HP: 100
+  MaxEnergy: 100
   Weapon: {fileID: 0}
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
