@@ -86,9 +86,16 @@ public class EnemyController : Character
 
             }
 
-            if (isEDF&&(target.transform.position - Weapon.ShotTransform.position).magnitude>75)
+            if (isEDF)
             {
-                move(new Vector3(0, 0, 2), 1.6f);
+                if ((target.transform.position - Weapon.ShotTransform.position).magnitude > 75)
+                {
+                    move(new Vector3(0, 0, 2), 1.6f);
+                }
+                else
+                {
+                    move(new Vector3((((gameObject.GetHashCode() >> 1) & 1) == 1 ? 1 : -1), (((gameObject.GetHashCode()<<3) & 1) == 1 ? 0.5f : -0.5f), 0), 1.6f);
+                }
             }
         }
 

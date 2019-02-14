@@ -12,6 +12,10 @@ public class ShipSystem : MonoBehaviour
 
     [SerializeField] public GameObject target;
 
+    [SerializeField] private float SpawnTime = 5;
+
+    [SerializeField] private int MaxSpawn = 100;
+
     private float spawnTimeCnt = 0;
 
     private int spawnCnt = 0;
@@ -25,8 +29,8 @@ public class ShipSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawnCnt<100)spawnTimeCnt += Time.deltaTime;
-        if (spawnTimeCnt > 5&&spawnCnt<100)
+        if(spawnCnt<MaxSpawn)spawnTimeCnt += Time.deltaTime;
+        if (spawnTimeCnt > SpawnTime&&spawnCnt<MaxSpawn)
         {
             spawnTimeCnt = 0;
             SpawnMonster1();

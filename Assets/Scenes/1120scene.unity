@@ -8301,6 +8301,8 @@ MonoBehaviour:
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
+  SpawnTime: 2
+  MaxSpawn: 100
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8318,7 +8320,7 @@ MonoBehaviour:
   HP: 10000
   MaxEnergy: 100
   Weapon: {fileID: 0}
-  cycle: 1000
+  cycle: 180
   moveVec: {x: 0, y: 0, z: -1}
   target: {fileID: 0}
   delay: 2
@@ -21131,6 +21133,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 1257585924}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1840487839}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: HP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21185,21 +21202,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: Weapon
-      value: 
-      objectReference: {fileID: 1257585924}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1840487839}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: HP
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0c678902a79c5a4da769fadf6c1a470, type: 3}
