@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System;
 
 public class ShipSystem : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class ShipSystem : MonoBehaviour
 
     public EnemyController SpawnMonster1()
     {
-        var monster = Instantiate(Monster1, transform.position - transform.up*100, transform.rotation);
+        var monster = Instantiate(Monster1, position: transform.position - transform.up*100+transform.right*Random.Range(-200,200)+ transform.forward * Random.Range(-200, 200), rotation: transform.rotation);
         var eneCon = monster.GetComponent<EnemyController>();
         var weapon = Instantiate(Weapon1).GetComponent<Weapon>();
         weapon.character = eneCon;

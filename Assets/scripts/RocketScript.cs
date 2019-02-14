@@ -91,9 +91,6 @@ public class RocketScript : MonoBehaviour
             if (otherObj.tag == "Character")
             {
                 otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
-                var tmp = GameObject.Find("Canvas/showHP Text").GetComponent<TextMeshProUGUI>();
-                tmp.GetComponent<showHP>().character = otherObj.GetComponent<Character>();
-
             }
         }
     }
@@ -111,12 +108,19 @@ public class RocketScript : MonoBehaviour
         defaultScale = transform.localScale;
         var collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
-        collider.size = new Vector3(5, 5, 5);
+        collider.size *= 5;
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
+        var otherObj = other.gameObject;
+        if (otherObj.tag == "Character")
+        {
+            otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue*0.8f);
+        }
+
         if (isCollisionEntered&&other.gameObject.tag=="Rocket")
         {
             StartCoroutine(DelayMethod((explodeDelay), () =>

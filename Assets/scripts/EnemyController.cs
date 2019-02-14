@@ -75,9 +75,19 @@ public class EnemyController : Character
 
         if (target != null)
         {
+            //targetの方向を向く
             if (Weapon != null)
             {
-                transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+                var len_xz = target.transform.position - Weapon.ShotTransform.position;
+                //len_xz.y = 0;
+                if (len_xz.magnitude > (Weapon.ShotTransform.position - transform.position).magnitude)
+                {
+                    transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+                }
+                else
+                {
+
+                }
 
             }
             else
@@ -86,6 +96,7 @@ public class EnemyController : Character
 
             }
 
+            //targetの方向に動く
             if (isEDF)
             {
                 if ((target.transform.position - Weapon.ShotTransform.position).magnitude > 75)
@@ -94,7 +105,8 @@ public class EnemyController : Character
                 }
                 else
                 {
-                    move(new Vector3((((gameObject.GetHashCode() >> 1) & 1) == 1 ? 1 : -1), (((gameObject.GetHashCode()<<3) & 1) == 1 ? 0.5f : -0.5f), 0), 1.6f);
+                    //オブジェクトの固有ナンバーからどっちに動くか判断
+                    move(new Vector3((((gameObject.GetHashCode() >> 1) & 1) == 1 ? 1 : -1), (((gameObject.GetHashCode()>>2) & 1) == 1 ? 0.5f : -0.5f), 0), 1.6f);
                 }
             }
         }
@@ -109,7 +121,7 @@ public class EnemyController : Character
             {
                 delayCnt = 0;
                 
-                //Raycastを使って向いてる方向に障害物がないかチェック
+                //Raycastを使って向いてる方向に障害物がないかチェックして撃つ
                 int layerMask = 3 << 9;
                 RaycastHit hit;
                 if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||hit.collider.gameObject.layer==9))
