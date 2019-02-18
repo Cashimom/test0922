@@ -88,7 +88,7 @@ public class RocketScript : MonoBehaviour
         {
             Hit();
             var otherObj = collision.gameObject;
-            if (otherObj.tag == "Character")
+            if (otherObj.GetComponent<Character>() !=null)
             {
                 otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
             }
@@ -116,7 +116,7 @@ public class RocketScript : MonoBehaviour
     {
 
         var otherObj = other.gameObject;
-        if (otherObj.tag == "Character")
+        if (otherObj.GetComponent<Character>() != null)
         {
             otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue*0.8f);
         }

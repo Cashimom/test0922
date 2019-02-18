@@ -124,7 +124,7 @@ public class EnemyController : Character
                 //Raycastを使って向いてる方向に障害物がないかチェックして撃つ
                 int layerMask = 3 << 9;
                 RaycastHit hit;
-                if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||hit.collider.gameObject.layer==9))
+                if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     Weapon.Fire1();
