@@ -22,12 +22,17 @@ public class EnemyController : Character
     /// <summary>
     /// 弾を撃ったりする目標のゲームオブジェクト
     /// </summary>
-    [SerializeField] private GameObject target;
+    [SerializeField] public GameObject target;
 
     /// <summary>
     /// 武器を使う時間(delay倍される)
     /// </summary>
     [SerializeField] private int delay = 2;
+
+    /// <summary>
+    /// EDFモードの切り替え
+    /// </summary>
+    [SerializeField] private bool isEDF = false;
 
     /// <summary>
     /// 時間カウント用変数
@@ -43,7 +48,6 @@ public class EnemyController : Character
     /// <see cref="delay"/>のカウント用変数
     /// </summary>
     private int delayCnt = 0;
-    //public float HP = 100;
 
     // Use this for initialization
     void Start ()
@@ -71,15 +75,39 @@ public class EnemyController : Character
 
         if (target != null)
         {
+            //targetの方向を向く
             if (Weapon != null)
             {
-                transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+                var len_xz = target.transform.position - Weapon.ShotTransform.position;
+                //len_xz.y = 0;
+                if (len_xz.magnitude > (Weapon.ShotTransform.position - transform.position).magnitude)
+                {
+                    transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+                }
+                else
+                {
+
+                }
 
             }
             else
             {
                 transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
 
+            }
+
+            //targetの方向に動く
+            if (isEDF)
+            {
+                if ((target.transform.position - Weapon.ShotTransform.position).magnitude > 75)
+                {
+                    move(new Vector3(0, 0, 2), 1.6f);
+                }
+                else
+                {
+                    //オブジェクトの固有ナンバーからどっちに動くか判断
+                    move(new Vector3((((gameObject.GetHashCode() >> 1) & 1) == 1 ? 1 : -1), (((gameObject.GetHashCode()>>2) & 1) == 1 ? 0.5f : -0.5f), 0), 1.6f);
+                }
             }
         }
 
@@ -93,10 +121,10 @@ public class EnemyController : Character
             {
                 delayCnt = 0;
                 
-                //Raycastを使って向いてる方向に障害物がないかチェック
+                //Raycastを使って向いてる方向に障害物がないかチェックして撃つ
                 int layerMask = 3 << 9;
                 RaycastHit hit;
-                if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||hit.collider.gameObject.layer==9))
+                if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     Weapon.Fire1();

@@ -88,7 +88,7 @@ public class RocketScript : MonoBehaviour
         {
             Hit();
             var otherObj = collision.gameObject;
-            if (otherObj.tag == "Character")
+            if (otherObj.GetComponent<Character>() !=null)
             {
                 otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
             }
@@ -108,12 +108,19 @@ public class RocketScript : MonoBehaviour
         defaultScale = transform.localScale;
         var collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
-        collider.size = new Vector3(5, 5, 5);
+        collider.size *= 5;
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
+        var otherObj = other.gameObject;
+        if (otherObj.GetComponent<Character>() != null)
+        {
+            otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue*0.8f);
+        }
+
         if (isCollisionEntered&&other.gameObject.tag=="Rocket")
         {
             StartCoroutine(DelayMethod((explodeDelay), () =>

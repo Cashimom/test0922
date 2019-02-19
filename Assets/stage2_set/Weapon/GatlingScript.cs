@@ -26,12 +26,12 @@ public class GatlingScript : Weapon
 	// Update is called once per frame
 	void Update () {
         base.Update();
-        if (isHave)
+        if (isHave&&character!=null)
         {
             if(isPlayer)
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
             else 
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 8;
+                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
 
             transform.rotation= character.rightWeaponTransform.rotation;
             transform.Rotate(0, -90, 0);
