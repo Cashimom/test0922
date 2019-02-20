@@ -21188,6 +21188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 451671853}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21243,11 +21248,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
-        type: 3}
-      propertyPath: Weapon
-      value: 
-      objectReference: {fileID: 451671853}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09aa53c041814464fb501ec80dc4e828, type: 3}
 --- !u!1001 &1684019573465074330
@@ -21261,6 +21261,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684019574215074990, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684019574215074990, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1684019572926461551, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
         type: 3}
@@ -21366,16 +21376,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684019574215074990, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684019574215074990, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1684019573939876496, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
         type: 3}
@@ -21570,5 +21570,20 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 1840487844}
+    - target: {fileID: 2589238589987470304, guid: 75280344bf1f0e5439f89cb581972aa9,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589238589987470304, guid: 75280344bf1f0e5439f89cb581972aa9,
+        type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589238589987470304, guid: 75280344bf1f0e5439f89cb581972aa9,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75280344bf1f0e5439f89cb581972aa9, type: 3}

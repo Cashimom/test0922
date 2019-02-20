@@ -28,8 +28,13 @@ public class GatlingScript : Weapon
         base.Update();
         if (isHave&&character!=null)
         {
-            if(isPlayer)
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
+            if (isPlayer)
+            {
+                Vector3 pos = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
+                pos -= character.rightWeaponTransform.up * 2;
+                pos -= character.rightWeaponTransform.forward * (-2);
+                transform.position = pos;
+            }
             else 
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
 

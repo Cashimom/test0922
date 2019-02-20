@@ -34,7 +34,12 @@ public class ShotRocket : Weapon
         if (isHave)
         {
             if (isPlayer)
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 3;
+            {
+                Vector3 pos= character.rightWeaponTransform.position + character.rightWeaponTransform.right * 3;
+                pos -= character.rightWeaponTransform.up*3;
+                pos -= character.rightWeaponTransform.forward * 2;
+                transform.position = pos;
+            }
             else
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
             transform.rotation = character.rightWeaponTransform.rotation;

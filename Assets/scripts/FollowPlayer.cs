@@ -66,6 +66,11 @@ public class FollowPlayer : MonoBehaviour {
     /// </summary>
     [SerializeField] private playerController playerController;
 
+    /// <summary>
+    /// trueでTPSカメラ、falseでFPSカメラ
+    /// </summary>
+    [SerializeField] public bool isTPS = true;
+
     void Start()
     {
         if (Target == null)
@@ -82,26 +87,38 @@ public class FollowPlayer : MonoBehaviour {
         //var rotY = playerController.rotY;// -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         //playerController.rotX = 0.0f;
         //playerController.rotY = 0.0f;
-
-        var lookAt = Target.position + Vector3.up * HeightM;
-
-        // 回転
-        //transform.RotateAround(lookAt, Vector3.up, 0);
-        //transform.RotateAround(lookAt, transform.right, 0);
-        var angle = playerController.vector;
-        angle.x += 10.0f;
-        if (angle.x >= 90&& angle.x <= 180)
+        if (Input.GetKeyDown(KeyCode.F5))
         {
-            angle.x = 89;
+            isTPS = !isTPS;
         }
-        transform.eulerAngles = angle;
-        // カメラとプレイヤーとの間の距離を調整
-        transform.position = lookAt - transform.forward * DistanceToPlayerM;
 
-        // 注視点の設定
-        transform.LookAt(lookAt);
+        if (isTPS)
+        {
+            var lookAt = Target.position + Vector3.up * HeightM;
 
-        // カメラを横にずらして中央を開ける
-        transform.position = transform.position + transform.right * SlideDistanceM;
+            // 回転
+            //transform.RotateAround(lookAt, Vector3.up, 0);
+            //transform.RotateAround(lookAt, transform.right, 0);
+            var angle = playerController.vector;
+            angle.x += 10.0f;
+            if (angle.x >= 90 && angle.x <= 180)
+            {
+                angle.x = 89;
+            }
+            transform.eulerAngles = angle;
+            // カメラとプレイヤーとの間の距離を調整
+            transform.position = lookAt - transform.forward * DistanceToPlayerM;
+
+            // 注視点の設定
+            transform.LookAt(lookAt);
+
+            // カメラを横にずらして中央を開ける
+            transform.position = transform.position + transform.right * SlideDistanceM;
+        }
+        else
+        {
+            transform.position = Target.position;
+            transform.rotation = Target.transform.rotation;
+        }
     }
 }
