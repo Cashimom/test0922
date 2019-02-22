@@ -79,8 +79,9 @@ public class EnemyController : Character
             if (Weapon != null)
             {
                 var len_xz = target.transform.position - Weapon.ShotTransform.position;
-                //len_xz.y = 0;
-                if (len_xz.magnitude > (Weapon.ShotTransform.position - transform.position).magnitude)
+                len_xz.y = 0;
+                debugText(len_xz.magnitude.ToString() + " " + (Weapon.ShotTransform.position - transform.position).magnitude.ToString());
+                if (len_xz.magnitude > (Weapon.ShotTransform.position - transform.position).magnitude*1.5f)
                 {
                     transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
                 }
@@ -106,7 +107,8 @@ public class EnemyController : Character
                 else
                 {
                     //オブジェクトの固有ナンバーからどっちに動くか判断
-                    move(new Vector3((((gameObject.GetHashCode() >> 1) & 1) == 1 ? 1 : -1), (((gameObject.GetHashCode()>>2) & 1) == 1 ? 0.5f : -0.5f), 0), 1.6f);
+                    Random.InitState(gameObject.GetHashCode());
+                    move(new Vector3((((Random.Range(0,3) >> 1) & 1) == 1 ? 1 : -1), Random.Range(-1,1)*0.2f, 0), 1.6f);
                 }
             }
         }
