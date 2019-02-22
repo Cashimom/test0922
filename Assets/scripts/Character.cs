@@ -77,7 +77,6 @@ public class Character : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
     /// <summary>
@@ -175,13 +174,18 @@ public class Character : MonoBehaviour
         {
             rb.AddForce(flyForce, ForceMode.Force);
 
+            //ブーストによる上方向への加速度,速度制限付き！
+            if(rb.velocity.y < 64) {
+                rb.AddForce(rb.transform.up * 200, ForceMode.Acceleration);
+            }
+
         }
         StartCoroutine(DelayMethod(0.1f, () =>
         {
             
             if (!boostFlg)
                 //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-                rb.velocity = new Vector3(0, 0, 0);
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
                 /*var vel = rb.velocity;
                 vel.x = vel.z = 0;
                 rb.velocity = vel;*/
