@@ -8,16 +8,6 @@ using UnityEngine;
 /// </summary>
 public class GatlingScript : Weapon
 {
-    /// <summary>
-    /// 弾を撃つ間隔
-    /// </summary>
-    [SerializeField] private float fireTick = 0.1f;
-
-    /// <summary>
-    /// 時間をカウントする変数
-    /// </summary>
-    private float fireTime = 0.0f;
-
     // Use this for initialization
     void Start () {
         base.Start();

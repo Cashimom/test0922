@@ -312,8 +312,8 @@ public class playerController : Character
         //枠がいっぱいなら手持ちと交換
         if (WeaponList.Count >= 2)
         {
-            int index = WeaponList.FindIndex(match => Weapon.gameObject);
-            WeaponList.Insert(index, picked);
+            int index = WeaponList.FindIndex(match => Weapon==match);
+            WeaponList[index] = picked;
             Weapon.DropWeapon();
             picked.HaveWeapon();
             Weapon = picked;
@@ -339,7 +339,7 @@ public class playerController : Character
     /// <param name="sign">持ち替える方向(正負)</param>
     public void ChangeWeapon(int sign)
     {
-        var nowIndex = WeaponList.FindIndex(match => match == Weapon.gameObject);
+        var nowIndex = WeaponList.FindIndex(match => match == Weapon);
         if (WeaponList.Count >= 2)
         {
             Weapon will;

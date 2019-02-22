@@ -33,6 +33,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] public float WeaponTransformDistance = 8;
 
     /// <summary>
+    /// 弾を撃つ間隔
+    /// </summary>
+    [SerializeField] protected float fireTick = 0.1f;
+
+    /// <summary>
     /// <see cref="character"/>が持っているかどうか。
     /// 
     /// </summary>
@@ -42,6 +47,11 @@ public class Weapon : MonoBehaviour
     /// <see cref="character"/>がプレイヤーかどうか
     /// </summary>
     protected bool isPlayer = false;
+
+    /// <summary>
+    /// 時間をカウントする変数
+    /// </summary>
+    protected float fireTime = 0.0f;
 
     /*
      エネミーに武器を持たせる方法

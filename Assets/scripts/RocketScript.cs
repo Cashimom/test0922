@@ -27,6 +27,11 @@ public class RocketScript : MonoBehaviour
     [SerializeField] private float explodeDamageValue = 10.0f;
 
     /// <summary>
+    /// 弾が存在できる時間(射程)
+    /// </summary>
+    [SerializeField] private float TimeLimit = 10;
+
+    /// <summary>
     /// ヒットしたあと弾が残る時間
     /// </summary>
     [SerializeField] private float explodeDelay = 5 / 6;
@@ -55,6 +60,11 @@ public class RocketScript : MonoBehaviour
     /// サイズ変更時の元のサイズ
     /// </summary>
     private Vector3 defaultScale;
+
+    /// <summary>
+    /// 生成されてからの時間
+    /// </summary>
+    private float flyTime = 0;
     
 
 	// Use this for initialization
@@ -69,6 +79,7 @@ public class RocketScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+
         if (!isCollisionEntered)
         {
             //transform.Translate(0, 0, 1 * moveSpeed);
@@ -79,6 +90,12 @@ public class RocketScript : MonoBehaviour
             t += Time.deltaTime;
             float sc = (1 - t / destroyTime);
             //transform.localScale = defaultScale * (sc);
+        }
+
+        flyTime += Time.deltaTime;
+        if (flyTime >= TimeLimit)
+        {
+            Destroy(gameObject);
         }
     }
 
