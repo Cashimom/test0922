@@ -28,27 +28,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] public Character character;
 
     /// <summary>
-    /// "Press F"って表示させるためのテキスト
-    /// </summary>
-    [SerializeField] private TextMeshProUGUI pressButton;
-
-    /// <summary>
     /// エネミーが武器持つときにを浮かせる位置
     /// </summary>
     [SerializeField] public float WeaponTransformDistance = 8;
 
     /// <summary>
     /// <see cref="character"/>が持っているかどうか。
-    /// (character!=nullでよくね、そのうち消す)
+    /// 
     /// </summary>
     protected bool isHave = false;
-
-    /// <summary>
-    /// 近くにCharacterがいるかどうか。
-    /// Changed by <seealso cref="Weapon.OnTriggerEnter(Collider)"/>
-    /// or <seealso cref="Weapon.OnTriggerExit(Collider)"/>
-    /// </summary>
-    protected bool near = false;
 
     /// <summary>
     /// <see cref="character"/>がプレイヤーかどうか
@@ -80,28 +68,12 @@ public class Weapon : MonoBehaviour
             isPlayer = true;
         }
 
-        if (pressButton == null)
-        {
-            pressButton= GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
-        }
-
         isHave = (character != null);
     }
 	
 	// Update is called once per frame
 	public void Update () {
-        if (near&&(!isHave))
-        {
-            if (Input.GetKeyDown("f"))
-            {
-                isPlayer = (character is playerController);
-                character.Weapon.DropWeapon();
-                HaveWeapon();
-                near = false;
-                pressButton.enabled = true;
-                character.Weapon = this;
-            }
-        }
+
 	}
 
     /// <summary>
@@ -126,21 +98,21 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Character"&&!isHave)
+        var pc = other.gameObject.GetComponent<playerController>();
+        if (pc != null&&!isHave)
         {
-            near = true;
-            character = other.gameObject.GetComponent<Character>();
-            pressButton.enabled = true;
+            pc.NearWeapon = this;
+            character = pc;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Character"&& !isHave)
+        var pc = other.gameObject.GetComponent<playerController>();
+        if (pc != null && !isHave) 
         {
-            near = false;
+            pc.NearWeapon = null;
             //character = null;
-            pressButton.enabled = false;
         }
     }
 
@@ -155,11 +127,32 @@ public class Weapon : MonoBehaviour
     }
 
     /// <summary>
+    /// キャラクターに<see cref="this"/>を拾わせる
+    /// </summary>
+    public void PickWeapon()
+    {
+
+        isPlayer = (character is playerController);
+        GetComponent<BoxCollider>().enabled = false;
+        gameObject.SetActive(false);
+    }
+
+    /// <summary>
     /// キャラクターに<see cref="this"/>を持たせる
     /// </summary>
     public void HaveWeapon()
     {
+        PickWeapon();
         isHave = true;
-        GetComponent<BoxCollider>().enabled = false;
+        gameObject.SetActive(true);
+    }
+
+    /// <summary>
+    /// <see cref="this"/>を他のWeaponに持ち帰る
+    /// </summary>
+    public void ChangeWeapon()
+    {
+        isHave = false;
+        gameObject.SetActive(false);
     }
 }

@@ -366,7 +366,6 @@ MonoBehaviour:
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 1195981734}
   character: {fileID: 610842613}
-  pressButton: {fileID: 1423191604}
   WeaponTransformDistance: 8
   fireTick: 0.1
 --- !u!65 &50599617
@@ -1131,7 +1130,6 @@ MonoBehaviour:
   rocket: {fileID: 1321379527952672, guid: aa82ffa3f223ff747af1dc677e6e7f54, type: 3}
   ShotTransform: {fileID: 1068448061}
   character: {fileID: 528248297}
-  pressButton: {fileID: 1423191604}
   WeaponTransformDistance: 8
   fireTick: 0.5
   raser: {fileID: 2140029448}
@@ -1387,18 +1385,6 @@ MonoBehaviour:
   HP: 5000
   MaxEnergy: 100
   Weapon: {fileID: 0}
---- !u!114 &451671853 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114467099633521646, guid: ccaa9d729de89bb439ea19d7dc883418,
-    type: 3}
-  m_PrefabInstance: {fileID: 850490861}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2335beae0ac35a940b6203339a9c5444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &473423327
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,7 +7465,7 @@ PrefabInstance:
         type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 1840487844}
+      objectReference: {fileID: 0}
     - target: {fileID: 114467099633521646, guid: ccaa9d729de89bb439ea19d7dc883418,
         type: 3}
       propertyPath: pressButton
@@ -7487,15 +7473,15 @@ PrefabInstance:
       objectReference: {fileID: 1423191604}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.63
+      value: -11.79
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.78
+      value: -46.24
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13588,7 +13574,6 @@ MonoBehaviour:
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 1912432257}
   character: {fileID: 1725013021}
-  pressButton: {fileID: 1423191604}
   WeaponTransformDistance: 11
   fireTick: 0.1
 --- !u!65 &1257585925
@@ -14950,7 +14935,6 @@ MonoBehaviour:
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 1953437404}
   character: {fileID: 633662443}
-  pressButton: {fileID: 1423191604}
   WeaponTransformDistance: 8
   fireTick: 0.1
 --- !u!65 &1576800340
@@ -21192,7 +21176,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Weapon
       value: 
-      objectReference: {fileID: 451671853}
+      objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x

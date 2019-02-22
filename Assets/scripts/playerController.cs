@@ -30,6 +30,33 @@ public class playerController : Character
     /// </summary>
     [SerializeField] private float jumpForce = 50;
 
+    /// <summary>
+    /// "Press F"って表示させるためのテキスト
+    /// </summary>
+    [SerializeField] private TextMeshProUGUI pressButton;
+
+    [SerializeField] private List<Weapon> WeaponList;
+
+    private Weapon nearWeapon;
+    /// <summary>
+    /// 拾うことができる近くのアイテム。
+    /// setterで<see cref="pressButton"/>を切り替え。
+    /// set in <see cref="Weapon.OnTriggerEnter(Collider)"/>
+    ///  and <see cref="Weapon.OnTriggerExit(Collider)"/>
+    /// </summary>
+    public Weapon NearWeapon {
+        set
+        {
+            this.nearWeapon = value;
+            pressButton.enabled = (value != null);
+            
+        }
+        get
+        {
+            return this.nearWeapon;
+        }
+    }
+
     private GameObject shield;
     
     /// <summary>
@@ -56,29 +83,15 @@ public class playerController : Character
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = head.transform;
         shield = (GameObject)Resources.Load("Shield");
+
+        if (pressButton == null)
+        {
+            pressButton = GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
+        }
     }
 
     private void Update()
     {
-        // Bit shift the index of the layer (8) to get a bit mask
-        int layerMask = 1 << 8;
-
-        // This would cast rays only against colliders in layer 8.
-        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
-
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(head.transform.position, head.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
-        }
 
         //int onObject = 3 << 9;
         RaycastHit objectHit;
@@ -94,7 +107,8 @@ public class playerController : Character
                 chargeTimeCnt = 0;
             }
 
-
+            if (secondJumpFlg)
+                secondJumpFlg = false;
         }
 
         ChangeEnergyText();
@@ -122,6 +136,24 @@ public class playerController : Character
         }
         //pause状態ならマウスカーソルをlock
         CursorLock(pause);
+        
+        //武器拾う
+        if (Input.GetKeyDown(KeyCode.F)&&NearWeapon!=null)
+        {
+            PickUpWeapon(NearWeapon);
+            NearWeapon = null;
+        }
+        
+        //武器入れ替え
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            ChangeWeapon(1);
+        }
+        else if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            ChangeWeapon(-1);
+        }
+
 
         //wasdとかで動かす
         float shiftValue = 1.0f;
@@ -213,8 +245,8 @@ public class playerController : Character
     /// </summary>
     public void Jump()
     {
-
-        if ((Math.Abs(rb.velocity.y) < 0.0005))
+        RaycastHit objectHit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, 1.2f))
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             secondJumpFlg = false;
@@ -271,6 +303,71 @@ public class playerController : Character
         transform.Rotate(0, rotX, 0);
     }
 
+    /// <summary>
+    /// <paramref name="picked"/>を拾う
+    /// </summary>
+    /// <param name="picked">拾うWeapon</param>
+    public void PickUpWeapon(Weapon picked)
+    {
+        //枠がいっぱいなら手持ちと交換
+        if (WeaponList.Count >= 2)
+        {
+            int index = WeaponList.FindIndex(match => Weapon.gameObject);
+            WeaponList.Insert(index, picked);
+            Weapon.DropWeapon();
+            picked.HaveWeapon();
+            Weapon = picked;
+        }
+        //何も持ってなかったらすぐ装備
+        else if (Weapon == null&& WeaponList.Count<2)
+        {
+            WeaponList.Add(picked);
+            picked.HaveWeapon();
+            Weapon = picked;
+        }
+        //何か持ってて枠が空いてたら装備せずに拾う
+        else if (Weapon != null && WeaponList.Count < 2)
+        {
+            WeaponList.Add(picked);
+            picked.PickWeapon();
+        }
+    }
 
+    /// <summary>
+    /// 武器を持ち替える
+    /// </summary>
+    /// <param name="sign">持ち替える方向(正負)</param>
+    public void ChangeWeapon(int sign)
+    {
+        var nowIndex = WeaponList.FindIndex(match => match == Weapon.gameObject);
+        if (WeaponList.Count >= 2)
+        {
+            Weapon will;
+            if (sign>0&&nowIndex + 1 >= WeaponList.Count)
+            {
+                will = WeaponList[0];
+            }
+            else if(sign>0&&nowIndex+1<WeaponList.Count)
+            {
+                will = WeaponList[nowIndex+1];
+            }
+            else if (sign < 0 && nowIndex <= 0)
+            {
+                will = WeaponList[WeaponList.Count - 1];
+            }
+            else if (sign < 0 && nowIndex > 0)
+            {
+                will = WeaponList[nowIndex - 1];
+            }
+            else
+            {
+                will = WeaponList[0];
+            }
+            //debugText(WeaponList[nowIndex].ToString() +":::"+ Time.time.ToString());
+            Weapon.ChangeWeapon();
+            will.HaveWeapon();
+            Weapon = will;
+        }
+    }
 
 }
