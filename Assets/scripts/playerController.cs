@@ -119,6 +119,8 @@ public class playerController : Character
             isJumpPressed = true;
         }
 
+        //gravity,速度制限付き！
+        if(rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
     }
 
     void FixedUpdate()
@@ -134,8 +136,8 @@ public class playerController : Character
         {
             pause = !pause;
         }
-        //pause状態ならマウスカーソルをlock
-        CursorLock(pause);
+        //pause状態ならマウスカーソルをだす
+        CursorLock(!pause);
         
         //武器拾う
         if (Input.GetKeyDown(KeyCode.F)&&NearWeapon!=null)
