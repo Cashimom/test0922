@@ -8688,7 +8688,7 @@ MonoBehaviour:
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
   SpawnTime: 2
-  MaxSpawn: 0
+  MaxSpawn: 100
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0
