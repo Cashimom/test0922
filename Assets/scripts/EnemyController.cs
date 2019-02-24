@@ -76,14 +76,14 @@ public class EnemyController : Character
         if (target != null)
         {
             //targetの方向を向く
-            if (Weapon != null)
+            if (weapon != null)
             {
-                var len_xz = target.transform.position - Weapon.ShotTransform.position;
+                var len_xz = target.transform.position - weapon.ShotTransform.position;
                 len_xz.y = 0;
-                debugText(len_xz.magnitude.ToString() + " " + (Weapon.ShotTransform.position - transform.position).magnitude.ToString());
-                if (len_xz.magnitude > (Weapon.ShotTransform.position - transform.position).magnitude*1.5f)
+                debugText(len_xz.magnitude.ToString() + " " + (weapon.ShotTransform.position - transform.position).magnitude.ToString());
+                if (len_xz.magnitude > (weapon.ShotTransform.position - transform.position).magnitude*1.5f)
                 {
-                    transform.rotation = Quaternion.LookRotation(target.transform.position - Weapon.ShotTransform.position);
+                    transform.rotation = Quaternion.LookRotation(target.transform.position - weapon.ShotTransform.position);
                 }
                 else
                 {
@@ -100,7 +100,7 @@ public class EnemyController : Character
             //targetの方向に動く
             if (isEDF)
             {
-                if ((target.transform.position - Weapon.ShotTransform.position).magnitude > 75)
+                if ((target.transform.position - weapon.ShotTransform.position).magnitude > 75)
                 {
                     move(new Vector3(0, 0, 2), 1.6f);
                 }
@@ -115,7 +115,7 @@ public class EnemyController : Character
 
 
 
-        if (Weapon != null)
+        if (weapon != null)
         {
 
             delayCnt++;
@@ -126,10 +126,10 @@ public class EnemyController : Character
                 //Raycastを使って向いてる方向に障害物がないかチェックして撃つ
                 int layerMask = 3 << 9;
                 RaycastHit hit;
-                if (Physics.Raycast(Weapon.ShotTransform.position, Weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
+                if (Physics.Raycast(weapon.ShotTransform.position, weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    Weapon.Fire1();
+                    weapon.Fire1();
 
                 }
                 else
@@ -153,6 +153,11 @@ public class EnemyController : Character
         HP -= damage;
         if (HP <= 0)
         {
+            if (isEDF && weapon != null) 
+            {
+                weapon.character = null;
+                Destroy(weapon.gameObject);
+            }
             die();
         }
         return true;

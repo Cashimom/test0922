@@ -46,7 +46,7 @@ public class ShipSystem : MonoBehaviour
         var weapon = Instantiate(Weapon1).GetComponent<Weapon>();
         weapon.character = eneCon;
         weapon.WeaponTransformDistance = 11;
-        eneCon.Weapon = weapon;
+        eneCon.weapon = weapon;
         eneCon.target = target;
         return eneCon;
     }

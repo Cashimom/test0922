@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.01
@@ -220,7 +220,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 1000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
   target: {fileID: 0}
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 1195981734}
-  character: {fileID: 610842613}
+  character: {fileID: 633662443}
   WeaponTransformDistance: 8
   fireTick: 0.1
 --- !u!65 &50599617
@@ -489,7 +489,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &186510586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &292033149
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &323674021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &348260191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 359553989}
-  character: {fileID: 528248297}
+  character: {fileID: 610842613}
   WeaponTransformDistance: 8
   fireTick: 0.1
 --- !u!65 &376316564
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &390096735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &441444256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1578217270576770, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &473423327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 100
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 30
   MaxEnergy: 100
-  Weapon: {fileID: 376316563}
+  weapon: {fileID: 1576800339}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 2000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &610842612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 30
   MaxEnergy: 100
-  Weapon: {fileID: 50599616}
+  weapon: {fileID: 376316563}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2264,7 +2264,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &633662442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 30
   MaxEnergy: 100
-  Weapon: {fileID: 1576800339}
+  weapon: {fileID: 50599616}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 100
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &750881608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!4 &785780266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744368151897796, guid: 4bc2adde9e9f41c4c95734e358790e58,
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &850355239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7974,7 +7974,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &909944730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8137,7 +8137,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!4 &948343048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433440861020130, guid: 088c8b5a564c9a849b7a6589b01fb2cd,
@@ -8688,7 +8688,7 @@ MonoBehaviour:
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
   SpawnTime: 2
-  MaxSpawn: 100
+  MaxSpawn: 0
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8705,7 +8705,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 10000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 90
   moveVec: {x: 0, y: 0, z: -1}
   target: {fileID: 0}
@@ -8891,7 +8891,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &1183688250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14023,7 +14023,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &1298481093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14103,7 +14103,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 1000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
   target: {fileID: 0}
@@ -14217,7 +14217,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1331047347
 GameObject:
   m_ObjectHideFlags: 0
@@ -14326,7 +14326,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!4 &1331481981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4380265995217298, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -14441,7 +14441,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1352937613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b,
@@ -14556,7 +14556,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!114 &1423191604 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1684019574215074990, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
@@ -14743,7 +14743,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1001 &1469298229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14933,7 +14933,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1503675223
 GameObject:
   m_ObjectHideFlags: 0
@@ -15042,7 +15042,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1539849726
 GameObject:
   m_ObjectHideFlags: 0
@@ -15349,7 +15349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 1953437404}
-  character: {fileID: 633662443}
+  character: {fileID: 528248297}
   WeaponTransformDistance: 8
   fireTick: 0.1
 --- !u!65 &1576800340
@@ -15473,7 +15473,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 100
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -15501,7 +15501,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1664121325
 GameObject:
   m_ObjectHideFlags: 0
@@ -15667,7 +15667,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!114 &1725013021 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
@@ -15797,7 +15797,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1821597558
 GameObject:
   m_ObjectHideFlags: 0
@@ -15906,7 +15906,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1833408423
 GameObject:
   m_ObjectHideFlags: 0
@@ -16281,7 +16281,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &1912432256
 GameObject:
   m_ObjectHideFlags: 0
@@ -16578,7 +16578,7 @@ MonoBehaviour:
   FlyForce: 200
   HP: 100
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
   target: {fileID: 0}
@@ -21461,7 +21461,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &2085497080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944494647689572, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -21484,7 +21484,7 @@ MonoBehaviour:
   FlyForce: 100
   HP: 5000
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!1 &2140029448
 GameObject:
   m_ObjectHideFlags: 0
@@ -21701,16 +21701,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1696084407103657316, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204010462775695703, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
-        type: 3}
-      propertyPath: m_Name
-      value: ShowEnergy Text2
-      objectReference: {fileID: 0}
     - target: {fileID: 1684019572926461544, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
         type: 3}
       propertyPath: m_Name
@@ -21725,6 +21715,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696084407103657316, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204010462775695703, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
+        type: 3}
+      propertyPath: m_Name
+      value: ShowEnergy Text2
       objectReference: {fileID: 0}
     - target: {fileID: 1684019572926461551, guid: 04ff9bfcbae701c4ea50d7eae9f96718,
         type: 3}
@@ -21890,6 +21890,11 @@ PrefabInstance:
       propertyPath: HP
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1257585924}
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
       propertyPath: m_LocalPosition.x

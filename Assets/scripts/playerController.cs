@@ -317,21 +317,21 @@ public class playerController : Character
         //枠がいっぱいなら手持ちと交換
         if (WeaponList.Count >= 2)
         {
-            int index = WeaponList.FindIndex(match => Weapon==match);
+            int index = WeaponList.FindIndex(match => weapon==match);
             WeaponList[index] = picked;
-            Weapon.DropWeapon();
+            weapon.DropWeapon();
             picked.HaveWeapon();
-            Weapon = picked;
+            weapon = picked;
         }
         //何も持ってなかったらすぐ装備
-        else if (Weapon == null&& WeaponList.Count<2)
+        else if (weapon == null&& WeaponList.Count<2)
         {
             WeaponList.Add(picked);
             picked.HaveWeapon();
-            Weapon = picked;
+            weapon = picked;
         }
         //何か持ってて枠が空いてたら装備せずに拾う
-        else if (Weapon != null && WeaponList.Count < 2)
+        else if (weapon != null && WeaponList.Count < 2)
         {
             WeaponList.Add(picked);
             picked.PickWeapon();
@@ -344,7 +344,7 @@ public class playerController : Character
     /// <param name="sign">持ち替える方向(正負)</param>
     public void ChangeWeapon(int sign)
     {
-        var nowIndex = WeaponList.FindIndex(match => match == Weapon);
+        var nowIndex = WeaponList.FindIndex(match => match == weapon);
         if (WeaponList.Count >= 2)
         {
             Weapon will;
@@ -369,9 +369,9 @@ public class playerController : Character
                 will = WeaponList[0];
             }
             //debugText(WeaponList[nowIndex].ToString() +":::"+ Time.time.ToString());
-            Weapon.ChangeWeapon();
+            weapon.ChangeWeapon();
             will.HaveWeapon();
-            Weapon = will;
+            weapon = will;
         }
     }
 
