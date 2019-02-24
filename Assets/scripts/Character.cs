@@ -248,7 +248,7 @@ public class Character : MonoBehaviour
     protected void ChangeEnergyText()
     {
         var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
-        tmp.text = "Energy\n"+energy.ToString();
+        tmp.text = "Energy : "+energy.ToString();
     }
 
     /// <summary>

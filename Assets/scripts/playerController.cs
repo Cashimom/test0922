@@ -76,7 +76,8 @@ public class playerController : Character
 
     //E押したらポーズ
     public bool pause = false;
-    
+
+    public event Action dieFunc;
 
     private void Start()
     {
@@ -88,6 +89,8 @@ public class playerController : Character
         {
             pressButton = GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
         }
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        tmp.text = "HP : " + HP.ToString();
     }
 
     private void Update()
@@ -370,6 +373,16 @@ public class playerController : Character
             will.HaveWeapon();
             Weapon = will;
         }
+    }
+
+    public override bool explodeDamage(float damage)
+    {
+        base.explodeDamage(damage);
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        tmp.text = "HP : " + HP.ToString();
+        if (HP<=0&&dieFunc!=null)
+            dieFunc();
+        return true;
     }
 
 }
