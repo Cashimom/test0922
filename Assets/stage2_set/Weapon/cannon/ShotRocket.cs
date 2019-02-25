@@ -34,6 +34,9 @@ public class ShotRocket : Weapon
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
             transform.rotation = character.rightWeaponTransform.rotation;
 
+
+            if (fireTime < fireTick)
+                fireTime += Time.deltaTime;
             if (isPlayer&&Input.GetButton("Fire1"))
             {
                 Fire1();
@@ -55,13 +58,13 @@ public class ShotRocket : Weapon
     /// </summary>
     public override void Fire1()
     {
-        fireTime += Time.deltaTime;
-        if (fireTime > fireTick)
+        if (fireTime >= fireTick)
         {
             fireTime = 0.0f;
             var rs = Fire();
             //rs.moveSpeed = 10;
-
+            var anime = gameObject.GetComponent<Animator>();
+            anime.Play("Reload");
 
         }
     }
