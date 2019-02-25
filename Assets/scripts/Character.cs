@@ -121,7 +121,7 @@ public class Character : MonoBehaviour
 
         if (x == 0 && z == 0)
         {
-            impulseForce += new Vector3(0, FlyForce, 0);
+            impulseForce += new Vector3(0, FlyForce*2, 0);
         }
 
         if (impulseForce != new Vector3(0, 0, 0))
@@ -175,8 +175,17 @@ public class Character : MonoBehaviour
             rb.AddForce(flyForce, ForceMode.Force);
 
             //ブーストによる上方向への加速度,速度制限付き！
+            debugText(rb.velocity.y.ToString());
             if(rb.velocity.y < 64) {
                 rb.AddForce(rb.transform.up * 200, ForceMode.Acceleration);
+            }
+            else if (rb.velocity.y > 96)
+            { 
+                {
+                    var vel = rb.velocity;
+                    vel.y /= 10;
+                    rb.velocity = vel;
+                }
             }
 
         }

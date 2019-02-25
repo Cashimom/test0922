@@ -80,7 +80,6 @@ public class EnemyController : Character
             {
                 var len_xz = target.transform.position - weapon.ShotTransform.position;
                 len_xz.y = 0;
-                debugText(len_xz.magnitude.ToString() + " " + (weapon.ShotTransform.position - transform.position).magnitude.ToString());
                 if (len_xz.magnitude > (weapon.ShotTransform.position - transform.position).magnitude*1.5f)
                 {
                     transform.rotation = Quaternion.LookRotation(target.transform.position - weapon.ShotTransform.position);
