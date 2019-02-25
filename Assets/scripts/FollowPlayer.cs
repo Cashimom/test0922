@@ -78,6 +78,10 @@ public class FollowPlayer : MonoBehaviour {
             Debug.LogError("ターゲットが設定されていない");
             Application.Quit();
         }
+        if (playerController == null)
+        {
+            playerController = Target.GetComponent<playerController>();
+        }
     }
 
     void Update()

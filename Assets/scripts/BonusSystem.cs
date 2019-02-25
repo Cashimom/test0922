@@ -2,12 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 何かを倒す(破壊)すると隠し武器出現するシステム
+/// </summary>
 public class BonusSystem : MonoBehaviour
 {
+    /// <summary>
+    /// 倒す敵
+    /// </summary>
     [SerializeField] public List<Character> enemies;
 
+    /// <summary>
+    /// 隠し武器
+    /// </summary>
     [SerializeField] private GameObject DropWeapon;
 
+    /// <summary>
+    /// 隠し武器
+    /// </summary>
     [SerializeField] private ParticleSystem particle;
 
     // Start is called before the first frame update
