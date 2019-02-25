@@ -8,6 +8,8 @@ public class BonusSystem : MonoBehaviour
 
     [SerializeField] private GameObject DropWeapon;
 
+    [SerializeField] private ParticleSystem particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,12 @@ public class BonusSystem : MonoBehaviour
         {
             DropWeapon.SetActive(true);
             this.enabled = false;
+            if (particle != null)
+            {
+                var parti = Instantiate(particle, DropWeapon.transform);
+                parti.transform.position = DropWeapon.transform.position;
+                parti.Play();
+            }
         }
 
     }

@@ -872,6 +872,8 @@ MonoBehaviour:
   - {fileID: 1634798695}
   - {fileID: 2035040538}
   DropWeapon: {fileID: 166305738}
+  particle: {fileID: 2259105263325039152, guid: 594e69713de51bb469e01df01f4e4b64,
+    type: 3}
 --- !u!1 &328496925
 GameObject:
   m_ObjectHideFlags: 0
@@ -15026,6 +15028,7 @@ MonoBehaviour:
   - {fileID: 1299654652}
   - {fileID: 25512321}
   DropWeapon: {fileID: 1352937613}
+  particle: {fileID: 2088357615, guid: 7eff267d0b553a94f850f4779c60d3fe, type: 3}
 --- !u!1001 &1576800336
 PrefabInstance:
   m_ObjectHideFlags: 0
