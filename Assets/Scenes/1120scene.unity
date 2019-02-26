@@ -8436,7 +8436,7 @@ MonoBehaviour:
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
-  SpawnTime: 5
+  SpawnTime: 2
   MaxSpawn: 100
 --- !u!114 &1129087489
 MonoBehaviour:
@@ -21392,6 +21392,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21496,14 +21504,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2975646128955056776, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}

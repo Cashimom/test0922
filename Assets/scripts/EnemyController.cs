@@ -107,7 +107,7 @@ public class EnemyController : Character
                 {
                     //オブジェクトの固有ナンバーからどっちに動くか判断
                     Random.InitState(gameObject.GetHashCode());
-                    move(new Vector3((((Random.Range(0,3) >> 1) & 1) == 1 ? 1 : -1), Random.Range(-1,1)*0.2f, 0), 1.6f);
+                    move(new Vector3((((Random.Range(1,2) >> 1) & 1) == 1 ? 1 : -1), Random.Range(-1,1)*0.2f, 0), 1.6f);
                 }
             }
         }
