@@ -97,7 +97,7 @@ public class playerController : Character
             pressButton = GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
         }
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = "HP : " + HP.ToString();
+        tmp.text = HP.ToString();
     }
 
     private void Update()
