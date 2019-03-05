@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 /// <summary>
 /// プレイヤーの処理を実装しているクラス
@@ -398,7 +399,9 @@ public class playerController : Character
     {
         base.explodeDamage(damage);
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = "HP : " + HP.ToString();
+        tmp.text = ((int)HP).ToString();
+        var slider = GameObject.Find("Canvas/HP Slider").GetComponent<Slider>();
+        slider.value = (HP / MaxHP);
         if (HP<=0&&dieFunc!=null)
             dieFunc();
         return true;

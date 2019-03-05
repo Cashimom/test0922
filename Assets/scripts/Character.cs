@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
@@ -27,6 +28,11 @@ public class Character : MonoBehaviour
     /// キャラクターのHP
     /// </summary>
     [SerializeField] public float HP = 100;
+    
+    /// <summary>
+    /// キャラクターのHPの上限
+    /// </summary>
+    [SerializeField] public float MaxHP = 100;
 
     /// <summary>
     /// キャラクターのエネルギーの上限
@@ -257,7 +263,9 @@ public class Character : MonoBehaviour
     protected void ChangeEnergyText()
     {
         var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
-        tmp.text = "Energy : "+energy.ToString();
+        tmp.text = ((int)energy).ToString();
+        var slider = GameObject.Find("Canvas/Energy Slider").GetComponent<Slider>();
+        slider.value = (energy / MaxEnergy);
     }
 
     /// <summary>

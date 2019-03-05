@@ -54,7 +54,7 @@ public class GameSystem : MonoBehaviour
         Player.transform.position=SpawnPosition;
         playerController.HP = 100;
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = "HP : " + playerController.HP.ToString();
+        tmp.text = playerController.HP.ToString();
     }
     
     void GameClear()
