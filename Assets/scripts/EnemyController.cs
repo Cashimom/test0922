@@ -114,7 +114,7 @@ public class EnemyController : Character
 
 
 
-        if (weapon != null)
+        if (weapon != null&&target!=null)
         {
 
             delayCnt++;

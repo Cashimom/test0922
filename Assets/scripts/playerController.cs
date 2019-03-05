@@ -77,7 +77,13 @@ public class playerController : Character
     //E押したらポーズ
     public bool pause = false;
 
+    /// <summary>
+    /// HPがなくなって死ぬときの処理を入れておく。
+    /// insert by <see cref="GameSystem"/>
+    /// </summary>
     public event Action dieFunc;
+
+    private Character myShield;
 
     private void Start()
     {
@@ -209,11 +215,24 @@ public class playerController : Character
         }
 
         //バリア張る
-        if (Input.GetKeyDown("c")&&Energy>=20)
+        if (Input.GetKeyDown("c"))
         {
-            Energy -= 20;
-            var shieldObj = Instantiate(shield, head.transform.position+head.transform.forward*10,transform.rotation*head.transform.localRotation);
-            //shieldObj.transform.rotation
+            if (myShield == null && Energy >= 10) {
+                Energy -= 10;
+                var shieldObj = Instantiate(shield, head.transform.position + head.transform.forward * 10, transform.rotation * head.transform.localRotation);
+                //shieldObj.transform.rotation
+                myShield = shieldObj.GetComponent<Character>();
+            }
+            else if(myShield != null)
+            {
+                myShield.die();
+                myShield = null;
+            }
+        }
+        if (myShield != null)
+        {
+            myShield.transform.position = head.transform.position + head.transform.forward * 10;
+            myShield.transform.rotation = transform.rotation * head.transform.localRotation;
         }
 
 
