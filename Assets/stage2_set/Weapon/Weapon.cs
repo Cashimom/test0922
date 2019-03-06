@@ -37,6 +37,8 @@ public class Weapon : MonoBehaviour
     /// </summary>
     [SerializeField] protected float fireTick = 0.1f;
 
+    [SerializeField] public Texture image;
+
     /// <summary>
     /// <see cref="character"/>が持っているかどうか。
     /// 

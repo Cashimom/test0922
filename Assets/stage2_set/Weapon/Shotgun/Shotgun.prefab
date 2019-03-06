@@ -489,6 +489,7 @@ MonoBehaviour:
   character: {fileID: 0}
   WeaponTransformDistance: 8
   fireTick: 1
+  image: {fileID: 2800000, guid: 964171cd29d50b74f9c43e08ccde5ecb, type: 3}
 --- !u!1 &1320709487
 GameObject:
   m_ObjectHideFlags: 0

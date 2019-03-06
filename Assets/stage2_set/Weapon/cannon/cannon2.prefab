@@ -298,6 +298,7 @@ MonoBehaviour:
   character: {fileID: 0}
   WeaponTransformDistance: 8
   fireTick: 0.5
+  image: {fileID: 2800000, guid: 2c9d53ae39f8a964598c9aa7912a018f, type: 3}
   raser: {fileID: 7330652979617934601}
 --- !u!1 &7330652979988153442
 GameObject:

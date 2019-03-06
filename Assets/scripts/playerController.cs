@@ -75,6 +75,8 @@ public class playerController : Character
     /// </summary>
     private float chargeTimeCnt = 0;
 
+    private UIController uiController;
+
     //E押したらポーズ
     public bool pause = false;
 
@@ -98,6 +100,7 @@ public class playerController : Character
         }
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
         tmp.text = HP.ToString();
+        uiController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     private void Update()
@@ -356,6 +359,8 @@ public class playerController : Character
             WeaponList.Add(picked);
             picked.PickWeapon();
         }
+        uiController.SlotUpdate(WeaponList);
+        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == weapon));
     }
 
     /// <summary>
@@ -393,6 +398,9 @@ public class playerController : Character
             will.HaveWeapon();
             weapon = will;
         }
+
+        uiController.SlotUpdate(WeaponList);
+        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == weapon));
     }
 
     public override bool explodeDamage(float damage)
