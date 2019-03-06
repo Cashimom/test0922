@@ -21444,6 +21444,10 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4384910244646854905, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -21643,6 +21647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525754939401544817, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}

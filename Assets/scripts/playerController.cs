@@ -34,7 +34,7 @@ public class playerController : Character
     /// <summary>
     /// "Press F"って表示させるためのテキスト
     /// </summary>
-    [SerializeField] private TextMeshProUGUI pressButton;
+    [SerializeField] private GameObject pressButton;
 
     [SerializeField] private List<Weapon> WeaponList;
 
@@ -49,7 +49,15 @@ public class playerController : Character
         set
         {
             this.nearWeapon = value;
-            pressButton.enabled = (value != null);
+            if (value != null)
+            {
+                pressButton.SetActive(true);
+                pressButton.transform.Find("Weapon Image").GetComponent<RawImage>().texture=nearWeapon.image;
+            }
+            else
+            {
+                pressButton.SetActive(false);
+            }
             
         }
         get
@@ -96,8 +104,9 @@ public class playerController : Character
 
         if (pressButton == null)
         {
-            pressButton = GameObject.Find("Canvas/PressButton Text").GetComponent<TextMeshProUGUI>();
+            pressButton = GameObject.Find("Canvas/PickUp View");
         }
+        pressButton.SetActive(false);
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
         tmp.text = HP.ToString();
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
