@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private List<RawImage> slotImages;
     [SerializeField] private List<Image> slotPanels;
+    [SerializeField] private Slider HPSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -53,4 +55,21 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void Damage(float now,float max)
+    {
+        HPSlider.value = now / max;
+        var fill =HPSlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
+        if (fill.color != new Color(1, 0.3f, 0.3f))
+            fill.color = new Color(1, 0.3f, 0.3f);
+        StartCoroutine(DelayMethod(0.1f, () =>
+        {
+            fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
+        }));
+    }
+
+    public IEnumerator DelayMethod(float waitTime, Action action)
+    {
+        yield return new WaitForSeconds(waitTime);
+        action();
+    }
 }

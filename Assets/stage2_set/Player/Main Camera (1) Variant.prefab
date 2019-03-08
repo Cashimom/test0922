@@ -9,7 +9,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1691272340833108, guid: 9136a88a264abaf49be188cf09baf03e, type: 3}
       propertyPath: m_Name
-      value: Main Camera (1)
+      value: Main Camera (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
+        type: 3}
+      propertyPath: DistanceToPlayerM
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
+        type: 3}
+      propertyPath: HeightM
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4747046177228162, guid: 9136a88a264abaf49be188cf09baf03e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43,26 +63,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
-        type: 3}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
-        type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
-        type: 3}
-      propertyPath: DistanceToPlayerM
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114498409356099602, guid: 9136a88a264abaf49be188cf09baf03e,
-        type: 3}
-      propertyPath: HeightM
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 20198353210145188, guid: 9136a88a264abaf49be188cf09baf03e,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -86,12 +86,17 @@ PrefabInstance:
     - target: {fileID: 20198353210145188, guid: 9136a88a264abaf49be188cf09baf03e,
         type: 3}
       propertyPath: field of view
-      value: 91
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 20198353210145188, guid: 9136a88a264abaf49be188cf09baf03e,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 1845
+      value: 3893
+      objectReference: {fileID: 0}
+    - target: {fileID: 20198353210145188, guid: 9136a88a264abaf49be188cf09baf03e,
+        type: 3}
+      propertyPath: far clip plane
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9136a88a264abaf49be188cf09baf03e, type: 3}

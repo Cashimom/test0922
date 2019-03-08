@@ -31,6 +31,24 @@ public class GameSystem : MonoBehaviour
         playerController.dieFunc += dieFunc;
     }
 
+    private void OnDisable()
+    {
+        shipSystems.ForEach(ship =>
+        {
+            if(ship.gameObject!=null)
+                ship.gameObject.SetActive(false);
+        });
+    }
+
+    private void OnEnable()
+    {
+        shipSystems.ForEach(ship =>
+        {
+            if(ship.gameObject!=null)
+                ship.gameObject.SetActive(true);
+        });
+    }
+
     // Update is called once per frame
     void Update()
     {

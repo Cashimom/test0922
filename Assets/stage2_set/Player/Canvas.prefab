@@ -1050,6 +1050,7 @@ MonoBehaviour:
   slotPanels:
   - {fileID: 3172287950431339064}
   - {fileID: 6939002921921040951}
+  HPSlider: {fileID: 2851329072241007193}
 --- !u!1 &4833039195123233601
 GameObject:
   m_ObjectHideFlags: 0

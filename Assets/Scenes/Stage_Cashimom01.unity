@@ -124,6 +124,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1472728102}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: delay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,21 +193,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 1472728102}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: delay
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
-        type: 3}
-      propertyPath: target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0c678902a79c5a4da769fadf6c1a470, type: 3}
@@ -263,8 +263,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -563,8 +563,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -811,7 +811,7 @@ Transform:
   m_LocalScale: {x: 70, y: 90, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &90549968
 MonoBehaviour:
@@ -828,6 +828,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &91738389
@@ -920,7 +921,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &91738394
 MonoBehaviour:
@@ -937,6 +938,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &93692671
@@ -1120,7 +1122,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &106278156
 MonoBehaviour:
@@ -1137,6 +1139,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &128546806
@@ -1411,7 +1414,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &166990328
 MonoBehaviour:
@@ -1428,6 +1431,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &172375165
@@ -1612,6 +1616,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192861491}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &209857166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209857169}
+  - component: {fileID: 209857168}
+  - component: {fileID: 209857167}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &209857167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209857166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ee768be6f64f94ba3d4a3816f2e7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &209857168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209857166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1000, y: 1000, z: 1000}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &209857169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209857166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223295712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1763,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &223295717
 MonoBehaviour:
@@ -1719,6 +1780,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &239392754
@@ -1971,8 +2033,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2291,7 +2353,7 @@ Transform:
   m_LocalScale: {x: 5, y: 400, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &312758452
 MonoBehaviour:
@@ -2308,6 +2370,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &316650572
@@ -2673,7 +2736,7 @@ Transform:
   m_LocalScale: {x: 500, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &403369115
 MonoBehaviour:
@@ -2690,6 +2753,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &460310112
@@ -2782,7 +2846,7 @@ Transform:
   m_LocalScale: {x: 292, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &460310117
 MonoBehaviour:
@@ -2799,6 +2863,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &503521567
@@ -3073,7 +3138,7 @@ Transform:
   m_LocalScale: {x: 400, y: 160, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &530100743
 MonoBehaviour:
@@ -3090,6 +3155,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &539215990
@@ -3182,7 +3248,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &539215995
 MonoBehaviour:
@@ -3199,6 +3265,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &652924670
@@ -3269,8 +3336,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3499,6 +3566,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737278837}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &743508642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126878902727707458, guid: 09aa53c041814464fb501ec80dc4e828,
+    type: 3}
+  m_PrefabInstance: {fileID: 954009671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &743508645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+    type: 3}
+  m_PrefabInstance: {fileID: 954009671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743508642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfc571a9fae700478e01c945f8d2991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &758597260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,7 +3765,7 @@ Transform:
   m_LocalScale: {x: 292, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &763703100
 MonoBehaviour:
@@ -3697,6 +3782,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &781094745
@@ -3789,7 +3875,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &781094750
 MonoBehaviour:
@@ -3806,6 +3892,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &784999178
@@ -3898,7 +3985,7 @@ Transform:
   m_LocalScale: {x: 180, y: 100, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &784999183
 MonoBehaviour:
@@ -3915,6 +4002,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &869556397
@@ -4007,7 +4095,7 @@ Transform:
   m_LocalScale: {x: 30, y: 3, z: 52}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: -25, y: 90, z: 0}
 --- !u!114 &869556402
 MonoBehaviour:
@@ -4024,6 +4112,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &885579048
@@ -4116,7 +4205,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &885579053
 MonoBehaviour:
@@ -4133,6 +4222,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &896298276
@@ -4226,7 +4316,7 @@ Transform:
   m_LocalScale: {x: 100, y: 10, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &896298281
 BoxCollider:
@@ -4331,7 +4421,7 @@ Transform:
   m_LocalScale: {x: 70, y: 90, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &903692628
 MonoBehaviour:
@@ -4348,6 +4438,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &918435090
@@ -4440,7 +4531,7 @@ Transform:
   m_LocalScale: {x: 70, y: 90, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &918435095
 MonoBehaviour:
@@ -4457,6 +4548,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &919970534
@@ -4549,7 +4641,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &919970539
 MonoBehaviour:
@@ -4566,8 +4658,119 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+--- !u!1 &930791032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930791037}
+  - component: {fileID: 930791036}
+  - component: {fileID: 930791035}
+  - component: {fileID: 930791034}
+  - component: {fileID: 930791033}
+  m_Layer: 0
+  m_Name: Ship
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &930791033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930791032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b2affe3384388499e69c8e32da299b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Monster1: {fileID: 1918341719101329098, guid: d0c678902a79c5a4da769fadf6c1a470,
+    type: 3}
+  Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
+  target: {fileID: 743508642}
+  SpawnTime: 10
+  MaxSpawn: 20
+--- !u!65 &930791034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930791032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &930791035
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930791032}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &930791036
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930791032}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &930791037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930791032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 654, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 51
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939398139
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4861,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &939398144
 MonoBehaviour:
@@ -4675,6 +4878,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &949940291
@@ -4818,7 +5022,7 @@ PrefabInstance:
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
@@ -4868,6 +5072,31 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4384910244646854905, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384910244646854905, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384910244646854905, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479253744456787846, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479253744456787846, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4906,7 +5135,7 @@ PrefabInstance:
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
@@ -5013,6 +5242,31 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5135034957465271513, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135034957465271513, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135034957465271513, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878668032585286179, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878668032585286179, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
 --- !u!1 &1021491899
@@ -5105,7 +5359,7 @@ Transform:
   m_LocalScale: {x: 70, y: 90, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1021491904
 MonoBehaviour:
@@ -5122,6 +5376,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1061362177
@@ -5305,7 +5560,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1066278059
 MonoBehaviour:
@@ -5322,6 +5577,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1132673629
@@ -5414,7 +5670,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1132673634
 MonoBehaviour:
@@ -5431,6 +5687,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1187744805
@@ -5523,7 +5780,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1187744810
 MonoBehaviour:
@@ -5540,6 +5797,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1199676702
@@ -5671,7 +5929,7 @@ Transform:
   - {fileID: 1910913454}
   - {fileID: 1963311535}
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1213170508
 MonoBehaviour:
@@ -5688,6 +5946,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1215511984
@@ -5728,7 +5987,7 @@ Transform:
   - {fileID: 1954979445}
   - {fileID: 28474376}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1215511986
 MonoBehaviour:
@@ -5745,6 +6004,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1224933096
@@ -5837,7 +6097,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1224933101
 MonoBehaviour:
@@ -5854,6 +6114,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1326530567
@@ -5946,7 +6207,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1326530572
 MonoBehaviour:
@@ -5963,6 +6224,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1331032491
@@ -6055,7 +6317,7 @@ Transform:
   m_LocalScale: {x: 5, y: 400, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1331032496
 MonoBehaviour:
@@ -6072,6 +6334,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1359269965
@@ -6255,7 +6518,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1367156146
 MonoBehaviour:
@@ -6272,6 +6535,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1384376465
@@ -6364,7 +6628,7 @@ Transform:
   m_LocalScale: {x: 5, y: 400, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1384376470
 MonoBehaviour:
@@ -6381,6 +6645,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1405152045
@@ -7104,7 +7369,7 @@ Transform:
   m_LocalScale: {x: 100, y: 70, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576152479
 MonoBehaviour:
@@ -7121,6 +7386,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1585543773
@@ -7304,7 +7570,7 @@ Transform:
   m_LocalScale: {x: 5, y: 400, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1587067453
 MonoBehaviour:
@@ -7321,6 +7587,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1620332061
@@ -7413,7 +7680,7 @@ Transform:
   m_LocalScale: {x: 100, y: 60, z: 400}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1620332066
 MonoBehaviour:
@@ -7430,6 +7697,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1643521820
@@ -7705,6 +7973,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693971338}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1737928534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737928536}
+  - component: {fileID: 1737928535}
+  - component: {fileID: 1737928537}
+  m_Layer: 0
+  m_Name: GameSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737928535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737928534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c46142910b4fe2643bca0b0efa3e01a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 743508642}
+  SpawnPosition: {x: 0, y: 0, z: 0}
+  shipSystems:
+  - {fileID: 930791033}
+--- !u!4 &1737928536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737928534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1737928537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737928534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3bd32ba8cc2b24e894d9bcdd9ffdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSystem: {fileID: 1737928535}
+  listenner: {fileID: 209857167}
 --- !u!1 &1759797967
 GameObject:
   m_ObjectHideFlags: 0
@@ -7886,7 +8216,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1780809631
 MonoBehaviour:
@@ -7903,6 +8233,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1800644612
@@ -8268,7 +8599,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1857849990
 MonoBehaviour:
@@ -8285,6 +8616,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1001 &1900299604
@@ -8485,7 +8817,7 @@ PrefabInstance:
     - target: {fileID: 2574315046522619846, guid: 75280344bf1f0e5439f89cb581972aa9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2574315046522619846, guid: 75280344bf1f0e5439f89cb581972aa9,
         type: 3}
@@ -8507,6 +8839,11 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 954009672}
+    - target: {fileID: 2467927785193620054, guid: 75280344bf1f0e5439f89cb581972aa9,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 743508645}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75280344bf1f0e5439f89cb581972aa9, type: 3}
 --- !u!1 &1927607570
@@ -8599,7 +8936,7 @@ Transform:
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1927607575
 MonoBehaviour:
@@ -8616,6 +8953,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1928346522
@@ -8656,7 +8994,7 @@ Transform:
   - {fileID: 1687931849}
   - {fileID: 93692672}
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1928346524
 MonoBehaviour:
@@ -8673,6 +9011,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1933751059
@@ -8724,8 +9063,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8930,7 +9269,7 @@ Transform:
   - {fileID: 1472728103}
   - {fileID: 7237318}
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945091254
 GameObject:
@@ -9022,7 +9361,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1945091259
 MonoBehaviour:
@@ -9039,6 +9378,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1954979444
@@ -9313,7 +9653,7 @@ Transform:
   m_LocalScale: {x: 150, y: 150, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1984040065
 MonoBehaviour:
@@ -9330,6 +9670,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &1985708643
@@ -9513,7 +9854,7 @@ Transform:
   m_LocalScale: {x: 195, y: 20, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1997737512
 MonoBehaviour:
@@ -9530,6 +9871,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &2027754791
@@ -9622,7 +9964,7 @@ Transform:
   m_LocalScale: {x: 220, y: 5, z: 150}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2027754796
 MonoBehaviour:
@@ -9639,6 +9981,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &2056671303
@@ -9731,7 +10074,7 @@ Transform:
   m_LocalScale: {x: 30, y: 3, z: 52}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: -25, y: -90, z: 0}
 --- !u!114 &2056671308
 MonoBehaviour:
@@ -9748,6 +10091,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &2103605691
@@ -9840,7 +10184,7 @@ Transform:
   m_LocalScale: {x: 500, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2103605696
 MonoBehaviour:
@@ -9857,6 +10201,7 @@ MonoBehaviour:
   moveSpeed: 5
   FlyForce: 100
   HP: 1000
+  MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
 --- !u!1 &2114682350
@@ -9908,8 +10253,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
