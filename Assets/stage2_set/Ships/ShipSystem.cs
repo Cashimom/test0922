@@ -74,7 +74,7 @@ public class ShipSystem : MonoBehaviour
         {
             for(int i = 0; i < enemies.Count; i++)
             {
-                if (enemies[i] == null)
+                if (enemies[i] == null||enemies[i].enabled==false)
                 {
                     enemies.Remove(enemies[i]);
                     i--;
