@@ -98,7 +98,9 @@ public class Weapon : MonoBehaviour
     {
         var fire = Instantiate(rocket, ShotTransform.position + ShotTransform.forward * 2, ShotTransform.rotation);
         if(character is playerController)fire.layer = 11;
-        return fire.GetComponent<RocketScript>();
+        var rs= fire.GetComponent<RocketScript>();
+        rs.parent = character;
+        return rs;
     }
 
     /// <summary>

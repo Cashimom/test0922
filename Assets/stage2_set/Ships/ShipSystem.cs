@@ -8,6 +8,7 @@ using System;
 /// </summary>
 public class ShipSystem : MonoBehaviour
 {
+    [SerializeField] public List<Transform> SpawnPositions;
 
     /// <summary>
     /// スポーンするモンスター
@@ -57,7 +58,7 @@ public class ShipSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
     }
 
     // Update is called once per frame
@@ -89,7 +90,12 @@ public class ShipSystem : MonoBehaviour
 
     public EnemyController SpawnMonster1()
     {
-        var monster = Instantiate(Monster1, position: transform.position - transform.up*100+transform.right*UnityEngine.Random.Range(-200,200)+ transform.forward * UnityEngine.Random.Range(-200, 200), rotation: transform.rotation);
+        //Transform spawnPos = SpawnPositions[UnityEngine.Random.Range(0, SpawnPositions.Count)];
+        Transform spawnPos = SpawnPositions[(int)((float)spawnCnt/( (float)MaxSpawn / (float)SpawnPositions.Count))];
+        if (spawnPos == null) spawnPos = transform;
+        var monster = Instantiate(Monster1, 
+            position: spawnPos.position - spawnPos.up*10+ spawnPos.right*UnityEngine.Random.Range(-50,50)+ spawnPos.forward * UnityEngine.Random.Range(-51, 51),
+            rotation: spawnPos.rotation);
         var eneCon = monster.GetComponent<EnemyController>();
         var weapon = Instantiate(Weapon1).GetComponent<Weapon>();
         weapon.character = eneCon;
@@ -101,6 +107,9 @@ public class ShipSystem : MonoBehaviour
         return eneCon;
     }
 
-    
+    private void OnDestroy()
+    {
+        SpawnPositions.Clear();
+    }
 
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 
 /// <summary>
 /// エネミーの処理を実装しているクラス
@@ -33,6 +33,8 @@ public class EnemyController : Character
     /// EDFモードの切り替え
     /// </summary>
     [SerializeField] private bool isEDF = false;
+
+    [NonSerialized] public bool killedByNotPlayer = false;
 
     /// <summary>
     /// 時間カウント用変数
@@ -106,8 +108,8 @@ public class EnemyController : Character
                 else
                 {
                     //オブジェクトの固有ナンバーからどっちに動くか判断
-                    Random.InitState(gameObject.GetHashCode());
-                    move(new Vector3((((Random.Range(1,2) >> 1) & 1) == 1 ? 1 : -1), Random.Range(-1,1)*0.2f, 0), 1.6f);
+                    UnityEngine.Random.InitState(gameObject.GetHashCode());
+                    move(new Vector3((((UnityEngine.Random.Range(1,2) - 1) ) == 1 ? 1 : -1), UnityEngine.Random.Range(-1,1)*0.2f, 0), 1.6f);
                 }
             }
         }
@@ -125,7 +127,7 @@ public class EnemyController : Character
                 //Raycastを使って向いてる方向に障害物がないかチェックして撃つ
                 int layerMask = 3 << 9;
                 RaycastHit hit;
-                if (Physics.Raycast(weapon.ShotTransform.position, weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
+                if (Physics.Raycast(weapon.ShotTransform.position, weapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     weapon.Fire1();
@@ -146,7 +148,7 @@ public class EnemyController : Character
     /// see <see cref="Character.explodeDamage(float)"/>
     /// </summary>
     /// <param name="damage">ダメージ量</param>
-    /// <returns></returns>
+    /// <returns>死んだかどうか</returns>
     public override bool explodeDamage(float damage)
     {
         HP -= damage;
@@ -158,9 +160,40 @@ public class EnemyController : Character
                 Destroy(weapon.gameObject);
             }
             die();
+            return true;
         }
-        return true;
+        return false;
     }
 
+    /// <summary>
+    /// 爆発によるダメージの処理をする。
+    /// see <see cref="Character.explodeDamage(float)"/>
+    /// </summary>
+    /// <param name="damage">ダメージ量</param>
+    /// <returns>死んだかどうか</returns>
+    public override bool explodeDamage(float damage,Character whose)
+    {
+        HP -= damage;
+        if (HP <= 0)
+        {
+            if (isEDF && weapon != null)
+            {
+                weapon.character = null;
+                Destroy(weapon.gameObject);
+            }
+            if (!(whose is playerController)) {
+                gameObject.SetActive(false);
+                if (weapon != null)
+                    weapon.gameObject.SetActive(false);
+                killedByNotPlayer = true;
+            }
+            else
+            {
+                die();
+            }
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -8,6 +8,10 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] public TriggerListenner listenner;
 
+    [SerializeField] public List<GameObject> willActive;
+
+    [SerializeField] public List<GameObject> willNotActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +28,18 @@ public class Tutorial : MonoBehaviour
 
     void GameStart(Collider other)
     {
-        if(other.gameObject.tag=="Character"&& other.gameObject.GetComponent<Character>() is playerController)
+        if (other.gameObject.tag == "Character" && other.gameObject.GetComponent<Character>() is playerController)
+        {
             gameSystem.gameObject.SetActive(true);
+            foreach(var obj in willActive)
+            {
+                obj.SetActive(true);
+            }
+            foreach(var obj in willNotActive)
+            {
+                obj.SetActive(false);
+            }
+        }
     }
 
 }

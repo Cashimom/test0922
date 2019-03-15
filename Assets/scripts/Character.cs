@@ -244,6 +244,17 @@ public class Character : MonoBehaviour
     }
 
     /// <summary>
+    /// 爆発によるダメージを与える
+    /// </summary>
+    /// <param name="damage">ダメージ量</param>
+    /// <returns></returns>
+    public virtual bool explodeDamage(float damage,Character whose)
+    {
+        HP -= damage;
+        return true;
+    }
+
+    /// <summary>
     /// 死ぬ処理
     /// </summary>
     /// <returns></returns>

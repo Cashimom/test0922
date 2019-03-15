@@ -35,6 +35,8 @@ public class RocketScript : MonoBehaviour
     /// ヒットしたあと弾が残る時間
     /// </summary>
     [SerializeField] private float explodeDelay = 5 / 6;
+
+    [NonSerialized] public Character parent;
     
     /// <summary>
     /// Rigidbodyが保存されてる変数
@@ -107,7 +109,7 @@ public class RocketScript : MonoBehaviour
             var otherObj = collision.gameObject;
             if (otherObj.GetComponent<Character>() !=null)
             {
-                otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue);
+                otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue,parent);
             }
         }
     }

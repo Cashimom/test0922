@@ -22,6 +22,8 @@ public class BonusSystem : MonoBehaviour
     /// </summary>
     [SerializeField] private ParticleSystem particle;
 
+    [SerializeField] private bool notPlayerKill=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class BonusSystem : MonoBehaviour
         bool flg = false;
         enemies.ForEach((charcter) =>
         {
-            if (charcter != null)
+            if (((charcter==null&&notPlayerKill)||(charcter != null && !notPlayerKill)|| (charcter != null &&( (EnemyController)charcter).killedByNotPlayer==false)))
                 flg = true;
         });
         if (!flg)
