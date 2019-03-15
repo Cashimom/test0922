@@ -35,7 +35,7 @@ public class GameSystem : MonoBehaviour
     {
         shipSystems.ForEach(ship =>
         {
-            if(ship.gameObject!=null)
+            if(ship!=null)
                 ship.gameObject.SetActive(false);
         });
     }

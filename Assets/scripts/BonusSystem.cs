@@ -41,6 +41,7 @@ public class BonusSystem : MonoBehaviour
         });
         if (!flg)
         {
+            //Debug.Break();
             DropWeapon.SetActive(true);
             this.enabled = false;
             if (particle != null)

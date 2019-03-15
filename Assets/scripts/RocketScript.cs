@@ -137,7 +137,7 @@ public class RocketScript : MonoBehaviour
         var otherObj = other.gameObject;
         if (otherObj.GetComponent<Character>() != null)
         {
-            otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue*0.8f);
+            otherObj.GetComponent<Character>().explodeDamage(explodeDamageValue*0.8f,parent);
         }
 
         if (isCollisionEntered&&other.gameObject.tag=="Rocket")
