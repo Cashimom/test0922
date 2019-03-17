@@ -55,7 +55,7 @@ public class EnemyController : Character
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        rightWeaponTransform = transform;
+        if(rightWeaponTransform==null)rightWeaponTransform = transform;
     }
 	
 	// Update is called once per frame
@@ -82,6 +82,7 @@ public class EnemyController : Character
             {
                 var len_xz = target.transform.position - weapon.ShotTransform.position;
                 len_xz.y = 0;
+                debugText(len_xz.magnitude.ToString());
                 if (len_xz.magnitude > (weapon.ShotTransform.position - transform.position).magnitude*1.5f)
                 {
                     transform.rotation = Quaternion.LookRotation(target.transform.position - weapon.ShotTransform.position);
@@ -109,7 +110,7 @@ public class EnemyController : Character
                 {
                     //オブジェクトの固有ナンバーからどっちに動くか判断
                     UnityEngine.Random.InitState(gameObject.GetHashCode());
-                    move(new Vector3((((UnityEngine.Random.Range(1,2) - 1) ) == 1 ? 1 : -1), UnityEngine.Random.Range(-1,1)*0.2f, 0), 1.6f);
+                    move(new Vector3((((UnityEngine.Random.Range(1,2)) ) == 1 ? 1 : -1), UnityEngine.Random.Range(-1,1)*0.2f, 0), 1.6f);
                 }
             }
         }

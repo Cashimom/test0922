@@ -425,4 +425,16 @@ public class playerController : Character
         return true;
     }
 
+    public override bool explodeDamage(float damage,Character character)
+    {
+        base.explodeDamage(damage,character);
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        tmp.text = ((int)HP).ToString();
+        //var slider = GameObject.Find("Canvas/HP Slider").GetComponent<Slider>();
+        //slider.value = (HP / MaxHP);
+        uiController.Damage(HP, MaxHP);
+        if (HP <= 0 && dieFunc != null)
+            dieFunc();
+        return true;
+    }
 }

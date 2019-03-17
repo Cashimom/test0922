@@ -222,6 +222,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
   target: {fileID: 0}
@@ -383,6 +384,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 5, z: 5}
   m_Center: {x: -1.5, y: 0, z: 0}
+--- !u!1 &73382656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73382657}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73382657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73382656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 271, y: 1292, z: 216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153582146
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +524,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &166305738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7330652979954869161, guid: 02dcaca7b139cbd439d40c687c0309a4,
@@ -661,6 +693,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &292033149
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +804,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &323674021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +913,7 @@ MonoBehaviour:
   DropWeapon: {fileID: 166305738}
   particle: {fileID: 2259105263325039152, guid: 594e69713de51bb469e01df01f4e4b64,
     type: 3}
+  notPlayerKill: 0
 --- !u!1 &328496925
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1024,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &348260191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1424,6 +1460,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &390096735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1569,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &441444256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1578217270576770, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -1556,6 +1594,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &473423327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1705,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -1806,6 +1846,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 1576800339}
+  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -1913,6 +1954,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &610842612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1993,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 376316563}
+  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2172,6 +2215,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &633662442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2254,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 50599616}
+  rightWeaponTransform: {fileID: 0}
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2321,6 +2366,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &674859572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674859573}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674859573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674859572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 96.4, y: 77.10799, z: 369.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701473888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,6 +2506,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -2665,6 +2741,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &750881608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,6 +2852,37 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+--- !u!1 &756254827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756254828}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &756254828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756254827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -577, y: 289, z: -352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &785780266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744368151897796, guid: 4bc2adde9e9f41c4c95734e358790e58,
@@ -2915,6 +3023,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &850355239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7888,6 +7997,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &909944730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8052,6 +8162,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!4 &948343048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433440861020130, guid: 088c8b5a564c9a849b7a6589b01fb2cd,
@@ -8363,7 +8474,7 @@ GameObject:
   - component: {fileID: 1129087484}
   - component: {fileID: 1129087489}
   - component: {fileID: 1129087488}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ship
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -8454,12 +8565,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2affe3384388499e69c8e32da299b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPositions:
+  - {fileID: 674859573}
+  - {fileID: 756254828}
+  - {fileID: 1536052096}
+  - {fileID: 73382657}
   Monster1: {fileID: 1918341719101329098, guid: d0c678902a79c5a4da769fadf6c1a470,
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
-  SpawnTime: 2
-  MaxSpawn: 50
+  SpawnTime: 0.5
+  MaxSpawn: 100
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8478,6 +8594,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 90
   moveVec: {x: 0, y: 0, z: -1}
   target: {fileID: 0}
@@ -8739,6 +8856,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &1183688250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13873,6 +13991,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &1298481093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13954,6 +14073,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
   target: {fileID: 0}
@@ -14069,6 +14189,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1331047347
 GameObject:
   m_ObjectHideFlags: 0
@@ -14179,6 +14300,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!4 &1331481981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4380265995217298, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -14295,6 +14417,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1352937613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b,
@@ -14411,6 +14534,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!114 &1423191604 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2,
@@ -14599,6 +14723,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &1469298229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14790,6 +14915,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1503675223
 GameObject:
   m_ObjectHideFlags: 0
@@ -14900,6 +15026,37 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+--- !u!1 &1536052095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536052096}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1536052096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536052095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 271, y: 547, z: -743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539849726
 GameObject:
   m_ObjectHideFlags: 0
@@ -15068,6 +15225,7 @@ MonoBehaviour:
   - {fileID: 25512321}
   DropWeapon: {fileID: 1352937613}
   particle: {fileID: 2088357615, guid: 7eff267d0b553a94f850f4779c60d3fe, type: 3}
+  notPlayerKill: 0
 --- !u!1001 &1576800336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15334,6 +15492,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -15363,6 +15522,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1664121325
 GameObject:
   m_ObjectHideFlags: 0
@@ -15532,6 +15692,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!114 &1725013021 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
@@ -15663,6 +15824,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1821597558
 GameObject:
   m_ObjectHideFlags: 0
@@ -15773,6 +15935,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1833408423
 GameObject:
   m_ObjectHideFlags: 0
@@ -16149,6 +16312,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &1912432256
 GameObject:
   m_ObjectHideFlags: 0
@@ -16447,6 +16611,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
   target: {fileID: 0}
@@ -21331,6 +21496,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1 &2085497080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944494647689572, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -21355,6 +21521,7 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   weapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
 --- !u!1001 &126878904414639837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21623,11 +21790,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2679464562478970581, guid: 86cc6462615923149bca2402a4d6fdd2,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 26.900024
-      objectReference: {fileID: 0}
     - target: {fileID: 5135034957465271513, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -21652,6 +21814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679464562478970581, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 26.900024
       objectReference: {fileID: 0}
     - target: {fileID: 8525754939401544817, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}

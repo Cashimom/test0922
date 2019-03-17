@@ -53,7 +53,7 @@ public class Character : MonoBehaviour
     /// <summary>
     /// <see cref="weapon"/>を置く場所、
     /// </summary>
-    [NonSerialized] public Transform rightWeaponTransform;
+    [SerializeField] public Transform rightWeaponTransform;
 
 
     private float energy=100;
@@ -181,7 +181,7 @@ public class Character : MonoBehaviour
             rb.AddForce(flyForce, ForceMode.Force);
 
             //ブーストによる上方向への加速度,速度制限付き！
-            debugText(rb.velocity.y.ToString());
+            //debugText(rb.velocity.y.ToString());
             if(rb.velocity.y < 64) {
                 rb.AddForce(rb.transform.up * 200, ForceMode.Acceleration);
             }
