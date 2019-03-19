@@ -14,34 +14,34 @@ public class RocketScript : MonoBehaviour
     /// <summary>
     /// 移動スピード
     /// </summary>
-    [SerializeField] private float moveSpeed = 1.0f;
+    [SerializeField] protected float moveSpeed = 1.0f;
 
     /// <summary>
     /// ヒットした時に出すパーティクル
     /// </summary>
-    [SerializeField] private ParticleSystem destroyParticle;
+    [SerializeField] protected ParticleSystem destroyParticle;
 
     /// <summary>
     /// characterにヒットした時のダメージ
     /// </summary>
-    [SerializeField] private float explodeDamageValue = 10.0f;
+    [SerializeField] protected float explodeDamageValue = 10.0f;
 
     /// <summary>
     /// 弾が存在できる時間(射程)
     /// </summary>
-    [SerializeField] private float TimeLimit = 10;
+    [SerializeField] protected float TimeLimit = 10;
 
     /// <summary>
     /// ヒットしたあと弾が残る時間
     /// </summary>
-    [SerializeField] private float explodeDelay = 5 / 6;
+    [SerializeField] protected float explodeDelay = 5 / 6;
 
     [NonSerialized] public Character parent;
     
     /// <summary>
     /// Rigidbodyが保存されてる変数
     /// </summary>
-    private Rigidbody rb;
+    protected Rigidbody rb;
 
     /// <summary>
     /// ヒットしたかどうか
@@ -51,22 +51,22 @@ public class RocketScript : MonoBehaviour
     /// <summary>
     /// <see cref="destroyParticle"/>の動作時間
     /// </summary>
-    private float destroyTime = 0;
+    protected float destroyTime = 0;
 
     /// <summary>
     /// 時間カウント用変数
     /// </summary>
-    private float t=0;
+    protected float t=0;
 
     /// <summary>
     /// サイズ変更時の元のサイズ
     /// </summary>
-    private Vector3 defaultScale;
+    protected Vector3 defaultScale;
 
     /// <summary>
     /// 生成されてからの時間
     /// </summary>
-    private float flyTime = 0;
+    protected float flyTime = 0;
     
 
 	// Use this for initialization
@@ -74,7 +74,8 @@ public class RocketScript : MonoBehaviour
     {
         //transform.Rotate(rotX, rotY, rotZ);
         rb = GetComponent<Rigidbody>();
-        destroyTime = destroyParticle.main.duration;
+        if(destroyParticle!=null)
+            destroyTime = destroyParticle.main.duration;
         rb.AddForce(transform.forward * 50 * moveSpeed, ForceMode.Impulse);
     }
 	

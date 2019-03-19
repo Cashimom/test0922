@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private List<RawImage> slotImages;
     [SerializeField] private List<Image> slotPanels;
     [SerializeField] private Slider HPSlider;
+    [SerializeField] private Slider GrenadeSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,18 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void SlotUpdate(Weapon weapons,int index)
+    {
+        if (weapons.image != null)
+        {
+            slotImages[index].texture = weapons.image;
+        }
+        else
+        {
+            slotImages[index].texture = Resources.Load<Texture>("NoImage.png");
+        }
+    }
+
     public void SetActiveSlot(int index)
     {
         for(int i = 0; i < slotPanels.Count; i++)
@@ -65,6 +78,12 @@ public class UIController : MonoBehaviour
         {
             fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
         }));
+    }
+
+    public void setGrenade(float value)
+    {
+        GrenadeSlider.value = value;
+        //var fill = GrenadeSlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
     }
 
     public IEnumerator DelayMethod(float waitTime, Action action)

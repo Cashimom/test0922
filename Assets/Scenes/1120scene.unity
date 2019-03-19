@@ -221,8 +221,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
   target: {fileID: 0}
@@ -305,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -371,6 +373,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  isHave: 0
 --- !u!65 &50599617
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153582146
 GameObject:
@@ -523,8 +526,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &166305738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7330652979954869161, guid: 02dcaca7b139cbd439d40c687c0309a4,
@@ -692,8 +697,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &292033149
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,8 +810,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &323674021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,8 +1032,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &348260191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,7 +1282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1337,6 +1348,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  isHave: 0
 --- !u!65 &376316564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1459,8 +1471,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &390096735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,8 +1582,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &441444256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1578217270576770, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -1593,8 +1609,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &473423327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,8 +1722,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -1845,8 +1865,10 @@ MonoBehaviour:
   HP: 30
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 1576800339}
+  RightWeapon: {fileID: 1576800339}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -1953,8 +1975,10 @@ MonoBehaviour:
   HP: 2000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &610842612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,8 +2016,10 @@ MonoBehaviour:
   HP: 30
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 376316563}
+  RightWeapon: {fileID: 376316563}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2103,7 +2129,7 @@ Transform:
   - {fileID: 1754913132}
   - {fileID: 436069667}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622989481
 GameObject:
@@ -2214,8 +2240,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &633662442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,8 +2281,10 @@ MonoBehaviour:
   HP: 30
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 50599616}
+  RightWeapon: {fileID: 50599616}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 1840487839}
@@ -2364,7 +2394,7 @@ Transform:
   - {fileID: 528248301}
   - {fileID: 633662447}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674859572
 GameObject:
@@ -2394,7 +2424,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701473888
 GameObject:
@@ -2505,8 +2535,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -2740,8 +2772,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &750881608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,8 +2885,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &756254827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,7 +2917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &785780266 stripped
 Transform:
@@ -2995,7 +3031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285600559555984, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
@@ -3022,8 +3058,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &850355239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7781,7 +7819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114467099633521646, guid: ccaa9d729de89bb439ea19d7dc883418,
         type: 3}
@@ -7996,8 +8034,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &909944730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8161,8 +8201,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!4 &948343048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433440861020130, guid: 088c8b5a564c9a849b7a6589b01fb2cd,
@@ -8393,7 +8435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1050120693
 PrefabInstance:
@@ -8551,7 +8593,7 @@ Transform:
   m_LocalScale: {x: 500, y: 300, z: 500}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1129087488
 MonoBehaviour:
@@ -8593,8 +8635,10 @@ MonoBehaviour:
   HP: 10000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 90
   moveVec: {x: 0, y: 0, z: -1}
   target: {fileID: 0}
@@ -8615,7 +8659,22 @@ PrefabInstance:
     - target: {fileID: 7330652979954869161, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869160, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: fireTick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869160, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869160, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: WeaponTransformDistance
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
@@ -8655,7 +8714,7 @@ PrefabInstance:
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
@@ -8855,8 +8914,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &1183688250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8898,7 +8959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13802,7 +13863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -13868,6 +13929,7 @@ MonoBehaviour:
   WeaponTransformDistance: 11
   fireTick: 0.1
   image: {fileID: 0}
+  isHave: 0
 --- !u!65 &1257585925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13990,8 +14052,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &1298481093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14072,8 +14136,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
   target: {fileID: 0}
@@ -14188,8 +14254,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1331047347
 GameObject:
   m_ObjectHideFlags: 0
@@ -14299,8 +14367,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!4 &1331481981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4380265995217298, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -14416,8 +14486,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1352937613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b,
@@ -14533,8 +14605,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!114 &1423191604 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1423191604, guid: 86cc6462615923149bca2402a4d6fdd2,
@@ -14611,7 +14685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459155892
 GameObject:
@@ -14722,8 +14796,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &1469298229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14914,8 +14990,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1503675223
 GameObject:
   m_ObjectHideFlags: 0
@@ -15025,8 +15103,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1536052095
 GameObject:
   m_ObjectHideFlags: 0
@@ -15055,7 +15135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539849726
 GameObject:
@@ -15206,7 +15286,7 @@ Transform:
   - {fileID: 292033150}
   - {fileID: 2065364578}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576095415
 MonoBehaviour:
@@ -15303,7 +15383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a5524cd5fb4eeae49bc96595d456eefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -15369,6 +15449,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  isHave: 0
 --- !u!65 &1576800340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15491,8 +15572,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
@@ -15521,8 +15604,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1664121325
 GameObject:
   m_ObjectHideFlags: 0
@@ -15691,8 +15776,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!114 &1725013021 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
@@ -15823,8 +15910,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1821597558
 GameObject:
   m_ObjectHideFlags: 0
@@ -15934,8 +16023,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1833408423
 GameObject:
   m_ObjectHideFlags: 0
@@ -15968,11 +16059,17 @@ Transform:
   - {fileID: 1477690060}
   - {fileID: 1850404439}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840487839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 126878902727707458, guid: 09aa53c041814464fb501ec80dc4e828,
+    type: 3}
+  m_PrefabInstance: {fileID: 126878904414639837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1840487840 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
     type: 3}
   m_PrefabInstance: {fileID: 126878904414639837}
   m_PrefabAsset: {fileID: 0}
@@ -16311,8 +16408,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1912432256
 GameObject:
   m_ObjectHideFlags: 0
@@ -16404,6 +16503,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912432256}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1933783607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
+    type: 3}
+  m_PrefabInstance: {fileID: 5520535356069486210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce18ff147c801c43adde69cb9211156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953437403
 GameObject:
   m_ObjectHideFlags: 0
@@ -16610,8 +16721,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
   target: {fileID: 0}
@@ -21495,8 +21608,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &2085497080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944494647689572, guid: d5c4574c7efb36c44b89363cb44d62b0,
@@ -21520,8 +21635,10 @@ MonoBehaviour:
   HP: 5000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &126878904414639837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21539,6 +21656,16 @@ PrefabInstance:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: LeftWeapon
+      value: 
+      objectReference: {fileID: 1933783607}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: rightWeaponTransform
+      value: 
+      objectReference: {fileID: 1997165345}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21577,7 +21704,7 @@ PrefabInstance:
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
@@ -21683,7 +21810,7 @@ PrefabInstance:
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3224608736853090749, guid: 86cc6462615923149bca2402a4d6fdd2,
         type: 3}
@@ -21825,6 +21952,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 281376113875248327, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281376113875248327, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115217045768259005, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115217045768259005, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115217045768259005, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
 --- !u!1001 &1918341719591047890
@@ -21857,6 +22009,11 @@ PrefabInstance:
     - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
       propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1257585924}
+    - target: {fileID: 1918341719101329103, guid: d0c678902a79c5a4da769fadf6c1a470,
+        type: 3}
+      propertyPath: RightWeapon
       value: 
       objectReference: {fileID: 1257585924}
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
@@ -21897,7 +22054,7 @@ PrefabInstance:
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1918341719101329102, guid: d0c678902a79c5a4da769fadf6c1a470,
         type: 3}
@@ -21966,7 +22123,7 @@ PrefabInstance:
     - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}
@@ -22035,7 +22192,7 @@ PrefabInstance:
     - target: {fileID: 2574315046522619846, guid: 75280344bf1f0e5439f89cb581972aa9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2574315046522619846, guid: 75280344bf1f0e5439f89cb581972aa9,
         type: 3}
@@ -22084,6 +22241,96 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75280344bf1f0e5439f89cb581972aa9, type: 3}
+--- !u!1001 &5520535356069486210
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5520535355855645876, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_Name
+      value: gurepon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 1840487844}
+    - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: rocket
+      value: 
+      objectReference: {fileID: 8941128537739663554, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+    - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: fireTick
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: isHave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.293077
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -47.037323
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.7894852
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf9be206ec23dd2499b0e674bb017e56, type: 3}
 --- !u!1001 &7330652979792968803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22134,7 +22381,7 @@ PrefabInstance:
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
@@ -22153,3 +22400,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02dcaca7b139cbd439d40c687c0309a4, type: 3}
+--- !u!1001 &8941128537850050882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8941128537739663554, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_Name
+      value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.249578
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.696953
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.7010279
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663557, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 1840487840}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f36acbcdaa21cc443b1f50c5819784ea, type: 3}

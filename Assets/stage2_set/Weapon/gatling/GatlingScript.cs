@@ -16,7 +16,7 @@ public class GatlingScript : Weapon
 	// Update is called once per frame
 	void Update () {
         base.Update();
-        if (isHave&&character!=null)
+        if (character!=null)
         {
             if (isPlayer)
             {
@@ -31,7 +31,7 @@ public class GatlingScript : Weapon
             transform.rotation= character.rightWeaponTransform.rotation;
             transform.Rotate(0, -90, 0);
 
-            if (isPlayer && Input.GetButton("Fire1"))
+            if (isHave&&isPlayer && Input.GetButton("Fire1"))
             {
                 Fire1();
             }

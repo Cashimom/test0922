@@ -110,6 +110,11 @@ public class playerController : Character
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
         tmp.text = HP.ToString();
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+
+        if (LeftWeapon != null){
+            uiController.SlotUpdate(LeftWeapon, 2);
+            LeftWeapon.isHave = false;
+        }
     }
 
     private void Update()
@@ -167,23 +172,44 @@ public class playerController : Character
             PickUpWeapon(NearWeapon);
             NearWeapon = null;
         }
-        
+
         //武器入れ替え
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (NowWeapon == WEAPON_RIGHT)
         {
-            ChangeWeapon(1);
-        }
-        else if(Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            ChangeWeapon(-1);
+            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            {
+                ChangeWeapon(1);
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                ChangeWeapon(-1);
+            }
         }
 
+
+        if (Input.GetKeyDown("q"))
+        {
+            if (NowWeapon == WEAPON_RIGHT)
+            {
+                NowWeapon = WEAPON_LEFT;
+                RightWeapon.isHave = false;
+                LeftWeapon.isHave = true;
+                uiController.SetActiveSlot(2);
+            }
+            else if (NowWeapon == WEAPON_LEFT)
+            {
+                NowWeapon = WEAPON_RIGHT;
+                RightWeapon.isHave = true;
+                LeftWeapon.isHave = false;
+                uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
+            }
+        }
 
         //wasdとかで動かす
-        float shiftValue = 1.0f;
+        float shiftValue = 2.0f;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            shiftValue = 2.0f;
+            //shiftValue = 2.0f;
         }
         var mx = Input.GetAxis("Horizontal");
         var mz = Input.GetAxis("Vertical");
@@ -349,27 +375,27 @@ public class playerController : Character
         //枠がいっぱいなら手持ちと交換
         if (WeaponList.Count >= 2)
         {
-            int index = WeaponList.FindIndex(match => weapon==match);
+            int index = WeaponList.FindIndex(match => RightWeapon==match);
             WeaponList[index] = picked;
-            weapon.DropWeapon();
+            RightWeapon.DropWeapon();
             picked.HaveWeapon();
-            weapon = picked;
+            RightWeapon = picked;
         }
         //何も持ってなかったらすぐ装備
-        else if (weapon == null&& WeaponList.Count<2)
+        else if (RightWeapon == null&& WeaponList.Count<2)
         {
             WeaponList.Add(picked);
             picked.HaveWeapon();
-            weapon = picked;
+            RightWeapon = picked;
         }
         //何か持ってて枠が空いてたら装備せずに拾う
-        else if (weapon != null && WeaponList.Count < 2)
+        else if (RightWeapon != null && WeaponList.Count < 2)
         {
             WeaponList.Add(picked);
             picked.PickWeapon();
         }
         uiController.SlotUpdate(WeaponList);
-        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == weapon));
+        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
     }
 
     /// <summary>
@@ -378,7 +404,7 @@ public class playerController : Character
     /// <param name="sign">持ち替える方向(正負)</param>
     public void ChangeWeapon(int sign)
     {
-        var nowIndex = WeaponList.FindIndex(match => match == weapon);
+        var nowIndex = WeaponList.FindIndex(match => match == RightWeapon);
         if (WeaponList.Count >= 2)
         {
             Weapon will;
@@ -403,13 +429,13 @@ public class playerController : Character
                 will = WeaponList[0];
             }
             //debugText(WeaponList[nowIndex].ToString() +":::"+ Time.time.ToString());
-            weapon.ChangeWeapon();
+            RightWeapon.ChangeWeapon();
             will.HaveWeapon();
-            weapon = will;
+            RightWeapon = will;
         }
 
         uiController.SlotUpdate(WeaponList);
-        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == weapon));
+        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
     }
 
     public override bool explodeDamage(float damage)

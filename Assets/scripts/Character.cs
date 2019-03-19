@@ -42,7 +42,12 @@ public class Character : MonoBehaviour
     /// <summary>
     /// 持っている武器
     /// </summary>
-    [SerializeField] public Weapon weapon;
+    [SerializeField] public Weapon RightWeapon;
+    
+    /// <summary>
+    /// 持っている武器2
+    /// </summary>
+    [SerializeField] public Weapon LeftWeapon;
 
     /// <summary>
     /// キャラクターのtransform.eulerAnglesを保存している変数。
@@ -51,7 +56,7 @@ public class Character : MonoBehaviour
     [NonSerialized] public Vector3 vector;
 
     /// <summary>
-    /// <see cref="weapon"/>を置く場所、
+    /// <see cref="RightWeapon"/>を置く場所、
     /// </summary>
     [SerializeField] public Transform rightWeaponTransform;
 
@@ -74,6 +79,10 @@ public class Character : MonoBehaviour
     /// ブースト中かどうか
     /// </summary>
     protected bool boostFlg = false;
+
+    public const int WEAPON_RIGHT = 1;
+    public const int WEAPON_LEFT = 2;
+    public int NowWeapon = WEAPON_RIGHT;
 
 
     // Use this for initialization
@@ -260,9 +269,13 @@ public class Character : MonoBehaviour
     /// <returns></returns>
     public virtual bool die()
     {
-        if (weapon != null)
+        if (RightWeapon != null)
         {
-            weapon.DropWeapon();
+            RightWeapon.DropWeapon();
+        }
+        if (LeftWeapon != null)
+        {
+            LeftWeapon.DropWeapon();
         }
         Destroy(gameObject);
         return true;

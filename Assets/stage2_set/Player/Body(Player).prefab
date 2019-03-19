@@ -111,12 +111,18 @@ MonoBehaviour:
   moveSpeed: 10
   FlyForce: 200
   HP: 100
+  MaxHP: 100
   MaxEnergy: 100
-  Weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 131347339920959126}
+  NowWeapon: 1
   RotationSensitivity: 500
   body: {fileID: 126878902727707458}
   head: {fileID: 128169749615304222}
   jumpForce: 50
+  pressButton: {fileID: 0}
+  WeaponList: []
   pause: 0
 --- !u!114 &126878902727707512
 MonoBehaviour:
@@ -206,6 +212,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54788662120311436, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54788662120311436, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 65090116642681096, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114751447994126164, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
         type: 3}
       propertyPath: rocket
@@ -227,21 +248,6 @@ PrefabInstance:
       propertyPath: body
       value: 
       objectReference: {fileID: 126878902727707458}
-    - target: {fileID: 65090116642681096, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54788662120311436, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54788662120311436, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114751447994126164, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
     - {fileID: 114671203813000630, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}

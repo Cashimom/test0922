@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     /// <see cref="character"/>が持っているかどうか。
     /// 
     /// </summary>
-    protected bool isHave = false;
+    public bool isHave = false;
 
     /// <summary>
     /// <see cref="character"/>がプレイヤーかどうか
@@ -54,6 +54,8 @@ public class Weapon : MonoBehaviour
     /// 時間をカウントする変数
     /// </summary>
     protected float fireTime = 0.0f;
+
+    private Character nearCharacter;
 
     /*
      エネミーに武器を持たせる方法
@@ -117,7 +119,8 @@ public class Weapon : MonoBehaviour
         if (pc != null&&!isHave)
         {
             pc.NearWeapon = this;
-            character = pc;
+            //character = pc;
+            nearCharacter = pc;
         }
     }
 
@@ -146,7 +149,7 @@ public class Weapon : MonoBehaviour
     /// </summary>
     public void PickWeapon()
     {
-
+        character = nearCharacter;
         isPlayer = (character is playerController);
         GetComponent<BoxCollider>().enabled = false;
         gameObject.SetActive(false);

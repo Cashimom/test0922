@@ -21,7 +21,7 @@ public class ShotRocket : Weapon
 	// Update is called once per frame
 	void Update () {
         base.Update();
-        if (isHave)
+        if (character!=null)
         {
             if (isPlayer)
             {
@@ -34,20 +34,22 @@ public class ShotRocket : Weapon
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
             transform.rotation = character.rightWeaponTransform.rotation;
 
-
-            if (fireTime < fireTick)
-                fireTime += Time.deltaTime;
-            if (isPlayer&&Input.GetButton("Fire1"))
+            if (isHave)
             {
-                Fire1();
-            }
-            if (isPlayer && Input.GetButtonDown("Fire2"))
-            {
-                raser.SetActive(true);
-            }
-            else if (isPlayer && Input.GetButtonUp("Fire2"))
-            {
-                raser.SetActive(false);
+                if (fireTime < fireTick)
+                    fireTime += Time.deltaTime;
+                if (isPlayer && Input.GetButton("Fire1"))
+                {
+                    Fire1();
+                }
+                if (isPlayer && Input.GetButtonDown("Fire2"))
+                {
+                    raser.SetActive(true);
+                }
+                else if (isPlayer && Input.GetButtonUp("Fire2"))
+                {
+                    raser.SetActive(false);
+                }
             }
         }
     }

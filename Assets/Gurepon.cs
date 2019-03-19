@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotgunScript : Weapon
+public class Gurepon : Weapon
 {
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
         base.Start();
     }
@@ -17,20 +17,24 @@ public class ShotgunScript : Weapon
         {
             if (isPlayer)
             {
-                Vector3 pos = character.rightWeaponTransform.position + character.rightWeaponTransform.right * 2;
+                Vector3 pos = character.rightWeaponTransform.position + character.rightWeaponTransform.right * (-6);
                 pos -= character.rightWeaponTransform.up * 3;
-                pos -= character.rightWeaponTransform.forward * (-2);
+                pos -= character.rightWeaponTransform.forward * (4);
                 transform.position = pos;
             }
             else
                 transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
             transform.rotation = character.rightWeaponTransform.rotation;
-            transform.Rotate(0, 180, 0);
+            //transform.Rotate(0, 180, 0);
 
+            if (fireTime < fireTick)
+                fireTime += Time.deltaTime;
+            if (isPlayer)
+            {
+                GameObject.Find("Canvas").GetComponent<UIController>().setGrenade(fireTime / fireTick);
+            }
             if (isHave)
             {
-                if (fireTime < fireTick)
-                    fireTime += Time.deltaTime;
                 if (isPlayer && Input.GetButton("Fire1"))
                 {
                     Fire1();
@@ -44,16 +48,10 @@ public class ShotgunScript : Weapon
         if (fireTime >= fireTick)
         {
             fireTime = 0;
-            for(int i = 0; i < 20; i++)
-            {
-                var f = Fire();
-                var rx = Random.value*(2) -1;
-                var ry = Random.value*(2) -1;
-                f.transform.localPosition += new Vector3(rx*2, ry*2, 0.1f*i);
-                f.transform.rotation *= Quaternion.Euler(rx * 15, ry * 15, 0);
-            }
-            var anime = gameObject.GetComponent<Animator>();
-            anime.Play("Reload");
+            var f= Fire();
+            f.GetComponent<Rigidbody>().AddForce(f.transform.forward*2000+ f.transform.up*400, ForceMode.Impulse);
+            //var anime = gameObject.GetComponent<Animator>();
+            //anime.Play("Reload");
         }
     }
 }
