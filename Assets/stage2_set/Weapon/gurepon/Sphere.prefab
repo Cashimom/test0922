@@ -5112,9 +5112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   destroyParticle: {fileID: 0}
-  explodeDamageValue: 50
+  explodeDamageValue: 30
   TimeLimit: 1.5
   explodeDelay: 1
   area: {fileID: 8941128536332151523}
   adsorption: 0
   collidType: 1
+  strong: 2

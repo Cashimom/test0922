@@ -17,9 +17,9 @@ public class Gurepon : Weapon
         {
             if (isPlayer)
             {
-                Vector3 pos = character.rightWeaponTransform.position + character.rightWeaponTransform.right * (-6);
+                Vector3 pos = character.rightWeaponTransform.position + character.rightWeaponTransform.right * (-3);
                 pos -= character.rightWeaponTransform.up * 3;
-                pos -= character.rightWeaponTransform.forward * (4);
+                pos -= character.rightWeaponTransform.forward * (0);
                 transform.position = pos;
             }
             else

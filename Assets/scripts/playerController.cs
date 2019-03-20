@@ -189,20 +189,7 @@ public class playerController : Character
 
         if (Input.GetKeyDown("q"))
         {
-            if (NowWeapon == WEAPON_RIGHT)
-            {
-                NowWeapon = WEAPON_LEFT;
-                RightWeapon.isHave = false;
-                LeftWeapon.isHave = true;
-                uiController.SetActiveSlot(2);
-            }
-            else if (NowWeapon == WEAPON_LEFT)
-            {
-                NowWeapon = WEAPON_RIGHT;
-                RightWeapon.isHave = true;
-                LeftWeapon.isHave = false;
-                uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
-            }
+            switchWeapon();
         }
 
         //wasdとかで動かす
@@ -436,6 +423,26 @@ public class playerController : Character
 
         uiController.SlotUpdate(WeaponList);
         uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
+    }
+
+    void switchWeapon()
+    {
+        if (NowWeapon == WEAPON_RIGHT&&LeftWeapon!=null)
+        {
+            NowWeapon = WEAPON_LEFT;
+            if(RightWeapon!=null)
+                RightWeapon.isHave = false;
+            LeftWeapon.isHave = true;
+            uiController.SetActiveSlot(2);
+        }
+        else if (NowWeapon == WEAPON_LEFT&&RightWeapon!=null)
+        {
+            NowWeapon = WEAPON_RIGHT;
+            RightWeapon.isHave = true;
+            if(LeftWeapon!=null)
+                LeftWeapon.isHave = false;
+            uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
+        }
     }
 
     public override bool explodeDamage(float damage)

@@ -17,6 +17,15 @@ public class Grenade : RocketScript
 
     [SerializeField] public CollideType collidType;
 
+    public enum StrongAgainst
+    {
+        nomal,
+        Enemy,
+        Building
+    }
+
+    [SerializeField] public StrongAgainst strong;
+
     bool exploded = false;
 
     // Start is called before the first frame update
@@ -58,13 +67,14 @@ public class Grenade : RocketScript
         if (collidType==CollideType.adsorption)
         {
             var jrb = collision.gameObject.GetComponent<Rigidbody>();
+            var joint = gameObject.AddComponent<FixedJoint>();
             if (jrb == null)
             {
-                //joint.connectedAnchor = collision.transform.position;
+                joint.connectedAnchor = collision.transform.position;
             }
             else
             {
-                var joint = gameObject.AddComponent<FixedJoint>();
+                
                 joint.connectedBody = jrb;
             }
         }
@@ -79,13 +89,28 @@ public class Grenade : RocketScript
     private void OnTriggerEnter(Collider other)
     {
         var otherObj = other.gameObject;
-        if (otherObj.GetComponent<Character>() != null)
+        var character = otherObj.GetComponent<Character>();
+        if (character != null)
         {
             var damage = explodeDamageValue;
             if(collidType == CollideType.flash)
             {
                 damage *= 0.7f;
             }
+
+            if(character is EnemyController&&strong==StrongAgainst.Enemy)
+            {
+                damage *= 2.5f;
+            }
+            else if((character is Building || character.gameObject.layer == 10) && strong == StrongAgainst.Building)
+            {
+                damage *= 10;
+            }
+            else
+            {
+                damage *= 1.5f;
+            }
+
             otherObj.GetComponent<Character>().explodeDamage(damage, parent);
         }
     }

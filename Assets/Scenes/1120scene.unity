@@ -22266,13 +22266,13 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
         type: 3}
-      propertyPath: fireTick
-      value: 2
+      propertyPath: isHave
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
         type: 3}
-      propertyPath: isHave
-      value: 0
+      propertyPath: fireTick
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
         type: 3}
@@ -22411,6 +22411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941128537739663554, guid: f36acbcdaa21cc443b1f50c5819784ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
         type: 3}
