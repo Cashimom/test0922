@@ -160,9 +160,10 @@ MonoBehaviour:
   rocket: {fileID: 1302901325242100, guid: 694ea9c44d6b793429e399b0b4d12d60, type: 3}
   ShotTransform: {fileID: 4606193372600796}
   character: {fileID: 0}
-  WeaponTransformDistance: 6
+  WeaponTransformDistance: 0
   fireTick: 0.1
   image: {fileID: 2800000, guid: 67c019b4b6c4d0c45af996eb7b3aa280, type: 3}
+  isHave: 0
 --- !u!1 &1711904229368224
 GameObject:
   m_ObjectHideFlags: 0

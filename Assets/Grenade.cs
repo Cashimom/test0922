@@ -104,7 +104,7 @@ public class Grenade : RocketScript
             }
             else if((character is Building || character.gameObject.layer == 10) && strong == StrongAgainst.Building)
             {
-                damage *= 10;
+                damage *= 100;
             }
             else
             {

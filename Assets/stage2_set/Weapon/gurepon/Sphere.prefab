@@ -5113,7 +5113,7 @@ MonoBehaviour:
   moveSpeed: 1
   destroyParticle: {fileID: 0}
   explodeDamageValue: 30
-  TimeLimit: 1.5
+  TimeLimit: 1
   explodeDelay: 1
   area: {fileID: 8941128536332151523}
   adsorption: 0

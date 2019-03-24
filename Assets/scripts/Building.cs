@@ -25,7 +25,17 @@ public class Building : Character
     /// <returns></returns>
     public override bool explodeDamage(float damage)
     {
-        HP -= damage*3;
+        HP -= damage;
+        if (HP <= 0)
+        {
+            die();
+        }
+        return true;
+    }
+
+    public override bool explodeDamage(float damage,Character character)
+    {
+        HP -= damage ;
         if (HP <= 0)
         {
             die();

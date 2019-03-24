@@ -296,7 +296,7 @@ public class Character : MonoBehaviour
     /// デバッグ用のテキストを表示する
     /// </summary>
     /// <param name="str"></param>
-    protected void debugText(string str)
+    public void debugText(string str)
     {
         var tmp = GameObject.Find("Canvas/kasokudo").GetComponent<TextMeshProUGUI>();
         tmp.text = str;

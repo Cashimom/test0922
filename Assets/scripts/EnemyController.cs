@@ -81,8 +81,8 @@ public class EnemyController : Character
             if (RightWeapon != null)
             {
                 var len_xz = target.transform.position - RightWeapon.ShotTransform.position;
-                len_xz.y = 0;
-                debugText(len_xz.magnitude.ToString());
+                //len_xz.y = 0;
+                //debugText(len_xz.magnitude.ToString());
                 if (len_xz.magnitude > (RightWeapon.ShotTransform.position - transform.position).magnitude*1.5f)
                 {
                     transform.rotation = Quaternion.LookRotation(target.transform.position - RightWeapon.ShotTransform.position);
@@ -102,15 +102,17 @@ public class EnemyController : Character
             //targetの方向に動く
             if (isEDF)
             {
-                if ((target.transform.position - RightWeapon.ShotTransform.position).magnitude > 75)
+                //オブジェクトの固有ナンバーからどっちに動くか判断
+                UnityEngine.Random.InitState(gameObject.GetHashCode());
+                var len = target.transform.position - RightWeapon.ShotTransform.position;
+                if (len.magnitude > 75)
                 {
-                    move(new Vector3(0, 0, 2), 1.6f);
+                    move(new Vector3(UnityEngine.Random.value*5 - 1f, 0, (float)Math.Sqrt(len.magnitude)/10), 1.6f);
                 }
                 else
                 {
-                    //オブジェクトの固有ナンバーからどっちに動くか判断
-                    UnityEngine.Random.InitState(gameObject.GetHashCode());
-                    move(new Vector3((((UnityEngine.Random.Range(1,2)) ) == 1 ? 1 : -1), UnityEngine.Random.Range(-1,1)*0.2f, 0), 1.6f);
+                    move(new Vector3(((UnityEngine.Random.value*3)-1f )
+                        , UnityEngine.Random.Range(-1,1)*0.2f, 0), 1.6f);
                 }
             }
         }

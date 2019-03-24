@@ -1148,7 +1148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4705391421137262, guid: 2d833e43935954f478972ecab48ea904, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -160
+      value: -170.29
       objectReference: {fileID: 0}
     - target: {fileID: 4705391421137262, guid: 2d833e43935954f478972ecab48ea904, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1191,6 +1191,11 @@ PrefabInstance:
       propertyPath: WarpTarget
       value: 
       objectReference: {fileID: 1754913129}
+    - target: {fileID: 114347919188045636, guid: 2d833e43935954f478972ecab48ea904,
+        type: 3}
+      propertyPath: warpHigh
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1574854027982936, guid: 2d833e43935954f478972ecab48ea904, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -8580,7 +8585,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.6811325, b: 0, a: 1}
+  m_Color: {r: 0.8679245, g: 0.6016565, b: 0.036845837, a: 1}
   m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
@@ -8802,7 +8807,7 @@ MonoBehaviour:
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
   SpawnTime: 0.5
-  MaxSpawn: 50
+  MaxSpawn: 100
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0

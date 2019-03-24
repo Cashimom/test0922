@@ -81,6 +81,11 @@ public class Weapon : MonoBehaviour
         {
             isPlayer = true;
         }
+        else
+        {
+
+            gameObject.layer = 12;
+        }
 
         isHave = (character != null);
     }
@@ -151,7 +156,12 @@ public class Weapon : MonoBehaviour
     {
         character = nearCharacter;
         isPlayer = (character is playerController);
+        if (!isPlayer)
+        {
+            gameObject.layer = 12;
+        }
         GetComponent<BoxCollider>().enabled = false;
+        
         gameObject.SetActive(false);
     }
 

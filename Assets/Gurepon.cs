@@ -49,7 +49,7 @@ public class Gurepon : Weapon
         {
             fireTime = 0;
             var f= Fire();
-            f.GetComponent<Rigidbody>().AddForce(f.transform.forward*2000+ f.transform.up*400, ForceMode.Impulse);
+            f.GetComponent<Rigidbody>().AddForce(f.transform.forward*5000, ForceMode.Impulse);
             //var anime = gameObject.GetComponent<Animator>();
             //anime.Play("Reload");
         }

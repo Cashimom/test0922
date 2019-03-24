@@ -65,12 +65,16 @@ public class ShipSystem : MonoBehaviour
     void Update()
     {
         if(spawnCnt<MaxSpawn)spawnTimeCnt += Time.deltaTime;
-        if (spawnTimeCnt > SpawnTime&&spawnCnt<MaxSpawn)
+        var pmax = (int)(((float)MaxSpawn / (float)SpawnPositions.Count) * Math.Floor(((float)spawnCnt-0.1f) / ((float)MaxSpawn / (float)SpawnPositions.Count) + 1));
+        if (pmax > MaxSpawn) pmax = MaxSpawn;
+        GetComponent<EnemyController>().debugText(spawnCnt.ToString() + " / " + pmax.ToString());
+        if (spawnTimeCnt > SpawnTime&&spawnCnt<pmax|| spawnCnt >= pmax&&enemies.Count==0&&spawnCnt<MaxSpawn)
         {
             spawnTimeCnt = 0;
             SpawnMonster1();
         }
-        if (spawnCnt == MaxSpawn)
+        
+        if (spawnCnt >= pmax)
         {
             for(int i = 0; i < enemies.Count; i++)
             {
@@ -80,7 +84,7 @@ public class ShipSystem : MonoBehaviour
                     i--;
                 }
             }
-            if (enemies.Count == 0)
+            if (enemies.Count == 0&& spawnCnt>=MaxSpawn)
             {
 
                 AllFinish = true;
@@ -97,9 +101,15 @@ public class ShipSystem : MonoBehaviour
             position: spawnPos.position - spawnPos.up*10+ spawnPos.right*UnityEngine.Random.Range(-50,50)+ spawnPos.forward * UnityEngine.Random.Range(-51, 51),
             rotation: spawnPos.rotation);
         var eneCon = monster.GetComponent<EnemyController>();
-        var weapon = Instantiate(Weapon1).GetComponent<Weapon>();
+        var weap = Instantiate(Weapon1);
+        weap.layer = 12;
+        foreach(Transform o in weap.transform)
+        {
+            o.gameObject.layer = 12;
+        }
+        var weapon = weap.GetComponent<Weapon>();
         weapon.character = eneCon;
-        weapon.WeaponTransformDistance = 11;
+        //weapon.WeaponTransformDistance = 11;
         eneCon.RightWeapon = weapon;
         eneCon.target = target;
         enemies.Add(eneCon);
