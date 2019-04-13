@@ -79,6 +79,16 @@ public class playerController : Character
     private bool isJumpPressed = false;
 
     /// <summary>
+    /// <see cref="Update"/>でQが押されていたか保持する変数
+    /// </summary>
+    private bool isKeyQPressed = false;
+
+    /// <summary>
+    /// <see cref="Update"/>でJumpが押されていたか保持する変数
+    /// </summary>
+    private bool isKeyFPressed = false;
+
+    /// <summary>
     /// エネルギーのチャージ時間カウント用変数
     /// </summary>
     private float chargeTimeCnt = 0;
@@ -145,6 +155,15 @@ public class playerController : Character
         {
             isJumpPressed = true;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            isKeyQPressed = true;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isKeyFPressed = true;
+        }
+
 
         //gravity,速度制限付き！
         if(rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
@@ -167,7 +186,7 @@ public class playerController : Character
         CursorLock(!pause);
         
         //武器拾う
-        if (Input.GetKeyDown(KeyCode.F)&&NearWeapon!=null)
+        if (isKeyFPressed&&NearWeapon!=null)
         {
             PickUpWeapon(NearWeapon);
             NearWeapon = null;
@@ -187,7 +206,7 @@ public class playerController : Character
         }
 
 
-        if (Input.GetKeyDown("q"))
+        if (isKeyQPressed)
         {
             switchWeapon();
         }
@@ -263,7 +282,8 @@ public class playerController : Character
 
 
         isJumpPressed = false;
-
+        isKeyQPressed = false;
+        isKeyFPressed = false;
     }
 
     /// <summary>

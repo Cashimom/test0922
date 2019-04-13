@@ -129,6 +129,9 @@ public class RocketScript : MonoBehaviour
         var collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
         collider.size *= 5;
+        var sound=GetComponent<AudioSource>();
+        if (sound != null)
+            sound.Play();
         
     }
 

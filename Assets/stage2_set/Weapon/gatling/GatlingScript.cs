@@ -8,10 +8,14 @@ using UnityEngine;
 /// </summary>
 public class GatlingScript : Weapon
 {
+
+    AudioSource audio;
     // Use this for initialization
     void Start () {
         base.Start();
-	}
+
+        audio=GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -51,7 +55,8 @@ public class GatlingScript : Weapon
             fireTime = 0.0f;
             var rs = Fire();
             //rs.moveSpeed = 5;
-
+            
+            //audio.Play();
 
         }
     }
