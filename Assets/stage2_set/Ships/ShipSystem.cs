@@ -67,7 +67,7 @@ public class ShipSystem : MonoBehaviour
         if(spawnCnt<MaxSpawn)spawnTimeCnt += Time.deltaTime;
         var pmax = (int)(((float)MaxSpawn / (float)SpawnPositions.Count) * Math.Floor(((float)spawnCnt-0.1f) / ((float)MaxSpawn / (float)SpawnPositions.Count) + 1));
         if (pmax > MaxSpawn) pmax = MaxSpawn;
-        GetComponent<EnemyController>().debugText(spawnCnt.ToString() + " / " + pmax.ToString());
+        //GetComponent<EnemyController>().debugText(spawnCnt.ToString() + " / " + pmax.ToString());
         if (spawnTimeCnt > SpawnTime&&spawnCnt<pmax|| spawnCnt >= pmax&&enemies.Count==0&&spawnCnt<MaxSpawn)
         {
             spawnTimeCnt = 0;

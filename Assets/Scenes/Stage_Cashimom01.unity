@@ -899,7 +899,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &91738389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1012,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &93139674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1376,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &128546806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1762,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &172375165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2406,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &239392754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,7 +3001,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &316650572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,7 +3558,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &412164744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,7 +3613,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 957463647}
+  RightWeapon: {fileID: 957463647}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -3856,7 +3880,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &468178336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4239,7 +4266,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &539215990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4379,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &641930902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +4839,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 1607973075}
+  RightWeapon: {fileID: 1607973075}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -5248,7 +5284,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &781094745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5358,7 +5397,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &784999178
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,7 +5510,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &796072937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5967,7 +6012,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &869758162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6157,7 +6205,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &896298276
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,7 +6424,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &918435090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6537,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &919970534
 GameObject:
   m_ObjectHideFlags: 0
@@ -6593,7 +6650,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &930791032
 GameObject:
   m_ObjectHideFlags: 0
@@ -6857,7 +6917,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &949940291
 GameObject:
   m_ObjectHideFlags: 0
@@ -6961,6 +7024,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7016,11 +7084,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09aa53c041814464fb501ec80dc4e828, type: 3}
 --- !u!4 &954009672 stripped
@@ -7070,7 +7133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7708,7 +7771,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1061362177
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,7 +7975,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1079224511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,7 +8270,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1150664569
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,7 +8519,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 398721285}
+  RightWeapon: {fileID: 398721285}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -8620,7 +8695,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1199676702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8769,7 +8847,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1214198773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8918,7 +8999,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1224933096
 GameObject:
   m_ObjectHideFlags: 0
@@ -9028,7 +9112,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1226099406
 GameObject:
   m_ObjectHideFlags: 0
@@ -9367,7 +9454,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1327230490
 GameObject:
   m_ObjectHideFlags: 0
@@ -9419,7 +9509,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 1525166001}
+  RightWeapon: {fileID: 1525166001}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -9592,7 +9685,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1333800782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9884,7 +9980,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1384376465
 GameObject:
   m_ObjectHideFlags: 0
@@ -9994,7 +10093,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1405152045
 GameObject:
   m_ObjectHideFlags: 0
@@ -11141,7 +11243,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1585543773
 GameObject:
   m_ObjectHideFlags: 0
@@ -11342,7 +11447,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1001 &1607973074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11595,7 +11703,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1643521820
 GameObject:
   m_ObjectHideFlags: 0
@@ -11920,7 +12031,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 869758163}
+  RightWeapon: {fileID: 869758163}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -12250,7 +12364,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1800644612
 GameObject:
   m_ObjectHideFlags: 0
@@ -12393,7 +12510,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 1882856513}
+  RightWeapon: {fileID: 1882856513}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}
@@ -12748,7 +12868,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1871225143
 GameObject:
   m_ObjectHideFlags: 0
@@ -13239,7 +13362,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1928346522
 GameObject:
   m_ObjectHideFlags: 0
@@ -13297,7 +13423,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1933751059
 GameObject:
   m_ObjectHideFlags: 0
@@ -13564,9 +13693,9 @@ Transform:
   - {fileID: 1182705257}
   - {fileID: 398721286}
   - {fileID: 412164745}
-  - {fileID: 2102573134}
-  - {fileID: 19574587215795444}
   - {fileID: 957463648}
+  - {fileID: 19574587215795444}
+  - {fileID: 2102573134}
   - {fileID: 657688998}
   - {fileID: 1607973076}
   - {fileID: 1327230491}
@@ -13704,7 +13833,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1954979444
 GameObject:
   m_ObjectHideFlags: 0
@@ -13996,7 +14128,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &1985708643
 GameObject:
   m_ObjectHideFlags: 0
@@ -14197,7 +14332,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &2026710116
 GameObject:
   m_ObjectHideFlags: 0
@@ -14398,7 +14536,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &2056671303
 GameObject:
   m_ObjectHideFlags: 0
@@ -14508,7 +14649,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &2069757573
 GameObject:
   m_ObjectHideFlags: 0
@@ -14580,7 +14724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14728,7 +14872,10 @@ MonoBehaviour:
   HP: 1000
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 0}
+  RightWeapon: {fileID: 0}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
 --- !u!1 &2114682350
 GameObject:
   m_ObjectHideFlags: 0
@@ -15166,7 +15313,10 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   MaxEnergy: 100
-  weapon: {fileID: 2102573133}
+  RightWeapon: {fileID: 2102573133}
+  LeftWeapon: {fileID: 0}
+  rightWeaponTransform: {fileID: 0}
+  NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
   target: {fileID: 743508642}

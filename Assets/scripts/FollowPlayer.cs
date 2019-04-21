@@ -98,7 +98,6 @@ public class FollowPlayer : MonoBehaviour {
 
         if (isTPS)
         {
-            var lookAt = Target.position + Vector3.up * HeightM;
 
             // 回転
             //transform.RotateAround(lookAt, Vector3.up, 0);
@@ -110,14 +109,33 @@ public class FollowPlayer : MonoBehaviour {
                 angle.x = 89;
             }
             transform.eulerAngles = angle;
+
+
             // カメラとプレイヤーとの間の距離を調整
+
+            var lookAt = Target.position + Vector3.up * HeightM;
             transform.position = lookAt - transform.forward * DistanceToPlayerM;
 
-            // 注視点の設定
-            transform.LookAt(lookAt);
+            //Target -> This(Camera)にRayを飛ばしてHitしたらカメラの位置を調整
+            RaycastHit hit;
+            Vector3 direction = transform.position - Target.transform.position;
+            if (Physics.Raycast(Target.transform.position, direction.normalized ,out hit,direction.magnitude))
+            {
+                Vector3 localHit = hit.point - Target.transform.position;
+                lookAt = Target.position + Vector3.up * (HeightM*(localHit.magnitude / direction.magnitude));
+                transform.position = Target.transform.position + (localHit)*0.99f;
+                transform.LookAt(lookAt);
+            }
+            else
+            {
+                // カメラを横にずらして中央を開ける
+                transform.position = transform.position + transform.right * SlideDistanceM;
+                // 注視点の設定
+                transform.LookAt(lookAt);
+            }
+            
 
-            // カメラを横にずらして中央を開ける
-            transform.position = transform.position + transform.right * SlideDistanceM;
+
         }
         else
         {

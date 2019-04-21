@@ -7,6 +7,7 @@
 		_LineSize("LineSize",Range(0,1)) = 0.1
 		_Boxes("Boxes",Int) = 7
 		_Speed("Speed",Float) = 0.5
+		_LineDarkness("LineDarkness",Range(0,1))=0.3
     }
     SubShader
     {
@@ -44,6 +45,7 @@
 			half _LineSize;
 			int _Boxes;
 			half _Speed;
+			half _LineDarkness;
 
             v2f vert (appdata v)
             {
@@ -68,7 +70,7 @@
 				fixed4 col = _Color;
 				float2 p = i.uv*_Boxes;
 				p.x += _Time.w*_Speed;
-				col.a += Box(frac(p))*0.3;
+				col.a += Box(frac(p))*_LineDarkness;
 				
                 return col;
             }
