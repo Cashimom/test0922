@@ -26,6 +26,7 @@ Material:
     m_Floats:
     - _Box: 0
     - _Boxes: 5.07
+    - _LineDarkness: 0.3
     - _LineSize: 0.1
     - _Speed: -2.02
     m_Colors:

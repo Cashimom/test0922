@@ -120,6 +120,7 @@ public class RocketScript : MonoBehaviour
     /// </summary>
     public void Hit()
     {
+        GetComponent<MeshRenderer>().enabled = false;
         isCollisionEntered = true;
         var particle = Instantiate(destroyParticle, transform);
         particle.Play();
