@@ -14,7 +14,7 @@ public class playerController : Character
     /// <summary>
     /// マウスの感度
     /// </summary>
-    [SerializeField] private float RotationSensitivity = 1000f;// 感度
+    [SerializeField] public float RotationSensitivity = 1000f;// 感度
 
     /// <summary>
     /// 胴体のゲームオブジェクト
@@ -411,6 +411,10 @@ public class playerController : Character
     /// <param name="sign">持ち替える方向(正負)</param>
     public void ChangeWeapon(int sign)
     {
+        if (NowWeapon == WEAPON_LEFT)
+        {
+            switchWeapon();
+        }
         var nowIndex = WeaponList.FindIndex(match => match == RightWeapon);
         if (WeaponList.Count >= 2)
         {
