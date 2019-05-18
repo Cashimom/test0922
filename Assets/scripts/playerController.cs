@@ -212,7 +212,7 @@ public class playerController : Character
         }
 
         //wasdとかで動かす
-        float shiftValue = 2.0f;
+        float shiftValue = 1.0f;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             //shiftValue = 2.0f;
