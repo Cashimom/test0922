@@ -12641,7 +12641,7 @@ MonoBehaviour:
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
-  SpawnTime: 1000
+  SpawnTime: 1
   MaxSpawn: 50
 --- !u!114 &1129087489
 MonoBehaviour:
@@ -12915,7 +12915,7 @@ PrefabInstance:
     - target: {fileID: 7330652979954869160, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: fireTick
-      value: 1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869160, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
@@ -12930,17 +12930,17 @@ PrefabInstance:
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.42
+      value: 47.07
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -44
+      value: -51.07
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.28
+      value: 41.72
       objectReference: {fileID: 0}
     - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
         type: 3}
@@ -29522,26 +29522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body(Player)
       objectReference: {fileID: 0}
-    - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
-        type: 3}
-      propertyPath: Weapon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: LeftWeapon
       value: 
       objectReference: {fileID: 1933783607}
-    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
-        type: 3}
-      propertyPath: rightWeaponTransform
-      value: 
-      objectReference: {fileID: 1997165345}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x

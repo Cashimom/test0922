@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 2975646128955056776}
   - component: {fileID: 3989191415037964194}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: Aiming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2513,6 +2513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8c0dc32790bca44a22de809aab3154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  head: {fileID: 0}
 --- !u!1 &5421710974059702060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000882868267662989}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,6 +15,10 @@ public class Aiming : MonoBehaviour
     void Start()
     {
         rect = GetComponent<RectTransform>();
+        if (camera == null || head == null)
+        {
+            this.enabled = false;
+        }
     }
 
     // Update is called once per frame

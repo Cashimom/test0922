@@ -51,12 +51,18 @@ public class playerController : Character
             this.nearWeapon = value;
             if (value != null)
             {
-                pressButton.SetActive(true);
-                pressButton.transform.Find("Weapon Image").GetComponent<RawImage>().texture=nearWeapon.image;
+                if (pressButton != null)
+                {
+                    pressButton.SetActive(true);
+                    pressButton.transform.Find("Weapon Image").GetComponent<RawImage>().texture = nearWeapon.image;
+                }
             }
             else
             {
-                pressButton.SetActive(false);
+                if (pressButton != null)
+                {
+                    pressButton.SetActive(false);
+                }
             }
             
         }

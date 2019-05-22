@@ -84,7 +84,7 @@ public class FollowPlayer : MonoBehaviour {
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
 
         //var rotX = playerController.rotX;//Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
