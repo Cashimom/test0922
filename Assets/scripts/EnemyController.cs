@@ -34,6 +34,8 @@ public class EnemyController : Character
     /// </summary>
     [SerializeField] private bool isEDF = false;
 
+    [SerializeField] private float deathTime = 1.0f;
+
     [NonSerialized] public bool killedByNotPlayer = false;
 
     /// <summary>
@@ -51,11 +53,17 @@ public class EnemyController : Character
     /// </summary>
     private int delayCnt = 0;
 
+    private Material deathMaterial;
+
+    private float sceneStartTime = 0.0f;
+
     // Use this for initialization
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
         if(rightWeaponTransform==null)rightWeaponTransform = transform;
+        deathMaterial= Resources.Load<Material>("Jouhatu");
+        sceneStartTime = Time.time;
     }
 	
 	// Update is called once per frame
@@ -166,6 +174,37 @@ public class EnemyController : Character
             return true;
         }
         return false;
+    }
+
+    public override bool die()
+    {
+        deathMaterial.SetFloat("_Period", deathTime);
+        deathMaterial.SetFloat("_StartTime", Time.fixedTime );
+        var ren = transform.GetComponentsInChildren<Renderer>();
+        foreach (var r in ren)
+        {
+            r.material = deathMaterial;
+        }
+        //GetComponent<Renderer>().material = deathMaterial;
+        if (RightWeapon != null)
+        {
+            RightWeapon.DropWeapon();
+        }
+        if (LeftWeapon != null)
+        {
+            LeftWeapon.DropWeapon();
+        }
+        if (rb != null)
+        {
+            rb.Sleep();
+        }
+        if (isEDF)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        Destroy(gameObject,deathTime);
+        this.enabled = false;
+        return true;//base.die();
     }
 
     /// <summary>
