@@ -7,7 +7,7 @@ using TMPro;
 
 /// <summary>
 /// キャラクターを作るときに継承させるクラス。
-/// extended in <seealso cref="playerController"/>
+/// extended in <seealso cref="PlayerController"/>
 /// <seealso cref="EnemyController"/>
 /// </summary>
 public class Character : MonoBehaviour
@@ -85,15 +85,6 @@ public class Character : MonoBehaviour
     public int NowWeapon = WEAPON_RIGHT;
 
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
     /// <summary>
     /// 基本移動
     /// </summary>
@@ -144,7 +135,7 @@ public class Character : MonoBehaviour
             rb.AddForce(impulseForce, ForceMode.Impulse);
             boostFlg = true;
             boostFlg = true;
-            StartCoroutine(DelayMethod2(0.1f, () =>
+            StartCoroutine(DelayMethod2(1f, () =>
             {
                 boostFlg = false;
                 //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
@@ -153,6 +144,18 @@ public class Character : MonoBehaviour
                 vel.x = vel.z = 0;
                 rb.velocity = vel;*/
             }));
+        }
+    }
+
+    /// <summary>
+    /// ブーストした後のスピードの減衰
+    /// </summary>
+    public void boostDecay()
+    {
+        if (boostFlg)
+        {
+            var vel = rb.velocity;
+            rb.AddForce(-(vel*2f), ForceMode.Force);
         }
     }
 

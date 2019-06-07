@@ -77,7 +77,7 @@ public class Weapon : MonoBehaviour
 
     // Use this for initialization
     public void Start () {
-        if (character is playerController)
+        if (character is PlayerController)
         {
             isPlayer = true;
         }
@@ -104,7 +104,7 @@ public class Weapon : MonoBehaviour
     public RocketScript Fire()
     {
         var fire = Instantiate(rocket, ShotTransform.position + ShotTransform.forward * 2, ShotTransform.rotation);
-        if(character is playerController)fire.layer = 11;
+        if(character is PlayerController)fire.layer = 11;
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
         return rs;
@@ -120,7 +120,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var pc = other.gameObject.GetComponent<playerController>();
+        var pc = other.gameObject.GetComponent<PlayerController>();
         if (pc != null&&!isHave)
         {
             pc.NearWeapon = this;
@@ -131,7 +131,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var pc = other.gameObject.GetComponent<playerController>();
+        var pc = other.gameObject.GetComponent<PlayerController>();
         if (pc != null && !isHave) 
         {
             pc.NearWeapon = null;
@@ -155,7 +155,7 @@ public class Weapon : MonoBehaviour
     public void PickWeapon()
     {
         character = nearCharacter;
-        isPlayer = (character is playerController);
+        isPlayer = (character is PlayerController);
         if (!isPlayer)
         {
             gameObject.layer = 12;
@@ -170,6 +170,7 @@ public class Weapon : MonoBehaviour
     /// </summary>
     public void HaveWeapon()
     {
+
         PickWeapon();
         isHave = true;
         gameObject.SetActive(true);

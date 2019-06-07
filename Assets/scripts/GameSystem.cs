@@ -10,7 +10,7 @@ public class GameSystem : MonoBehaviour
     [SerializeField] public GameObject Player;
     [SerializeField] public Vector3 SpawnPosition;
     [SerializeField] public List<ShipSystem> shipSystems;
-    private playerController playerController;
+    private PlayerController playerController;
 
     private float clearCnt = 0;
 
@@ -21,9 +21,9 @@ public class GameSystem : MonoBehaviour
         if (Player == null)
         {
             Debug.LogError("Playerが設定されていない");
-            Application.Quit();
+            //Application.Quit();
         }
-        playerController = Player.GetComponent<playerController>();
+        playerController = Player.GetComponent<PlayerController>();
         if (SpawnPosition == new Vector3(0,0,0))
         {
             SpawnPosition = Player.transform.position;

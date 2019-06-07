@@ -223,7 +223,7 @@ public class EnemyController : Character
                 RightWeapon.character = null;
                 Destroy(RightWeapon.gameObject);
             }
-            if (!(whose is playerController)) {
+            if (!(whose is PlayerController)) {
                 gameObject.SetActive(false);
                 if (RightWeapon != null)
                     RightWeapon.gameObject.SetActive(false);

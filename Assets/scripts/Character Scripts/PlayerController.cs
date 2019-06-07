@@ -9,13 +9,8 @@ using UnityEngine.UI;
 /// プレイヤーの処理を実装しているクラス
 /// extends <see cref="Character"/>
 /// </summary>
-public class playerController : Character
+public class PlayerController : Character
 {
-    /// <summary>
-    /// マウスの感度
-    /// </summary>
-    [SerializeField] public float RotationSensitivity = 1000f;// 感度
-
     /// <summary>
     /// 胴体のゲームオブジェクト
     /// </summary>
@@ -27,16 +22,27 @@ public class playerController : Character
     [SerializeField] private GameObject head;
 
     /// <summary>
-    /// <see cref="Jump"/>する強さ
-    /// </summary>
-    [SerializeField] private float jumpForce = 50;
-
-    /// <summary>
     /// "Press F"って表示させるためのテキスト
     /// </summary>
     [SerializeField] private GameObject pressButton;
 
     [SerializeField] private List<Weapon> WeaponList;
+
+
+
+    //public PlayerContainer playerContainer;
+
+    /// <summary>
+    /// マウスの感度
+    /// </summary>
+    [SerializeField] public float RotationSensitivity = 1000f;// 感度
+
+    /// <summary>
+    /// <see cref="Jump"/>する強さ
+    /// </summary>
+    [SerializeField] private float jumpForce = 50;
+
+    public float OnFloorHeight = 1.2f;
 
     private Weapon nearWeapon;
     /// <summary>
@@ -72,6 +78,17 @@ public class playerController : Character
         }
     }
 
+    //E押したらポーズ
+    public bool pause = false;
+
+    [SerializeField] public PlayerJob playerJob;
+
+    
+
+    public List<PlayerJob> jobs;
+
+
+
     private GameObject shield;
     
     /// <summary>
@@ -101,9 +118,6 @@ public class playerController : Character
 
     private UIController uiController;
 
-    //E押したらポーズ
-    public bool pause = false;
-
     /// <summary>
     /// HPがなくなって死ぬときの処理を入れておく。
     /// insert by <see cref="GameSystem"/>
@@ -112,7 +126,8 @@ public class playerController : Character
 
     private Character myShield;
 
-    private void Start()
+
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = head.transform;
@@ -131,14 +146,20 @@ public class playerController : Character
             uiController.SlotUpdate(LeftWeapon, 2);
             LeftWeapon.isHave = false;
         }
+
+        if (playerJob != null)
+        {
+            playerJob.player = this;
+            playerJob._Start();
+        }
     }
 
-    private void Update()
+    public virtual void Update()
     {
 
         //int onObject = 3 << 9;
         RaycastHit objectHit;
-        bool isHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, 1.2f);
+        bool isHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, OnFloorHeight);
         if (isHit)
         {
             chargeTimeCnt += Time.deltaTime;
@@ -173,6 +194,12 @@ public class playerController : Character
 
         //gravity,速度制限付き！
         if(rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
+
+
+        if (playerJob != null)
+        {
+            playerJob._Update();
+        }
     }
 
     void FixedUpdate()
@@ -244,6 +271,10 @@ public class playerController : Character
         {
             Energy -= 5;
             boostMove(mx, mz);
+        }
+        if (boostFlg)
+        {
+            boostDecay();
         }
 
         //滞空する

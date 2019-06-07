@@ -28,7 +28,7 @@ public class Tutorial : MonoBehaviour
 
     void GameStart(Collider other)
     {
-        if (other.gameObject.tag == "Character" && other.gameObject.GetComponent<Character>() is playerController)
+        if (other.gameObject.tag == "Character" && other.gameObject.GetComponent<Character>() is PlayerController)
         {
             gameSystem.gameObject.SetActive(true);
             foreach(var obj in willActive)

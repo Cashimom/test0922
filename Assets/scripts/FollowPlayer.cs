@@ -62,9 +62,9 @@ public class FollowPlayer : MonoBehaviour {
 
     /// <summary>
     /// カメラを回転させる用。
-    /// using <see cref="playerController.vector"/>
+    /// using <see cref="PlayerController.vector"/>
     /// </summary>
-    [SerializeField] private playerController playerController;
+    [SerializeField] private PlayerController playerController;
 
     /// <summary>
     /// trueでTPSカメラ、falseでFPSカメラ
@@ -80,7 +80,7 @@ public class FollowPlayer : MonoBehaviour {
         }
         if (playerController == null)
         {
-            playerController = Target.GetComponent<playerController>();
+            playerController = Target.GetComponent<PlayerController>();
         }
     }
 

@@ -16,7 +16,7 @@ public class Setting : MonoBehaviour
 
     [SerializeField] Slider fieldOfView;
 
-    [SerializeField] playerController player;
+    [SerializeField] PlayerController player;
 
     [SerializeField] Camera camera;
 

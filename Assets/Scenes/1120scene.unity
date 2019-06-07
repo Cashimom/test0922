@@ -29734,9 +29734,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
+      propertyPath: WeaponList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
       propertyPath: LeftWeapon
       value: 
       objectReference: {fileID: 1933783607}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: playerJob
+      value: 
+      objectReference: {fileID: 5768295302789221076, guid: d016392c9d630e347b09b84ff702c7bf,
+        type: 3}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: RightWeapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: WeaponList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -67,7 +67,7 @@ MonoBehaviour:
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
+  rightWeaponTransform: {fileID: 1918341719101329102}
   NowWeapon: 1
   cycle: 1
   moveVec: {x: 0, y: 0, z: 0}
