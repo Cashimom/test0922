@@ -18,4 +18,9 @@ public class PlayerJob : MonoBehaviour
     {
         
     }
+
+    public virtual void _End()
+    {
+
+    }
 }

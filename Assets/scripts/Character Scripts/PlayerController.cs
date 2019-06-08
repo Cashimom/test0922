@@ -83,9 +83,9 @@ public class PlayerController : Character
 
     [SerializeField] public PlayerJob playerJob;
 
-    
-
     public List<PlayerJob> jobs;
+
+    private int jobIndex;
 
 
 
@@ -107,9 +107,9 @@ public class PlayerController : Character
     private bool isKeyQPressed = false;
 
     /// <summary>
-    /// <see cref="Update"/>でJumpが押されていたか保持する変数
+    /// <see cref="Update"/>でEが押されていたか保持する変数
     /// </summary>
-    private bool isKeyFPressed = false;
+    private bool isKeyEPressed = false;
 
     /// <summary>
     /// エネルギーのチャージ時間カウント用変数
@@ -147,6 +147,11 @@ public class PlayerController : Character
             LeftWeapon.isHave = false;
         }
 
+        if (jobs.Count > 0)
+        {
+            jobIndex = -1;
+            playerJob = null;
+        }
         if (playerJob != null)
         {
             playerJob.player = this;
@@ -186,15 +191,35 @@ public class PlayerController : Character
         {
             isKeyQPressed = true;
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            isKeyFPressed = true;
+            isKeyEPressed = true;
         }
 
 
         //gravity,速度制限付き！
         if(rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
 
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            jobIndex++;
+            if (playerJob!= null)
+            {
+                playerJob._End();
+            }
+            if(jobIndex >= jobs.Count)
+            {
+                jobIndex = -1;
+                playerJob = null;
+            }
+            else
+            {
+                playerJob = jobs[jobIndex];
+                playerJob.player = this;
+                playerJob._Start();
+            }
+            
+        }
 
         if (playerJob != null)
         {
@@ -210,16 +235,16 @@ public class PlayerController : Character
         var rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
         Rotation(rotX, rotY);
 
-        //Eが押されたらpause状態をswitch
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            pause = !pause;
-        }
-        //pause状態ならマウスカーソルをだす
-        CursorLock(!pause);
+        ////Eが押されたらpause状態をswitch
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    pause = !pause;
+        //}
+        ////pause状態ならマウスカーソルをだす
+        //CursorLock(!pause);
         
         //武器拾う
-        if (isKeyFPressed&&NearWeapon!=null)
+        if (isKeyEPressed&&NearWeapon!=null)
         {
             PickUpWeapon(NearWeapon);
             NearWeapon = null;
@@ -320,7 +345,7 @@ public class PlayerController : Character
 
         isJumpPressed = false;
         isKeyQPressed = false;
-        isKeyFPressed = false;
+        isKeyEPressed = false;
     }
 
     /// <summary>
@@ -353,7 +378,7 @@ public class PlayerController : Character
     public void Jump()
     {
         RaycastHit objectHit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, 1.2f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, OnFloorHeight))
         {
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             secondJumpFlg = false;
@@ -504,6 +529,24 @@ public class PlayerController : Character
                 LeftWeapon.isHave = false;
             uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
         }
+    }
+
+    public void setPlayerHP(float delta)
+    {
+        HP += delta;
+        HP = Mathf.Min(HP, MaxHP);
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        tmp.text = ((int)HP).ToString();
+        if (delta > 0)
+        {
+            uiController.Health(HP,MaxHP);
+        }
+        else
+        {
+            uiController.Damage(HP, MaxHP);
+        }
+        if (HP <= 0 && dieFunc != null)
+            dieFunc();
     }
 
     public override bool explodeDamage(float damage)

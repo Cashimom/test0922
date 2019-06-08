@@ -79,6 +79,17 @@ public class UIController : MonoBehaviour
             fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
         }));
     }
+    public void Health(float now, float max)
+    {
+        HPSlider.value = now / max;
+        var fill = HPSlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
+        if (fill.color != new Color(1, 0.3f, 0.3f))
+            fill.color = new Color(0.3f, 0.6f, 0.6f);
+        StartCoroutine(DelayMethod(0.1f, () =>
+        {
+            fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
+        }));
+    }
 
     public void setGrenade(float value)
     {

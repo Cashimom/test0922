@@ -152,11 +152,8 @@ public class Character : MonoBehaviour
     /// </summary>
     public void boostDecay()
     {
-        if (boostFlg)
-        {
-            var vel = rb.velocity;
-            rb.AddForce(-(vel*2f), ForceMode.Force);
-        }
+        var vel = rb.velocity;
+        rb.AddForce(-(vel*2f), ForceMode.Force);
     }
 
     /// <summary>

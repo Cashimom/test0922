@@ -29739,6 +29739,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
+      propertyPath: jobs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
       propertyPath: LeftWeapon
       value: 
       objectReference: {fileID: 1933783607}
@@ -29746,7 +29751,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerJob
       value: 
-      objectReference: {fileID: 5768295302789221076, guid: d016392c9d630e347b09b84ff702c7bf,
+      objectReference: {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415,
         type: 3}
     - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
@@ -29757,6 +29762,28 @@ PrefabInstance:
         type: 3}
       propertyPath: WeaponList.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: jobs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5768295302789221076, guid: d016392c9d630e347b09b84ff702c7bf,
+        type: 3}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: jobs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415,
+        type: 3}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: HP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: MaxHP
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707518, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
