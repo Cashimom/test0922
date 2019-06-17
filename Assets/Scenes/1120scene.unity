@@ -4488,6 +4488,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674859573}
+  - component: {fileID: 674859574}
+  - component: {fileID: 674859575}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4509,6 +4511,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &674859574
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674859572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 100
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &674859575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674859572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7ecd926ff28394cacb3667192ce6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Monster: {fileID: 1918341719101329098, guid: d0c678902a79c5a4da769fadf6c1a470,
+    type: 3}
+  _Weapon: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
+  _Target: {fileID: 0}
+  monsterCount: 20
+  range: 100
 --- !u!1 &678053521
 GameObject:
   m_ObjectHideFlags: 0
@@ -12847,8 +12880,8 @@ MonoBehaviour:
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
-  SpawnTime: 1
-  MaxSpawn: 50
+  SpawnTime: 20
+  MaxSpawn: 5000
 --- !u!114 &1129087489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29839,6 +29872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 128169749615304222, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: m_TagString
+      value: Character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09aa53c041814464fb501ec80dc4e828, type: 3}

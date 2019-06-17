@@ -210,7 +210,7 @@ Material:
     - _utsVersion: 2.06
     m_Colors:
     - _1st_ShadeColor: {r: 0.21266466, g: 0.65959734, b: 0.764151, a: 1}
-    - _2nd_ShadeColor: {r: 1, g: 0.033018887, b: 0.17630063, a: 1}
+    - _2nd_ShadeColor: {r: 0.031372547, g: 1, b: 0.9394331, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 0.172549, g: 0.531439, b: 0.77254903, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

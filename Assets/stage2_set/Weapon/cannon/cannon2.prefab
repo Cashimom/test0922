@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a43060535024a9845827c4a0f4d06429, type: 2}
+  - {fileID: 2100000, guid: 1e03ac3154e7aad419011c8f6eb8a585, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,6 +299,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.5
   image: {fileID: 2800000, guid: 2c9d53ae39f8a964598c9aa7912a018f, type: 3}
+  isHave: 0
   raser: {fileID: 7330652979617934601}
 --- !u!1 &7330652979988153442
 GameObject:
@@ -387,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a43060535024a9845827c4a0f4d06429, type: 2}
+  - {fileID: 2100000, guid: 9d4ba6caada7b5d41b329064d6bb535f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

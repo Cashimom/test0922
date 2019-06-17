@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gurepon_Material2
+  m_Name: cannon_material
   m_Shader: {fileID: 4800000, guid: 9baf30ce95c751649b14d96da3a4b4d5, type: 3}
   m_ShaderKeywords: _INVERSE_Z_AXIS_BLD_ON _IS_BLENDADDTOMATCAP_ON _IS_FILTER_HICUTPOINTLIGHTCOLOR_ON
     _IS_LIGHTCOLOR_1ST_SHADE_ON _IS_LIGHTCOLOR_2ND_SHADE_ON _IS_LIGHTCOLOR_AP_RIMLIGHT_ON
@@ -119,16 +119,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _1st2nd_Shades_Feather: 0.219
-    - _1st_ShadeColor_Feather: 0.156
-    - _1st_ShadeColor_Step: 0.79
-    - _2nd_ShadeColor_Feather: 0.219
-    - _2nd_ShadeColor_Step: 0.706
+    - _1st2nd_Shades_Feather: 0.138
+    - _1st_ShadeColor_Feather: 0.247
+    - _1st_ShadeColor_Step: 0.803
+    - _2nd_ShadeColor_Feather: 0.138
+    - _2nd_ShadeColor_Step: 0.344
     - _Add_Antipodean_RimLight: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
-    - _BaseColor_Step: 0.79
-    - _BaseShade_Feather: 0.156
+    - _BaseColor_Step: 0.803
+    - _BaseShade_Feather: 0.247
     - _BlurLevelMatcap: 0
     - _BumpScale: 1
     - _BumpScaleMatcap: 1
@@ -180,14 +180,14 @@ Material:
     - _Offset_Z: 0
     - _Outline_Width: 0
     - _Parallax: 0.02
-    - _RimLight: 1
+    - _RimLight: 0
     - _RimLight_FeatherOff: 0
     - _RimLight_InsideMask: 0.0001
-    - _RimLight_Power: 0.364
+    - _RimLight_Power: 0.1
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0.706
+    - _ShadeColor_Step: 0.344
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -209,14 +209,14 @@ Material:
     - _utsTechnique: 0
     - _utsVersion: 2.06
     m_Colors:
-    - _1st_ShadeColor: {r: 0.27058825, g: 0.3137255, b: 0.44313726, a: 1}
-    - _2nd_ShadeColor: {r: 0.112362035, g: 0.9528302, b: 0.9528302, a: 1}
+    - _1st_ShadeColor: {r: 0.10426309, g: 0.23523208, b: 0.6698113, a: 1}
+    - _2nd_ShadeColor: {r: 0.0240299, g: 0.108447015, b: 0.33962262, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.47620454, g: 0.35686275, b: 0.62352943, a: 1}
+    - _BaseColor: {r: 0.7398095, g: 0.77326286, b: 0.8962264, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emissive_Color: {r: 0.18485224, g: 0.4490384, b: 0.5849056, a: 0.1882353}
+    - _Emissive_Color: {r: 0.012281951, g: 0.03638837, b: 0.11320752, a: 1}
     - _HighColor: {r: 0, g: 0, b: 0, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _Outline_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _RimLightColor: {r: 1, g: 0.0141509175, b: 0.03134444, a: 1}
+    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
