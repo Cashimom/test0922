@@ -23,7 +23,7 @@ public class ShotgunScript : Weapon
                 transform.position = pos;
             }
             else
-                transform.position = character.rightWeaponTransform.position + character.rightWeaponTransform.right * WeaponTransformDistance;
+                transform.position = character.transform.position + character.transform.forward * 20;
             transform.rotation = character.rightWeaponTransform.rotation;
             transform.Rotate(0, 180, 0);
 

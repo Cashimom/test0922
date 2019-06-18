@@ -48,7 +48,7 @@ public class SavingObject : MonoBehaviour
     {
         for(int i=0; i < monsterCount;i++)
         {
-            var vec = new Vector3(UnityEngine.Random.value*2-1, UnityEngine.Random.value*2-1, UnityEngine.Random.value*2-1).normalized;
+            var vec = new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1).normalized;
             vec *= range ;
             vec *= Random.value;
 
@@ -58,16 +58,14 @@ public class SavingObject : MonoBehaviour
 
     public EnemyController SpawnMonster1(GameObject monster ,GameObject weapon ,GameObject target,Vector3 pos)
     {
-        var _monster = Instantiate(monster,
-            position: pos,
-            rotation: Quaternion.Euler(pos));
+        var _monster = Instantiate(monster, position: pos, rotation: Quaternion.Euler(pos));
         var eneCon = _monster.GetComponent<EnemyController>();
         var weap = Instantiate(weapon);
-        weap.layer = 12;
-        foreach (Transform o in weap.transform)
-        {
-            o.gameObject.layer = 12;
-        }
+        //weap.layer = 12;
+        //foreach (Transform o in weap.transform)
+        //{
+        //    o.gameObject.layer = 12;
+        //}
         var _weapon = weap.GetComponent<Weapon>();
         _weapon.character = eneCon;
         //weapon.WeaponTransformDistance = 11;
