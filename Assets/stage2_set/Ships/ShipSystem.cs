@@ -35,6 +35,8 @@ public class ShipSystem : MonoBehaviour
     /// </summary>
     [SerializeField] private int MaxSpawn = 100;
 
+    [SerializeField] public List<SavingObject> targetObjects;
+
     /// <summary>
     /// <see cref="this"/>からスポーンしたすべてのモンスターが倒されたかどうか
     /// </summary>
@@ -62,7 +64,7 @@ public class ShipSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(spawnCnt<MaxSpawn)spawnTimeCnt += Time.deltaTime;
         var pmax = (int)(((float)MaxSpawn / (float)SpawnPositions.Count) * Math.Floor(((float)spawnCnt-0.1f) / ((float)MaxSpawn / (float)SpawnPositions.Count) + 1));
@@ -89,6 +91,20 @@ public class ShipSystem : MonoBehaviour
 
                 AllFinish = true;
             }
+        }
+
+        var allTargetsDestroy = true;
+        foreach(var to in targetObjects)
+        {
+            if (to.savingObject!=null&& to.savingObject.activeSelf)
+            {
+                allTargetsDestroy = false;
+                break;
+            }
+        }
+        if (allTargetsDestroy)
+        {
+            AllFinish = true;
         }
     }
 

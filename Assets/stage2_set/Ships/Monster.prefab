@@ -74,7 +74,7 @@ MonoBehaviour:
   target: {fileID: 0}
   delay: 20
   isEDF: 1
-  deathTime: 1.5
+  deathTime: 1
 --- !u!54 &5227621291954048168
 Rigidbody:
   m_ObjectHideFlags: 0

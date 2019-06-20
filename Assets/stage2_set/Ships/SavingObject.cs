@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SavingObject : MonoBehaviour
 {
+    [SerializeField] public GameObject savingObject;
+
     [SerializeField]public GameObject _Monster;
 
     [SerializeField] public GameObject _Weapon;
