@@ -125,7 +125,7 @@ public class RocketScript : MonoBehaviour
         var particle = Instantiate(destroyParticle, transform);
         particle.Play();
         Destroy(gameObject, destroyTime+(explodeDelay));
-        rb.isKinematic = true;
+        rb.Sleep();
         defaultScale = transform.localScale;
         var collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
