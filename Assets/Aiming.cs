@@ -22,7 +22,7 @@ public class Aiming : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 pos = head.transform.position;
         //Vector3 pos = player.transform.position;
@@ -30,6 +30,6 @@ public class Aiming : MonoBehaviour
         Vector3 pos_s= RectTransformUtility.WorldToScreenPoint(camera, pos);
         pos_s.y -= 10;
         if ((pos_s - rect.position).magnitude < 100)
-            rect.position = Vector3.Lerp(rect.position, pos_s, 0.05f);
+            rect.position = Vector3.Lerp(rect.position, pos_s, 0.2f);
     }
 }

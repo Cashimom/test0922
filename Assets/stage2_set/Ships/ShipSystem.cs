@@ -8,6 +8,9 @@ using System;
 /// </summary>
 public class ShipSystem : MonoBehaviour
 {
+    /// <summary>
+    /// モンスターをスポーンさせる場所
+    /// </summary>
     [SerializeField] public List<Transform> SpawnPositions;
 
     /// <summary>
@@ -43,6 +46,11 @@ public class ShipSystem : MonoBehaviour
     [NonSerialized] public bool AllFinish = false;
 
     /// <summary>
+    /// 残ってる<see cref="targetObjects"/>"の数
+    /// </summary>
+    [NonSerialized] public int targetCount = 0;
+
+    /// <summary>
     /// 時間カウント用
     /// </summary>
     private float spawnTimeCnt = 0;
@@ -51,6 +59,9 @@ public class ShipSystem : MonoBehaviour
     /// スポーンしたモンスターの数
     /// </summary>
     private int spawnCnt = 0;
+
+    private UIController uiController;
+    
 
     /// <summary>
     /// スポーンしたモンスターの情報を保持するリスト
@@ -61,6 +72,7 @@ public class ShipSystem : MonoBehaviour
     void Start()
     {
         if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
+        uiController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     // Update is called once per frame
@@ -93,19 +105,23 @@ public class ShipSystem : MonoBehaviour
             }
         }
 
-        var allTargetsDestroy = true;
+        var targetsDestroy = 0;
         foreach(var to in targetObjects)
         {
             if (to.savingObject!=null&& to.savingObject.activeSelf)
             {
-                allTargetsDestroy = false;
-                break;
+                targetsDestroy++;
             }
         }
-        if (allTargetsDestroy)
+        if (targetsDestroy==0)
         {
             AllFinish = true;
         }
+        if(targetCount!= targetsDestroy)
+        {
+            uiController.setTargetCount(targetObjects.Count-targetsDestroy, targetObjects.Count);
+        }
+        targetCount = targetsDestroy;
     }
 
     public EnemyController SpawnMonster1()

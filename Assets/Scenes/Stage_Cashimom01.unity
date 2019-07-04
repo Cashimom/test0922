@@ -3622,6 +3622,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &412164747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4848,6 +4849,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &657689000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6704,6 +6706,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   SpawnTime: 2
   MaxSpawn: 50
+  targetObjects: []
 --- !u!65 &930791034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8685,6 +8688,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &1182705259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9675,6 +9679,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &1327230493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12197,6 +12202,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &1703500467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12694,6 +12700,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!65 &1822190263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15503,6 +15510,7 @@ MonoBehaviour:
   target: {fileID: 743508642}
   delay: 2
   isEDF: 0
+  deathTime: 1
 --- !u!23 &8915437648848763961
 MeshRenderer:
   m_ObjectHideFlags: 0
