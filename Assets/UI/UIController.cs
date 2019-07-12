@@ -57,6 +57,7 @@ public class UIController : MonoBehaviour
 
     }
 
+
     public void SlotUpdate(List<Weapon> weapons)
     {
         for(int i = 0; i < weapons.Count; i++)
@@ -137,6 +138,10 @@ public class UIController : MonoBehaviour
         targetCountUI.textUpdate(v);
     }
 
+    public void setTargetPointer(List<GameObject> targets)
+    {
+        targetCountUI.TargetPointerStart(targets,camera);
+    }
 
     public IEnumerator DelayMethod(float waitTime, Action action)
     {

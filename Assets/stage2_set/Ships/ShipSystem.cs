@@ -73,6 +73,12 @@ public class ShipSystem : MonoBehaviour
     {
         if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+        List<GameObject> a = new List<GameObject>();
+        foreach(var i in targetObjects)
+        {
+            a.Add(i.gameObject);
+        }
+        uiController.setTargetPointer(a);
     }
 
     // Update is called once per frame

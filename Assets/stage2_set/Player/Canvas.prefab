@@ -2424,8 +2424,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ece5111af22b5d40b0fbcee9acef744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointerPrefab: {fileID: 198642091926657334, guid: 5b524f6bdce0434409ae4b2e0b6c0f8e,
+    type: 3}
   valueText: {fileID: 5299262030318031292}
   maxValueText: {fileID: 4764979111617539880}
+  targets: []
+  camera: {fileID: 0}
   value: 0
   maxValue: 3
 --- !u!1 &5048275160761829095
