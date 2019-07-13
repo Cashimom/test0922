@@ -13185,7 +13185,7 @@ MonoBehaviour:
     type: 3}
   Weapon1: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
   target: {fileID: 1840487839}
-  SpawnTime: 3
+  SpawnTime: 300
   MaxSpawn: 100
   targetObjects:
   - {fileID: 674859575}

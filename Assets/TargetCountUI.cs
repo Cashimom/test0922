@@ -62,13 +62,49 @@ public class TargetCountUI : MonoBehaviour
             
             if (i == 0)
             {
-                textUpdate(Mathf.FloorToInt(d * 10));
+                //extUpdate(Mathf.RoundToInt(camera.pixelHeight));
             }
-            if (d > 0.5)
+            if (d > camera.fieldOfView/180&&new Rect(0,0,1,1).Contains(rectPos))
             {
                 rectPos.x *= camera.pixelWidth;
                 rectPos.y *= camera.pixelHeight;
-                //Debug.Log(rectPos);
+                pointers[i].transform.position = rectPos;
+            }
+            else
+            {
+                var x = rectPos.x;
+                var y = rectPos.y;
+                if (d > 0)
+                {
+                    x = Mathf.Clamp01(x) * camera.pixelWidth;
+                    y = Mathf.Clamp01(y) * camera.pixelHeight;
+                }
+                else
+                {
+                    x = (Mathf.Clamp01(x) - 0.5f < 0 ? 1 : 0) * camera.pixelWidth;
+                    y = (1-Mathf.Clamp01(y)) * camera.pixelHeight;
+                }
+                /*
+                if (0<=x&&x <= 1&&(y<0||y>1)&&d>0)
+                {
+                    rectPos.x *= camera.pixelWidth;
+                    rectPos.y *= Mathf.Clamp01(rectPos.y)* camera.pixelHeight;
+                    pointers[i].transform.position = rectPos;
+                }
+                else if (0 <= y && y <= 1 && (x < 0 || x > 1)&&d>0)
+                {
+                    rectPos.y *= camera.pixelHeight;
+                    rectPos.x *= Mathf.Clamp01(rectPos.x) * camera.pixelWidth ;
+                    pointers[i].transform.position = rectPos;
+                }
+                else
+                {
+                    rectPos.x = camera.pixelWidth;
+                    rectPos.y = camera.pixelHeight;
+                    pointers[i].transform.position = rectPos;
+                }*/
+                rectPos.x = Mathf.Lerp(pointers[i].transform.position.x, x, 0.5f);
+                rectPos.y = Mathf.Lerp(pointers[i].transform.position.y, y, 0.5f); ;
                 pointers[i].transform.position = rectPos;
             }
             

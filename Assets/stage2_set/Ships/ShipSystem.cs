@@ -76,7 +76,7 @@ public class ShipSystem : MonoBehaviour
         List<GameObject> a = new List<GameObject>();
         foreach(var i in targetObjects)
         {
-            a.Add(i.gameObject);
+            a.Add(i.savingObject);
         }
         uiController.setTargetPointer(a);
     }
