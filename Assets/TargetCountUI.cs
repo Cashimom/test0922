@@ -52,57 +52,48 @@ public class TargetCountUI : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// ターゲットをロックオンするやつ
+    /// </summary>
     public void TargetPointerUpdate()
     {
-        var cameraDir = camera.transform.forward;
         for (int i = 0; i < targets.Count; i++)
         {
-            var rectPos = camera.WorldToViewportPoint(targets[i].transform.position);
-            var d = Vector3.Dot((targets[i].transform.position - camera.transform.position).normalized, (cameraDir));
-            
-            if (i == 0)
+            if (targets[i] == null)
             {
-                //extUpdate(Mathf.RoundToInt(camera.pixelHeight));
+                pointers[i].enabled = false;
+                break;
             }
-            if (d > camera.fieldOfView/180&&new Rect(0,0,1,1).Contains(rectPos))
+
+            ///ワールド座標を画面座標(0-1)に変換
+            var rectPos = camera.WorldToViewportPoint(targets[i].transform.position);
+            //カメラからターゲットまでのベクトルと、カメラの正面のベクトルの内積
+            var d = Vector3.Dot((targets[i].transform.position - camera.transform.position).normalized, camera.transform.forward);
+            
+            //ターゲットが画面内なら
+            if (d > Mathf.Cos(camera.fieldOfView/2)&&new Rect(0,0,1,1).Contains(rectPos))
             {
                 rectPos.x *= camera.pixelWidth;
                 rectPos.y *= camera.pixelHeight;
                 pointers[i].transform.position = rectPos;
             }
+            ///画面外
             else
             {
                 var x = rectPos.x;
                 var y = rectPos.y;
+                ///前なら0か1に
                 if (d > 0)
                 {
                     x = Mathf.Clamp01(x) * camera.pixelWidth;
                     y = Mathf.Clamp01(y) * camera.pixelHeight;
                 }
+                ///なぜか後ろだとターゲットの座標が本来の反対にあるようになるので加工
                 else
                 {
                     x = (Mathf.Clamp01(x) - 0.5f < 0 ? 1 : 0) * camera.pixelWidth;
                     y = (1-Mathf.Clamp01(y)) * camera.pixelHeight;
                 }
-                /*
-                if (0<=x&&x <= 1&&(y<0||y>1)&&d>0)
-                {
-                    rectPos.x *= camera.pixelWidth;
-                    rectPos.y *= Mathf.Clamp01(rectPos.y)* camera.pixelHeight;
-                    pointers[i].transform.position = rectPos;
-                }
-                else if (0 <= y && y <= 1 && (x < 0 || x > 1)&&d>0)
-                {
-                    rectPos.y *= camera.pixelHeight;
-                    rectPos.x *= Mathf.Clamp01(rectPos.x) * camera.pixelWidth ;
-                    pointers[i].transform.position = rectPos;
-                }
-                else
-                {
-                    rectPos.x = camera.pixelWidth;
-                    rectPos.y = camera.pixelHeight;
-                    pointers[i].transform.position = rectPos;
-                }*/
                 rectPos.x = Mathf.Lerp(pointers[i].transform.position.x, x, 0.5f);
                 rectPos.y = Mathf.Lerp(pointers[i].transform.position.y, y, 0.5f); ;
                 pointers[i].transform.position = rectPos;
