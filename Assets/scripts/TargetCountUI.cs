@@ -62,14 +62,16 @@ public class TargetCountUI : MonoBehaviour
             if (targets[i] == null)
             {
                 pointers[i].enabled = false;
-                break;
+                continue;
             }
 
             ///ワールド座標を画面座標(0-1)に変換
             var rectPos = camera.WorldToViewportPoint(targets[i].transform.position);
+            rectPos.z = 0;
             //カメラからターゲットまでのベクトルと、カメラの正面のベクトルの内積
             var d = Vector3.Dot((targets[i].transform.position - camera.transform.position).normalized, camera.transform.forward);
-            
+
+
             //ターゲットが画面内なら
             if (d > Mathf.Cos(camera.fieldOfView/2)&&new Rect(0,0,1,1).Contains(rectPos))
             {
@@ -100,7 +102,6 @@ public class TargetCountUI : MonoBehaviour
             }
             
         }
-
 
     }
 

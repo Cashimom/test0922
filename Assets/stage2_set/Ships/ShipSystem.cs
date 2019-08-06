@@ -41,6 +41,12 @@ public class ShipSystem : MonoBehaviour
     [SerializeField] public List<SavingObject> targetObjects;
 
     /// <summary>
+    /// ステージを生成するやつ
+    /// </summary>
+    [SerializeField] public StageGenerator generator;
+
+
+    /// <summary>
     /// <see cref="this"/>からスポーンしたすべてのモンスターが倒されたかどうか
     /// </summary>
     [NonSerialized] public bool AllFinish = false;
@@ -74,11 +80,13 @@ public class ShipSystem : MonoBehaviour
         if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
         List<GameObject> a = new List<GameObject>();
-        foreach(var i in targetObjects)
+        targetObjects.AddRange(generator.generate());
+        foreach (var i in targetObjects)
         {
             a.Add(i.savingObject);
         }
         uiController.setTargetPointer(a);
+
     }
 
     // Update is called once per frame

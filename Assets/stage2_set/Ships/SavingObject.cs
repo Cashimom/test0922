@@ -18,14 +18,19 @@ public class SavingObject : MonoBehaviour
 
     private SphereCollider sphereCollider;
 
-    void Start()
+    private void Awake()
     {
+
         sphereCollider = gameObject.GetComponent<SphereCollider>();
         if (sphereCollider == null)
         {
             //sphereCollider= gameObject.AddComponent<SphereCollider>();
         }
         sphereCollider.radius = range;
+    }
+
+    void Start()
+    {
     }
 
     

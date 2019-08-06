@@ -42,29 +42,33 @@ public class InspecotrExpansion : Editor
         //base.OnInspectorGUI();
         serializedObject.Update();
         EditorGUI.BeginChangeCheck();
+
+        expansion.target = EditorGUILayout.ObjectField(expansion.target, typeof(SavingObject), true) as SavingObject;
+        expansion.targetCnt = EditorGUILayout.IntField(expansion.targetCnt);
+
         expansion.size= EditorGUILayout.Vector3IntField("Size", expansion.size);
 
         //builtsSetting
         if (foldout= EditorGUILayout.Foldout(foldout, ""))
         {
             //リストが足りてなかったら足す
-            if (expansion.builtsSetting.Count!= (int)StageGenerator.Built.MAX)
+            if (expansion.builtsProbability.Count!= (int)StageGenerator.Built.MAX)
             {
-                expansion.builtsSetting = new List<float>();
-                for (int i = expansion.builtsSetting.Count; i < (int)StageGenerator.Built.MAX; i++)
+                expansion.builtsProbability = new List<float>();
+                for (int i = expansion.builtsProbability.Count; i < (int)StageGenerator.Built.MAX; i++)
                 {
-                    expansion.builtsSetting.Add(1.0f);
+                    expansion.builtsProbability.Add(1.0f);
                 }
             }
             //リストの表示
             float s = 0.0f;
-            for (int i = 0; i < expansion.builtsSetting.Count; s += expansion.builtsSetting[i], i++) ;
-                for (var i =0;i< expansion.builtsSetting.Count;i++)
+            for (int i = 0; i < expansion.builtsProbability.Count; s += expansion.builtsProbability[i], i++) ;
+                for (var i =0;i< expansion.builtsProbability.Count;i++)
             {
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField(((StageGenerator.Built)i).ToString(),GUILayout.MaxWidth(80));
-                expansion.builtsSetting[i] = EditorGUILayout.FloatField(expansion.builtsSetting[i]);
-                EditorGUILayout.LabelField((expansion.builtsSetting[i]/s*100).ToString("F1")+"%",GUILayout.MaxWidth(80));
+                expansion.builtsProbability[i] = EditorGUILayout.FloatField(expansion.builtsProbability[i]);
+                EditorGUILayout.LabelField((expansion.builtsProbability[i]/s*100).ToString("F1")+"%",GUILayout.MaxWidth(80));
 
                 if (GUILayout.Button("preview",GUILayout.MaxWidth(100)))
                 {
@@ -72,6 +76,11 @@ public class InspecotrExpansion : Editor
                     changeObject();
                 }
                 EditorGUILayout.EndHorizontal();
+                if (expansion.builtsMaterial.Count <= i)
+                {
+                    expansion.builtsMaterial.Add(null);
+                }
+                expansion.builtsMaterial[i]=EditorGUILayout.ObjectField(expansion.builtsMaterial[i], typeof(Material),true)as Material;
             }
         }
 
