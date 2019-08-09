@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 80
+  m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2243484510635301586
 MonoBehaviour:
@@ -63,8 +63,8 @@ MonoBehaviour:
     type: 3}
   _Weapon: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
   _Target: {fileID: 0}
-  monsterCount: 10
-  range: 80
+  monsterCount: 30
+  range: 200
 --- !u!1 &2243484511521099357
 GameObject:
   m_ObjectHideFlags: 0
