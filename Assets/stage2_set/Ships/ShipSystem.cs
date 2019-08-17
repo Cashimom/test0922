@@ -8,6 +8,13 @@ using System;
 /// </summary>
 public class ShipSystem : MonoBehaviour
 {
+    //public enum Judgment
+    //{
+    //    Monster,
+    //    TargetObject
+    //}
+    //[SerializeField] public Judgment judgment=Judgment.Monster;
+
     /// <summary>
     /// モンスターをスポーンさせる場所
     /// </summary>
@@ -67,6 +74,8 @@ public class ShipSystem : MonoBehaviour
     private int spawnCnt = 0;
 
     private UIController uiController;
+
+
     
 
     /// <summary>
@@ -80,7 +89,8 @@ public class ShipSystem : MonoBehaviour
         if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
         List<GameObject> a = new List<GameObject>();
-        targetObjects.AddRange(generator.generate());
+        if(generator!=null)
+            targetObjects.AddRange(generator.generate());
         foreach (var i in targetObjects)
         {
             a.Add(i.savingObject);
@@ -102,40 +112,49 @@ public class ShipSystem : MonoBehaviour
             SpawnMonster1();
         }
         
-        if (spawnCnt >= pmax)
+
+        if (targetObjects.Count != 0)
         {
-            for(int i = 0; i < enemies.Count; i++)
+            //targetObjectsのカウント
+            var targetsDestroy = 0;
+            foreach (var to in targetObjects)
             {
-                if (enemies[i] == null||enemies[i].gameObject.activeSelf==false)
+                if (to.savingObject != null && to.savingObject.activeSelf)
                 {
-                    enemies.Remove(enemies[i]);
-                    i--;
+                    targetsDestroy++;
                 }
             }
-            if (enemies.Count == 0&& spawnCnt>=MaxSpawn)
+            if (targetsDestroy == 0)
             {
-
                 AllFinish = true;
             }
-        }
-
-        var targetsDestroy = 0;
-        foreach(var to in targetObjects)
-        {
-            if (to.savingObject!=null&& to.savingObject.activeSelf)
+            if (targetCount != targetsDestroy)
             {
-                targetsDestroy++;
+                uiController.setTargetCount(targetObjects.Count - targetsDestroy, targetObjects.Count);
+                targetCount = targetsDestroy;
             }
         }
-        if (targetsDestroy==0)
+        else
         {
-            AllFinish = true;
+            //shipが作ったenemyが倒されたかどうか
+            if (spawnCnt >= pmax)
+            {
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    if (enemies[i] == null || enemies[i].gameObject.activeSelf == false)
+                    {
+                        enemies.Remove(enemies[i]);
+                        i--;
+                    }
+                }
+                if (enemies.Count == 0 && spawnCnt >= MaxSpawn)
+                {
+
+                    AllFinish = true;
+                }
+            }
+            uiController.setTargetCount(enemies.Count, spawnCnt);
         }
-        if(targetCount!= targetsDestroy)
-        {
-            uiController.setTargetCount(targetObjects.Count-targetsDestroy, targetObjects.Count);
-        }
-        targetCount = targetsDestroy;
     }
 
     public EnemyController SpawnMonster1()

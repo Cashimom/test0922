@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ShotgunScript : Weapon
 {
+
+    [SerializeField] public int Ammunition = 20;
+
+    [SerializeField] public float maxAngle = 15;
+
     // Start is called before the first frame update
     new void Start()
     {
@@ -41,16 +46,24 @@ public class ShotgunScript : Weapon
 
     public override void Fire1()
     {
+        float _maxAngle = maxAngle;
+        if (isPlayer&&Input.GetKey(KeyCode.Mouse1))
+        {
+            _maxAngle *= 0.5f;
+        }
         if (fireTime >= fireTick)
         {
             fireTime = 0;
-            for(int i = 0; i < 20; i++)
+            for(int i = 0; i < Ammunition; i++)
             {
                 var f = Fire();
                 var rx = Random.value*(2) -1;
                 var ry = Random.value*(2) -1;
+                var anglex = (Random.value * (2) - 1) * _maxAngle;
+                var angley = (Random.value * (2) - 1) * _maxAngle;
                 f.transform.localPosition += new Vector3(rx*2, ry*2, 0.1f*i);
-                f.transform.rotation *= Quaternion.Euler(rx * 15, ry * 15, 0);
+
+                f.transform.rotation *= Quaternion.Euler(anglex, angley , 0);
             }
             var anime = gameObject.GetComponent<Animator>();
             anime.Play("Reload");

@@ -12,14 +12,19 @@ public class InspecotrExpansion : Editor
     StageGenerator expansion;
     GameObject previewObject;
     PreviewRenderUtility previewRenderUtility;
-    int previewNumber = 0;
+    int previewNumber;
 
     private void OnEnable()
     {
         if(previewRenderUtility!=null)
             previewRenderUtility.Cleanup();
         expansion = target as StageGenerator;
+        if (expansion.builtsProbability == null)
+        {
+            expansion.builtsProbability = new List<float>();
+        }
         previewSetup();
+        randomPutSize = expansion.randomPut.Count;
     }
 
     private void OnDisable()
@@ -27,13 +32,19 @@ public class InspecotrExpansion : Editor
         if(previewRenderUtility!=null)
             previewRenderUtility.Cleanup();
         previewRenderUtility = null;
+        if (previewObject != null)
+        {
+            DestroyImmediate(previewObject);
+        }
         previewObject = null;
     }
 
 
     bool foldout = true;
+    bool randomPutFold = true;
     int cnt = 0;
     float a;
+    int randomPutSize = 0;
 
     //インスペクタの描画
     public override void OnInspectorGUI()
@@ -43,15 +54,52 @@ public class InspecotrExpansion : Editor
         serializedObject.Update();
         EditorGUI.BeginChangeCheck();
 
-        expansion.target = EditorGUILayout.ObjectField(expansion.target, typeof(SavingObject), true) as SavingObject;
-        expansion.targetCnt = EditorGUILayout.IntField(expansion.targetCnt);
+        expansion.target = EditorGUILayout.ObjectField("Target",expansion.target, typeof(SavingObject), true) as SavingObject;
+        expansion.targetCnt = EditorGUILayout.IntField("Target Count",expansion.targetCnt);
 
         expansion.size= EditorGUILayout.Vector3IntField("Size", expansion.size);
+
+
+        expansion.spawner = EditorGUILayout.ObjectField("Player Spawner",expansion.spawner, typeof(GameObject), true) as GameObject;
+
+        if (randomPutFold = EditorGUILayout.Foldout(randomPutFold, "Random Put"))
+        {
+            randomPutSize = EditorGUILayout.IntField("size", randomPutSize);
+            if (randomPutSize < expansion.randomPut.Count && randomPutSize == 0)
+            {
+
+            }
+            else if(Event.current.type==EventType.KeyUp&&Event.current.keyCode==KeyCode.Return)
+            {
+                if (randomPutSize > expansion.randomPut.Count)
+                {
+                    //expansion.randomPut.AddRange(new List<GameObject>(randomPutSize - expansion.randomPut.Count));
+                    for (int i = 0; i < randomPutSize - expansion.randomPut.Count; i++)
+                    {
+                        expansion.randomPut.Add(null);
+
+                    }
+                }
+                else if (randomPutSize < expansion.randomPut.Count)
+                {
+                    expansion.randomPut.RemoveRange(randomPutSize, expansion.randomPut.Count - randomPutSize);
+                }
+            }
+            //Debug.Log(randomPutSize.ToString()+","+expansion.randomPut.Count.ToString());
+            for (int i = 0; i < expansion.randomPut.Count; i++)
+            {
+                expansion.randomPut[i] = EditorGUILayout.ObjectField(i.ToString(), expansion.randomPut[i], typeof(GameObject), true) as GameObject;
+            }
+        }
 
         //builtsSetting
         if (foldout= EditorGUILayout.Foldout(foldout, ""))
         {
             //リストが足りてなかったら足す
+            if (expansion.builtsProbability == null)
+            {
+                expansion.builtsProbability = new List<float>();
+            }
             if (expansion.builtsProbability.Count!= (int)StageGenerator.Built.MAX)
             {
                 expansion.builtsProbability = new List<float>();
@@ -138,9 +186,6 @@ public class InspecotrExpansion : Editor
 
         previewRenderUtility = new PreviewRenderUtility(true);
         previewRenderUtility.AddSingleGO(previewObject);
-        var previewCamera = previewRenderUtility.camera;
-        previewCamera.transform.position = previewObject.transform.position + new Vector3(2.5f, 2.5f, -5);
-        previewCamera.transform.LookAt(previewObject.transform);
         //FieldOfView を 30 にするとちょうどいい見た目になる
         previewRenderUtility.cameraFieldOfView = 30f;
         //必要に応じて nearClipPlane と farClipPlane を設定
@@ -148,6 +193,13 @@ public class InspecotrExpansion : Editor
         previewRenderUtility.camera.farClipPlane = 1000;
         //previewLayer のみ表示する
         previewRenderUtility.camera.cullingMask = 1 << previewLayer;
+
+        var previewCamera = previewRenderUtility.camera;
+        previewCamera.transform.position = previewObject.transform.position + new Vector3(2.5f, 2.5f, -5);
+        previewCamera.transform.LookAt(previewObject.transform);
+        previewCamera.clearFlags = CameraClearFlags.Skybox;
+        previewCamera.backgroundColor = new Color(0.9f, 0.9f, 0.9f);
+
         previewObject.layer = previewLayer;
         foreach (Transform transform in previewObject.transform)
         {

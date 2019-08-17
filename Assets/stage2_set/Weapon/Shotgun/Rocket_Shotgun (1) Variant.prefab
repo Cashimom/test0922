@@ -70,17 +70,17 @@ PrefabInstance:
     - target: {fileID: 4487865611012176614, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}
       propertyPath: TimeLimit
-      value: 2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4487865611012176614, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}
       propertyPath: explodeDamageValue
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4487865611012176614, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}
       propertyPath: moveSpeed
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4487865611012176614, guid: ef32557af84a6c4408d5509313efaae3,
         type: 3}

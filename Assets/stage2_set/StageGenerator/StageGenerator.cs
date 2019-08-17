@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 //マップを自動で生成する
 public class StageGenerator : MonoBehaviour
@@ -10,6 +12,10 @@ public class StageGenerator : MonoBehaviour
     [SerializeField] public SavingObject target;
 
     [SerializeField] public int targetCnt = 3;
+
+    [SerializeField] public GameObject spawner;
+
+    [SerializeField] public List<GameObject> randomPut = new List<GameObject>();
 
     private int[,,] map;
 
@@ -24,9 +30,9 @@ public class StageGenerator : MonoBehaviour
 
     //[SerializeField] public List<float> builtSetting= new List<float>((int)Built.MAX);
 
-    public List<float> builtsProbability;
+    public List<float> builtsProbability=new List<float>();
 
-    public List<Material> builtsMaterial;
+    public List<Material> builtsMaterial=new List<Material>();
 
     public enum Built:int
     {
@@ -69,16 +75,19 @@ public class StageGenerator : MonoBehaviour
         map = new int[size.x, size.y, size.z];
         int sw = 2;
         Vector3 flg = vec3(0, 0, 0);
+
+        Func<Vector3Int> randomPosition = ()=>  new Vector3Int(Random.Range(sw, size.x - sw), Random.Range(sw, size.y - sw - 1), Random.Range(sw, size.z - sw)) ;
+
         for (int jjj = 0; jjj < targetCnt; jjj++)
         {
-            var mainStreet = new Vector3Int(Random.Range(sw, size.x - sw), Random.Range(sw, size.y - sw - 1), Random.Range(sw, size.z - sw));
+            var mainStreet = randomPosition();
             targetList.Add(Instantiate(target, localPos(mainStreet)+firstPos, Quaternion.Euler(0, 0, 0)));
-            if (Mathf.Abs(mainStreet.x-size.x/2) >= Mathf.Abs(mainStreet.z - size.z / 2))
+            if (!(Mathf.Abs(mainStreet.x-size.x/2) >= Mathf.Abs(mainStreet.z - size.z / 2)))
             {
                 flg = vec3(1, 0, 0);
                 for (int i = sw; i < size.x - sw; i++)
                 {
-                    float center = (-Mathf.Abs(((float)mainStreet.x - (float)i)) / (float)size.x + 1.15f);
+                    float center = (-Mathf.Abs(((float)mainStreet.x - (float)i)) / (float)size.x + 1.3f);
                     int streetWidth = Mathf.FloorToInt(center);
                     map[i, mainStreet.y, mainStreet.z] = -1;
                     map[i, mainStreet.y + 1, mainStreet.z] = -1;
@@ -102,7 +111,7 @@ public class StageGenerator : MonoBehaviour
                 flg = vec3(0, 0, 1);
                 for (int i = sw; i < size.z - sw; i++)
                 {
-                    float center = (-Mathf.Abs(((float)mainStreet.z - (float)i)) / (float)size.z + 1.15f);
+                    float center = (-Mathf.Abs(((float)mainStreet.z - (float)i)) / (float)size.z + 1.3f);
                     int streetWidth = Mathf.FloorToInt(center);
                     map[ mainStreet.x, mainStreet.y,i] = -1;
                     map[ mainStreet.x, mainStreet.y + 1,i] = -1;
@@ -121,6 +130,18 @@ public class StageGenerator : MonoBehaviour
                     map[ mainStreet.x + 1 + streetWidth, mainStreet.y + 3,i] = Random.Range(2, 4);
                 }
             }
+        }
+
+        if (spawner != null)
+        {
+            randomPut.Add(spawner);
+        }
+        foreach (var gameObject in randomPut)
+        {
+            if (gameObject == null) continue;
+            Vector3Int pos = randomPosition();
+            gameObject.transform.position = localPos(pos) + firstPos;
+            map[pos.x, pos.y, pos.z] = -1;
         }
 
         float sum = 0.0f;
@@ -152,6 +173,9 @@ public class StageGenerator : MonoBehaviour
 
             }
         }
+
+
+
         return targetList;
     }
 
@@ -187,7 +211,7 @@ public class StageGenerator : MonoBehaviour
         g.transform.position = vec3(0, 0, 0);
         g.transform.Rotate(0, 0, 0);
         g.transform.localScale = vec3(1, 1, 1);
-        if(builtsMaterial.Count > (int)built && builtsMaterial[(int)built]!=null)
+        if(builtsMaterial!=null&&builtsMaterial.Count > (int)built && builtsMaterial[(int)built]!=null)
             g.GetComponent<Renderer>().material = builtsMaterial[(int)built];
         g.name = "_StageObject";
         
