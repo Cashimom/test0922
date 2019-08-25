@@ -63,7 +63,7 @@ MonoBehaviour:
     type: 3}
   _Weapon: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
   _Target: {fileID: 0}
-  monsterCount: 30
+  monsterCount: 20
   range: 200
 --- !u!1 &2243484511521099357
 GameObject:

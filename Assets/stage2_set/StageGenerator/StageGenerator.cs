@@ -144,6 +144,19 @@ public class StageGenerator : MonoBehaviour
             map[pos.x, pos.y, pos.z] = -1;
         }
 
+        generateBuilt(vec3(-1, (float)(size.y) / 2f, (float)(size.z) / 2f), Built.N2)
+            .transform.localScale=vec3(blockSize.x/transform.localScale.x,1, 1);
+        generateBuilt(vec3(size.x, (float)(size.y) / 2f, (float)(size.z) / 2f), Built.N2)
+            .transform.localScale = vec3(blockSize.x / transform.localScale.x, 1, 1);
+        generateBuilt(vec3((float)(size.x) / 2f, (float)(size.y) / 2f, -1), Built.N2)
+            .transform.localScale = vec3(1, 1, blockSize.z / transform.localScale.z);
+        generateBuilt(vec3((float)(size.x) / 2f, (float)(size.y) / 2f, size.z), Built.N2)
+            .transform.localScale = vec3(1, 1, blockSize.z / transform.localScale.z);
+        generateBuilt(vec3((float)(size.x) / 2f, -1, (float)(size.z) / 2f), Built.N2)
+            .transform.localScale = vec3(1, blockSize.y / transform.localScale.y, 1);
+        generateBuilt(vec3((float)(size.x) / 2f, size.y, (float)(size.z) / 2f), Built.N2)
+            .transform.localScale = vec3(1, blockSize.y / transform.localScale.y, 1);
+
         float sum = 0.0f;
         for (int i = 0; i < builtsProbability.Count; i++)
         {
@@ -192,7 +205,7 @@ public class StageGenerator : MonoBehaviour
             transform.localScale.z / size.z * (pos.z));
     }
 
-    void generateBuilt(Vector3 pos,Built built)
+    GameObject generateBuilt(Vector3 pos,Built built)
     {
         GameObject g=getBuiltObject(built);
         g.transform.parent = this.transform;
@@ -202,7 +215,7 @@ public class StageGenerator : MonoBehaviour
              g.transform.localScale.x * blockSize.x,
              g.transform.localScale.y * blockSize.y,
              g.transform.localScale.z * blockSize.z);
-
+        return g;
     }
 
     public GameObject getBuiltObject(Built built)

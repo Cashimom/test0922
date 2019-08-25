@@ -1630,6 +1630,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227377445}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &276909875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2243484510635301585, guid: b65e5173fae885845936ef2185887e4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2243484510236414181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292033149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,7 +4751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183688252, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: Ammunition
-      value: 90
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 1183688252, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: WeaponTransformDistance
@@ -4754,6 +4760,10 @@ PrefabInstance:
     - target: {fileID: 1183688252, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: maxAngle
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688252, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: isHave
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
@@ -21773,7 +21783,7 @@ Transform:
   m_GameObject: {fileID: 1427435795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 814, y: 94, z: -1005}
-  m_LocalScale: {x: 2500, y: 2500, z: 2500}
+  m_LocalScale: {x: 3000, y: 3000, z: 3000}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -21799,13 +21809,14 @@ MonoBehaviour:
   - {fileID: 950493400}
   - {fileID: 583859599}
   - {fileID: 4240421}
-  - {fileID: 711629043}
-  - {fileID: 227377445}
-  - {fileID: 1628778454}
+  - {fileID: 756254827}
+  - {fileID: 1536052095}
+  - {fileID: 73382656}
   - {fileID: 219640999}
   - {fileID: 993224020}
   - {fileID: 1477690061}
   - {fileID: 1850404441}
+  - {fileID: 276909875}
   builtsProbability:
   - 20
   - 1
@@ -31789,6 +31800,11 @@ PrefabInstance:
       propertyPath: generator
       value: 
       objectReference: {fileID: 1427435797}
+    - target: {fileID: 4413180473578561678, guid: 3c36836a5fb76254a8bb11aacf5af446,
+        type: 3}
+      propertyPath: SpawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4413180473578562417, guid: 3c36836a5fb76254a8bb11aacf5af446,
         type: 3}
       propertyPath: m_LocalPosition.x
