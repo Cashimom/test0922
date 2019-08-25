@@ -133,6 +133,7 @@ public class PlayerController : Character
         rightWeaponTransform = head.transform;
         shield = (GameObject)Resources.Load("Shield");
 
+        CursorLock(true);
         if (pressButton == null)
         {
             pressButton = GameObject.Find("Canvas/PickUp View");
@@ -146,7 +147,6 @@ public class PlayerController : Character
             uiController.SlotUpdate(LeftWeapon, 2);
             LeftWeapon.isHave = false;
         }
-
         if (jobs.Count > 0)
         {
             jobIndex = -1;
@@ -456,6 +456,8 @@ public class PlayerController : Character
             WeaponList.Add(picked);
             picked.HaveWeapon();
             RightWeapon = picked;
+            if (LeftWeapon != null)
+                LeftWeapon.isHave = false;
         }
         //何か持ってて枠が空いてたら装備せずに拾う
         else if (RightWeapon != null && WeaponList.Count < 2)

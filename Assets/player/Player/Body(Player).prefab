@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 126878902727707458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.44, y: -44.5, z: 12.93}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 131347339920959126}
   m_Father: {fileID: 0}
@@ -93,9 +93,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 3.3170166
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.6585083, z: 0}
 --- !u!114 &126878902727707513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,22 +108,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfc571a9fae700478e01c945f8d2991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   FlyForce: 200
-  HP: 100
-  MaxHP: 100
+  HP: 50
+  MaxHP: 50
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 131347339920959126}
   NowWeapon: 1
-  RotationSensitivity: 500
   body: {fileID: 126878902727707458}
   head: {fileID: 128169749615304222}
-  jumpForce: 50
   pressButton: {fileID: 0}
   WeaponList: []
+  RotationSensitivity: 500
+  jumpForce: 50
+  OnFloorHeight: 2.2
   pause: 0
+  playerJob: {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415,
+    type: 3}
+  jobs:
+  - {fileID: 5768295302789221076, guid: d016392c9d630e347b09b84ff702c7bf, type: 3}
+  - {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415, type: 3}
 --- !u!114 &126878902727707512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 1576723965917008, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576723965917008, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
+      propertyPath: m_TagString
+      value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 4609175712600024, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -217,8 +227,17 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114751447994126164, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
+    - target: {fileID: 65090116642681096, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751447994126164, guid: 1dbe40d649162ef44bfcb8e85e0f079d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbe40d649162ef44bfcb8e85e0f079d, type: 3}
 --- !u!1 &128169749615304222 stripped
 GameObject:

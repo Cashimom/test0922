@@ -8,6 +8,16 @@ using System;
 /// </summary>
 public class ShipSystem : MonoBehaviour
 {
+    //public enum Judgment
+    //{
+    //    Monster,
+    //    TargetObject
+    //}
+    //[SerializeField] public Judgment judgment=Judgment.Monster;
+
+    /// <summary>
+    /// モンスターをスポーンさせる場所
+    /// </summary>
     [SerializeField] public List<Transform> SpawnPositions;
 
     /// <summary>
@@ -35,10 +45,23 @@ public class ShipSystem : MonoBehaviour
     /// </summary>
     [SerializeField] private int MaxSpawn = 100;
 
+    [SerializeField] public List<SavingObject> targetObjects;
+
+    /// <summary>
+    /// ステージを生成するやつ
+    /// </summary>
+    [SerializeField] public StageGenerator generator;
+
+
     /// <summary>
     /// <see cref="this"/>からスポーンしたすべてのモンスターが倒されたかどうか
     /// </summary>
     [NonSerialized] public bool AllFinish = false;
+
+    /// <summary>
+    /// 残ってる<see cref="targetObjects"/>"の数
+    /// </summary>
+    [NonSerialized] public int targetCount = 0;
 
     /// <summary>
     /// 時間カウント用
@@ -50,6 +73,11 @@ public class ShipSystem : MonoBehaviour
     /// </summary>
     private int spawnCnt = 0;
 
+    private UIController uiController;
+
+
+    
+
     /// <summary>
     /// スポーンしたモンスターの情報を保持するリスト
     /// </summary>
@@ -59,10 +87,20 @@ public class ShipSystem : MonoBehaviour
     void Start()
     {
         if (SpawnPositions.Count == 0) SpawnPositions.Add(transform);
+        uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+        List<GameObject> a = new List<GameObject>();
+        if(generator!=null)
+            targetObjects.AddRange(generator.generate());
+        foreach (var i in targetObjects)
+        {
+            a.Add(i.savingObject);
+        }
+        uiController.setTargetPointer(a);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(spawnCnt<MaxSpawn)spawnTimeCnt += Time.deltaTime;
         var pmax = (int)(((float)MaxSpawn / (float)SpawnPositions.Count) * Math.Floor(((float)spawnCnt-0.1f) / ((float)MaxSpawn / (float)SpawnPositions.Count) + 1));
@@ -74,21 +112,48 @@ public class ShipSystem : MonoBehaviour
             SpawnMonster1();
         }
         
-        if (spawnCnt >= pmax)
+
+        if (targetObjects.Count != 0)
         {
-            for(int i = 0; i < enemies.Count; i++)
+            //targetObjectsのカウント
+            var targetsDestroy = 0;
+            foreach (var to in targetObjects)
             {
-                if (enemies[i] == null||enemies[i].gameObject.activeSelf==false)
+                if (to.savingObject != null && to.savingObject.activeSelf)
                 {
-                    enemies.Remove(enemies[i]);
-                    i--;
+                    targetsDestroy++;
                 }
             }
-            if (enemies.Count == 0&& spawnCnt>=MaxSpawn)
+            if (targetsDestroy == 0)
             {
-
                 AllFinish = true;
             }
+            if (targetCount != targetsDestroy)
+            {
+                uiController.setTargetCount(targetObjects.Count - targetsDestroy, targetObjects.Count);
+                targetCount = targetsDestroy;
+            }
+        }
+        else
+        {
+            //shipが作ったenemyが倒されたかどうか
+            if (spawnCnt >= pmax)
+            {
+                for (int i = 0; i < enemies.Count; i++)
+                {
+                    if (enemies[i] == null || enemies[i].gameObject.activeSelf == false)
+                    {
+                        enemies.Remove(enemies[i]);
+                        i--;
+                    }
+                }
+                if (enemies.Count == 0 && spawnCnt >= MaxSpawn)
+                {
+
+                    AllFinish = true;
+                }
+            }
+            uiController.setTargetCount(enemies.Count, spawnCnt);
         }
     }
 

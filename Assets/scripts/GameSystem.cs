@@ -5,11 +5,21 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
+//クリアの判定など
 public class GameSystem : MonoBehaviour
 {
+    //プレイヤー
     [SerializeField] public GameObject Player;
+
+    //プレイヤーのリスポーン場所
     [SerializeField] public Vector3 SpawnPosition;
+
+    //クリアの判定をするship
     [SerializeField] public List<ShipSystem> shipSystems;
+
+    /// <summary>
+    /// <see cref="Player"/>のplayerController
+    /// </summary>
     private PlayerController playerController;
 
     private float clearCnt = 0;
@@ -49,8 +59,7 @@ public class GameSystem : MonoBehaviour
         });
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         bool flg = false;
         shipSystems.ForEach((ship) =>
@@ -70,7 +79,7 @@ public class GameSystem : MonoBehaviour
     {
 
         Player.transform.position=SpawnPosition;
-        playerController.HP = 100;
+        playerController.HP = playerController.MaxHP;
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
         tmp.text = playerController.HP.ToString();
     }

@@ -50,7 +50,7 @@ public class warp : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (!cameON&&other.gameObject.tag=="Character")
         {

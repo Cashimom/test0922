@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 33706383777242502}
   - component: {fileID: 23467865334736032}
   - component: {fileID: 65090116642681096}
-  - component: {fileID: 114751447994126164}
   - component: {fileID: 54788662120311436}
-  - component: {fileID: 143932817479261126}
   - component: {fileID: 114671203813000630}
   m_Layer: 0
   m_Name: Cube
@@ -95,30 +93,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114751447994126164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576723965917008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfc571a9fae700478e01c945f8d2991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  JumpForce: 0.00003
-  vector: {x: 0, y: 0, z: 0}
-  JumpFlg: 0
-  HP: 100
-  Weapon: {fileID: 0}
-  rightWeaponTransform: {fileID: 0}
-  RotationSensitivity: 1000
-  rotX: 0
-  rotY: 0
-  body: {fileID: 0}
-  head: {fileID: 0}
 --- !u!54 &54788662120311436
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,24 +109,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!143 &143932817479261126
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576723965917008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 90
-  m_StepOffset: 1
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114671203813000630
 MonoBehaviour:
   m_ObjectHideFlags: 0

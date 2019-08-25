@@ -3,13 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
+
+    [SerializeField] private Camera camera;
+    [SerializeField] private Transform head;
+
     [SerializeField] private List<RawImage> slotImages;
     [SerializeField] private List<Image> slotPanels;
     [SerializeField] private Slider HPSlider;
     [SerializeField] private Slider GrenadeSlider;
+    [SerializeField] private TextMeshProUGUI aiming;
+    [SerializeField] private TargetCountUI targetCountUI;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +25,7 @@ public class UIController : MonoBehaviour
         {
             p.color = new Color(0.3f, 0.3f, 0.3f);
         });
+        
     }
 
     // Update is called once per frame
@@ -25,6 +33,30 @@ public class UIController : MonoBehaviour
     {
         
     }
+
+    void LateUpdate()
+    {
+        AimingUpdate();
+    }
+
+    void AimingUpdate()
+    {
+        if (camera == null || head == null)
+        {
+            return;
+            //this.enabled = false;
+        }
+        var rect = aiming.GetComponent<RectTransform>();
+        Vector3 pos = head.transform.position;
+        //Vector3 pos = player.transform.position;
+        pos += (new Vector3(0, -1, 0)) + head.transform.forward * 100;
+        Vector3 pos_s = RectTransformUtility.WorldToScreenPoint(camera, pos);
+        pos_s.y -= 10;
+        if ((pos_s - rect.position).magnitude < 100)
+            rect.position = Vector3.Lerp(rect.position, pos_s, 0.05f);
+
+    }
+
 
     public void SlotUpdate(List<Weapon> weapons)
     {
@@ -95,6 +127,20 @@ public class UIController : MonoBehaviour
     {
         GrenadeSlider.value = value;
         //var fill = GrenadeSlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
+    }
+
+    public void setTargetCount(int v,int maxValue)
+    {
+        targetCountUI.textUpdate(v, maxValue);
+    }
+    public void setTargetCount(int v)
+    {
+        targetCountUI.textUpdate(v);
+    }
+
+    public void setTargetPointer(List<GameObject> targets)
+    {
+        targetCountUI.TargetPointerStart(targets,camera);
     }
 
     public IEnumerator DelayMethod(float waitTime, Action action)

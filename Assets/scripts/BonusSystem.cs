@@ -36,7 +36,9 @@ public class BonusSystem : MonoBehaviour
         bool flg = false;
         enemies.ForEach((charcter) =>
         {
-            if (((charcter==null&&notPlayerKill)|| (charcter!=null && charcter.gameObject.activeSelf==true&&!notPlayerKill) ||  (notPlayerKill && charcter != null &&( (EnemyController)charcter).killedByNotPlayer==false)))
+            if (((charcter==null&&notPlayerKill)|| 
+            (charcter!=null && charcter.gameObject.activeSelf==true&&!notPlayerKill) || 
+            (notPlayerKill && charcter != null &&( (EnemyController)charcter).killedByNotPlayer==false)))
                 flg = true;
         });
         if (!flg)
