@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage_Cashimom01.unity
     guid: 603c901662be81c4b857e2382967e03e
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: dbd706bb642c56a45a8c7419e87b5bb1
   m_configObjects: {}
