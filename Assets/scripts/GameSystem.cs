@@ -26,7 +26,7 @@ public class GameSystem : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Player == null)
         {
@@ -80,8 +80,8 @@ public class GameSystem : MonoBehaviour
 
         Player.transform.position=SpawnPosition;
         playerController.HP = playerController.MaxHP;
-        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = playerController.HP.ToString();
+        Debug.Log(playerController.HP);
+        Debug.Log(playerController.MaxHP);
     }
     
     void GameClear()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// キャラクターを作るときに継承させるクラス。
@@ -24,10 +25,22 @@ public class Character : MonoBehaviour
     /// </summary>
     [SerializeField] private float FlyForce = 100;
 
+    //[FormerlySerializedAs("HP")]
+    private float hp;
     /// <summary>
     /// キャラクターのHP
     /// </summary>
-    [SerializeField] public float HP = 100;
+    /// 
+    
+    [SerializeField] public float HP {
+        set {
+            value = Mathf.Clamp(value, 0, MaxHP);
+            float delta = hp - value;
+            hp = value;
+            ChangeHPText(value,delta);
+        }
+        get { return hp; }
+    }
     
     /// <summary>
     /// キャラクターのHPの上限
@@ -284,12 +297,17 @@ public class Character : MonoBehaviour
     /// <summary>
     /// エネルギー量を表示しているテキストを更新する
     /// </summary>
-    protected void ChangeEnergyText()
+    protected virtual void ChangeEnergyText()
     {
-        var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
-        tmp.text = ((int)energy).ToString();
-        var slider = GameObject.Find("Canvas/Energy Slider").GetComponent<Slider>();
-        slider.value = (energy / MaxEnergy);
+        //var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
+        //tmp.text = ((int)energy).ToString();
+        //var slider = GameObject.Find("Canvas/Energy Slider").GetComponent<Slider>();
+        //slider.value = (energy / MaxEnergy);
+    }
+
+    protected virtual void ChangeHPText(float hp,float delta)
+    {
+
     }
 
     /// <summary>

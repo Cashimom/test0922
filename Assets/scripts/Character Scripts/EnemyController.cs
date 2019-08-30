@@ -60,6 +60,7 @@ public class EnemyController : Character
     // Use this for initialization
     void Start ()
     {
+        HP = MaxHP;
         rb = GetComponent<Rigidbody>();
         if(rightWeaponTransform==null)rightWeaponTransform = transform;
         deathMaterial= Resources.Load<Material>("Jouhatu");

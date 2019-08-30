@@ -157,6 +157,10 @@ public class PlayerController : Character
             playerJob.player = this;
             playerJob._Start();
         }
+
+
+        HP = MaxHP;
+
     }
 
     public virtual void Update()
@@ -533,20 +537,42 @@ public class PlayerController : Character
         }
     }
 
-    public void setPlayerHP(float delta)
+
+    //public void setPlayerHP(float hp)
+    //{
+    //    float delta = HP - hp;
+    //    setPlayerHPDelta(delta);
+    //}
+
+    //public void setPlayerHPDelta(float delta)
+    //{
+    //    HP += delta;
+    //    HP = Mathf.Min(HP, MaxHP);
+    //}
+
+    protected override void ChangeEnergyText()
     {
-        HP += delta;
-        HP = Mathf.Min(HP, MaxHP);
+        var tmp = GameObject.Find("Canvas/ShowEnergy Text").GetComponent<TextMeshProUGUI>();
+        tmp.text = ((int)Energy).ToString();
+        var slider = GameObject.Find("Canvas/Energy Slider").GetComponent<Slider>();
+        slider.value = (Energy / MaxEnergy);
+    }
+
+    protected override void ChangeHPText(float hp,float delta)
+    {
         var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = ((int)HP).ToString();
+        tmp.text = ((int)hp).ToString();
+
+        //float delta = hp - HP;
         if (delta > 0)
         {
-            uiController.Health(HP,MaxHP);
+            uiController.Health(HP, MaxHP);
         }
         else
         {
             uiController.Damage(HP, MaxHP);
         }
+
         if (HP <= 0 && dieFunc != null)
             dieFunc();
     }
@@ -554,26 +580,26 @@ public class PlayerController : Character
     public override bool explodeDamage(float damage)
     {
         base.explodeDamage(damage);
-        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = ((int)HP).ToString();
+        //var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        //tmp.text = ((int)HP).ToString();
         //var slider = GameObject.Find("Canvas/HP Slider").GetComponent<Slider>();
         //slider.value = (HP / MaxHP);
-        uiController.Damage(HP, MaxHP);
-        if (HP<=0&&dieFunc!=null)
-            dieFunc();
+        //uiController.Damage(HP, MaxHP);
+        //if (HP<=0&&dieFunc!=null)
+        //    dieFunc();
         return true;
     }
 
     public override bool explodeDamage(float damage,Character character)
     {
         base.explodeDamage(damage,character);
-        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = ((int)HP).ToString();
+        //var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
+        //tmp.text = ((int)HP).ToString();
         //var slider = GameObject.Find("Canvas/HP Slider").GetComponent<Slider>();
         //slider.value = (HP / MaxHP);
-        uiController.Damage(HP, MaxHP);
-        if (HP <= 0 && dieFunc != null)
-            dieFunc();
+        //uiController.Damage(HP, MaxHP);
+        //if (HP <= 0 && dieFunc != null)
+        //    dieFunc();
         return true;
     }
 }

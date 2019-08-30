@@ -14,7 +14,7 @@ public class TestJob2 : PlayerJob
         if (Input.GetKey(KeyCode.F))
         {
             player.Energy -= 5 * Time.deltaTime;
-            player.setPlayerHP(2.5f * Time.deltaTime);
+            player.HP+=2.5f * Time.deltaTime;
         }
         //base.Update();
     }

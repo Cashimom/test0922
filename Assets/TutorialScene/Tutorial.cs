@@ -12,12 +12,17 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] public List<GameObject> willNotActive;
 
+    [SerializeField] public Vector3 tutorialSpawnPosition;
+
+    private Vector3 defaultPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         gameSystem.gameObject.SetActive(false);
         listenner.action = GameStart;
-        
+        defaultPosition= gameSystem.SpawnPosition;
+        gameSystem.SpawnPosition = tutorialSpawnPosition;
     }
 
     // Update is called once per frame
@@ -30,6 +35,7 @@ public class Tutorial : MonoBehaviour
     {
         if (other.gameObject.tag == "Character" && other.gameObject.GetComponent<Character>() is PlayerController)
         {
+            gameSystem.SpawnPosition = defaultPosition;
             gameSystem.gameObject.SetActive(true);
             foreach(var obj in willActive)
             {

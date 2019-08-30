@@ -7,7 +7,7 @@ public class Building : Character
     // Start is called before the first frame update
     void Start()
     {
-        
+        HP = MaxHP;
     }
 
     // Update is called once per frame
