@@ -295,16 +295,15 @@ public class PlayerController : Character
             Jump();
         }
 
+
+        debugText(Input.GetButton("Horizontal").ToString()+","+ Input.GetButton("Horizontal").ToString());
         //ブーストする
-        if(isJumpPressed&&Input.GetKey(KeyCode.LeftShift)&& Energy>=5)
+        if (isJumpPressed&&Input.GetKey(KeyCode.LeftShift)&& Energy>=5)
         {
             Energy -= 5;
-            boostMove(mx, mz);
+            boostMove(mx*(Input.GetButton("Horizontal")?1:0), mz* (Input.GetButton("Vertical") ? 1 : 0));
         }
-        if (boostFlg)
-        {
-            boostDecay();
-        }
+        boostDuring();
 
         //滞空する
         if (Input.GetKey(KeyCode.LeftShift) && !boostFlg&& Energy>=5*Time.deltaTime)

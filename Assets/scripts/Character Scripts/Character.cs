@@ -93,6 +93,8 @@ public class Character : MonoBehaviour
     /// </summary>
     protected bool boostFlg = false;
 
+    protected float boostTimeCnt = 0;
+
     public const int WEAPON_RIGHT = 1;
     public const int WEAPON_LEFT = 2;
     public int NowWeapon = WEAPON_RIGHT;
@@ -121,52 +123,46 @@ public class Character : MonoBehaviour
     public void boostMove(float x, float z)
     {
         Vector3 impulseForce = new Vector3(0, 0, 0);
-        if (z > 0)
+        if (z != 0)
         {
-            impulseForce += transform.forward * FlyForce;
+            impulseForce += transform.forward * FlyForce * (z > 0 ? 1 : -1);
         }
-        else if (z < 0)
+        if (x != 0)
         {
-            impulseForce += transform.forward * -FlyForce;
-        }
-        if (x > 0)
-        {
-            impulseForce += transform.right * FlyForce;
-        }
-        else if (x < 0)
-        {
-            impulseForce += transform.right * -FlyForce;
+            impulseForce += transform.right * FlyForce * (x > 0 ? 1 : -1);
         }
 
         if (x == 0 && z == 0)
         {
-            impulseForce += new Vector3(0, FlyForce*2, 0);
+            impulseForce += transform.up * FlyForce*2;
         }
 
         if (impulseForce != new Vector3(0, 0, 0))
         {
             rb.AddForce(impulseForce, ForceMode.Impulse);
             boostFlg = true;
-            boostFlg = true;
-            StartCoroutine(DelayMethod2(1f, () =>
-            {
-                boostFlg = false;
-                //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-                //rb.velocity = new Vector3(0, 0, 0);
-                /*var vel = rb.velocity;
-                vel.x = vel.z = 0;
-                rb.velocity = vel;*/
-            }));
+            boostTimeCnt = 0;
         }
     }
 
     /// <summary>
     /// ブーストした後のスピードの減衰
     /// </summary>
-    public void boostDecay()
+    public void boostDuring()
     {
-        var vel = rb.velocity;
-        rb.AddForce(-(vel*2f), ForceMode.Force);
+        if (boostFlg)
+        {
+            boostTimeCnt += Time.deltaTime;
+            if (boostTimeCnt >= 1.0f)
+            {
+                boostFlg = false;
+                boostTimeCnt = 0;
+                return;
+            }
+
+            var vel = rb.velocity;
+            rb.AddForce(-(vel * 2f), ForceMode.Force);
+        }
     }
 
     /// <summary>

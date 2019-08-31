@@ -80,8 +80,6 @@ public class GameSystem : MonoBehaviour
 
         Player.transform.position=SpawnPosition;
         playerController.HP = playerController.MaxHP;
-        Debug.Log(playerController.HP);
-        Debug.Log(playerController.MaxHP);
     }
     
     void GameClear()
