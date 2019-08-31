@@ -9,6 +9,8 @@ public class ShotgunScript : Weapon
 
     [SerializeField] public float maxAngle = 15;
 
+    [SerializeField] public Vector2 muzzleSize =new Vector2(2,2);
+
     // Start is called before the first frame update
     new void Start()
     {
@@ -61,7 +63,7 @@ public class ShotgunScript : Weapon
                 var ry = Random.value*(2) -1;
                 var anglex = (Random.value * (2) - 1) * _maxAngle;
                 var angley = (Random.value * (2) - 1) * _maxAngle;
-                f.transform.localPosition += new Vector3(rx*2, ry*2, 0.1f*i);
+                f.transform.localPosition += new Vector3(rx*muzzleSize.x, ry*muzzleSize.y, 0.1f*i);
 
                 f.transform.rotation *= Quaternion.Euler(anglex, angley , 0);
             }

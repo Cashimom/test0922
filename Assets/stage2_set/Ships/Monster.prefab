@@ -62,8 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 200
-  HP: 30
-  MaxHP: 100
+  MaxHP: 30
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}

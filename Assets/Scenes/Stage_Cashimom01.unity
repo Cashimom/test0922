@@ -896,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -2399,7 +2399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -3549,7 +3549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -3870,7 +3870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -4367,7 +4367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -5277,7 +5277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -5389,7 +5389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -5501,7 +5501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6002,7 +6002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6194,7 +6194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6412,7 +6412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6524,7 +6524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6636,7 +6636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -7942,7 +7942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -8145,7 +8145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -8439,7 +8439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -8863,7 +8863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -9014,7 +9014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -9165,7 +9165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -9277,7 +9277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -9618,7 +9618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -9848,7 +9848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -10142,7 +10142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -10254,7 +10254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -11403,7 +11403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -11606,7 +11606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -11861,7 +11861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -12455,7 +12455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -12958,7 +12958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -13457,7 +13457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -13517,7 +13517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -13926,7 +13926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -14220,7 +14220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -14423,7 +14423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -14626,7 +14626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -14738,7 +14738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
@@ -14960,7 +14960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 300
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   LeftWeapon: {fileID: 0}
