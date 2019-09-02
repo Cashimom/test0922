@@ -138,6 +138,7 @@ public class InspecotrExpansion : Editor
         EditorGUILayout.LabelField("maji");
         EditorGUILayout.LabelField("manzi");
         EditorGUILayout.EndHorizontal();
+        expansion.generateWhenStart = EditorGUILayout.Toggle("only stage generate",expansion.generateWhenStart);
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(expansion, "stageGenerator");

@@ -171,20 +171,27 @@ public class PlayerController : Character
         bool isHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, OnFloorHeight);
         if (isHit)
         {
-            chargeTimeCnt += Time.deltaTime;
+            //chargeTimeCnt += Time.deltaTime;
 
-            if (chargeTimeCnt > 0.1)
-            {
-                if(Energy<MaxEnergy)
-                    Energy += 1;
-                chargeTimeCnt = 0;
-            }
+            //if (chargeTimeCnt > 0.1)
+            //{
+            //    if(Energy<MaxEnergy)
+            //        Energy += 1;
+            //    chargeTimeCnt = 0;
+            //}
+            if (Energy < MaxEnergy)
+                Energy += 10 * Time.deltaTime;
 
             if (secondJumpFlg)
                 secondJumpFlg = false;
         }
+        else
+        {
+            if (Energy < MaxEnergy)
+                Energy += 1 * Time.deltaTime;
+        }
 
-        ChangeEnergyText();
+        //ChangeEnergyText();
 
 
         if (Input.GetButtonDown("Jump"))

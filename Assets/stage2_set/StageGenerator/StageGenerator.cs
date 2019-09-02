@@ -17,6 +17,8 @@ public class StageGenerator : MonoBehaviour
 
     [SerializeField] public List<GameObject> randomPut = new List<GameObject>();
 
+    [SerializeField] public bool generateWhenStart = false;
+
     private int[,,] map;
 
     private Vector3 blockSize;
@@ -61,7 +63,10 @@ public class StageGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (generateWhenStart)
+        {
+            generate();
+        }
     }
 
     public List<SavingObject> generate()
