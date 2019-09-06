@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// プレイヤーの処理を実装しているクラス
@@ -35,7 +36,8 @@ public class PlayerController : Character
     /// <summary>
     /// マウスの感度
     /// </summary>
-    [SerializeField] public float RotationSensitivity = 1000f;// 感度
+     [FormerlySerializedAs("RotationSensitivity")]
+    [SerializeField] public float mouseSensitivity = 1000f;// 感度
 
     /// <summary>
     /// <see cref="Jump"/>する強さ
@@ -242,8 +244,8 @@ public class PlayerController : Character
     {
 
         //マウスで方向を変える
-        var rotX = Input.GetAxis("Mouse X") * Time.deltaTime * RotationSensitivity;
-        var rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * RotationSensitivity;
+        var rotX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
+        var rotY = -Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity;
         Rotation(rotX, rotY);
 
         ////Eが押されたらpause状態をswitch
@@ -303,7 +305,6 @@ public class PlayerController : Character
         }
 
 
-        debugText(Input.GetButton("Horizontal").ToString()+","+ Input.GetButton("Horizontal").ToString());
         //ブーストする
         if (isJumpPressed&&Input.GetKey(KeyCode.LeftShift)&& Energy>=5)
         {
