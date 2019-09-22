@@ -29,7 +29,7 @@ public class WeaponSlot : MonoBehaviour , IBeginDragHandler,IDragHandler,IEndDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         transform.position= eventData.position;
-        transform.SetSiblingIndex(1);
+        transform.SetSiblingIndex(0);
         inventory.dragging = this;
     }
 
@@ -40,7 +40,7 @@ public class WeaponSlot : MonoBehaviour , IBeginDragHandler,IDragHandler,IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetSiblingIndex(2);
+        transform.SetSiblingIndex(1);
         inventory.dragging = null;
         ReturnToFirstPos();
     }
@@ -50,9 +50,9 @@ public class WeaponSlot : MonoBehaviour , IBeginDragHandler,IDragHandler,IEndDra
         if (inventory.dragging != this)
         {
             inventory.WeaponExchange(weapon, inventory.dragging.weapon);
-            var w = inventory.dragging.weapon;
-            inventory.dragging.weapon = weapon;
-            weapon = w;
+            //var w = inventory.dragging.weapon;
+            //inventory.dragging.weapon = weapon;
+            //weapon = w;
         }
     }
 
@@ -62,7 +62,7 @@ public class WeaponSlot : MonoBehaviour , IBeginDragHandler,IDragHandler,IEndDra
     {
         image = gameObject.GetComponent<RawImage>();
 
-        transform.SetSiblingIndex(2);
+        transform.SetSiblingIndex(1);
     }
 
     // Start is called before the first frame update

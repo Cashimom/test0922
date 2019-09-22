@@ -42,6 +42,7 @@ public class DropPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
     private void Awake()
     {
         image = GetComponent<Image>();
+        transform.SetSiblingIndex(2);
     }
 
     // Start is called before the first frame update
