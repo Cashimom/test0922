@@ -144,6 +144,7 @@ public class Weapon : MonoBehaviour
     /// </summary>
     public void DropWeapon()
     {
+        gameObject.SetActive(true);
         isHave = false;
         character = null;
         GetComponent<BoxCollider>().enabled = true;

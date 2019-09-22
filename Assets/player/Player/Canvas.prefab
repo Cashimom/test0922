@@ -1482,6 +1482,7 @@ MonoBehaviour:
   GrenadeSlider: {fileID: 2434616336229961474}
   aiming: {fileID: 2975646128955056776}
   targetCountUI: {fileID: 3689703480104831116}
+  playerInventory: {fileID: 0}
 --- !u!1 &4833039195123233601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3871,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1453148810230497252, guid: e6fdc108678758241bf4d3459b6d5497,
+        type: 3}
+      propertyPath: slot1
+      value: 
+      objectReference: {fileID: 2686053242577490484}
+    - target: {fileID: 1453148810230497252, guid: e6fdc108678758241bf4d3459b6d5497,
+        type: 3}
+      propertyPath: slot2
+      value: 
+      objectReference: {fileID: 5257613654223152187}
     - target: {fileID: 3877998751765039340, guid: e6fdc108678758241bf4d3459b6d5497,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4018,3 +4029,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2663194511274292277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2686053242577490484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 122536711482254849, guid: e6fdc108678758241bf4d3459b6d5497,
+    type: 3}
+  m_PrefabInstance: {fileID: 2663194511274292277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5257613654223152187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7783164151495446542, guid: e6fdc108678758241bf4d3459b6d5497,
+    type: 3}
+  m_PrefabInstance: {fileID: 2663194511274292277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

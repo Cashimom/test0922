@@ -15,9 +15,9 @@ public class Setting : MonoBehaviour
 
     [SerializeField] Menu menu;
 
-    [SerializeField] Slider mouseSensitivity;
+    //[SerializeField] Slider mouseSensitivity;
 
-    [SerializeField] Slider fieldOfView;
+    //[SerializeField] Slider fieldOfView;
 
     [SerializeField] PlayerController player;
 
@@ -42,7 +42,7 @@ public class Setting : MonoBehaviour
 
     void MenuOpen()
     {
-        menu.Open();
+        menu.Open(player);
         //_menu.SetActive(true);
         //Time.timeScale = 0;
         //Cursor.visible = true;

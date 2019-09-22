@@ -27,11 +27,7 @@ public class PlayerController : Character
     /// </summary>
     [SerializeField] private GameObject pressButton;
 
-    [SerializeField] private List<Weapon> WeaponList;
-
-
-
-    //public PlayerContainer playerContainer;
+    private UIController uiController;
 
     /// <summary>
     /// マウスの感度
@@ -45,6 +41,11 @@ public class PlayerController : Character
     [SerializeField] private float jumpForce = 50;
 
     public float OnFloorHeight = 1.2f;
+
+    /// <summary>
+    /// 持っている武器
+    /// </summary>
+    [SerializeField] public List<Weapon> WeaponList;
 
     private Weapon nearWeapon;
     /// <summary>
@@ -106,19 +107,17 @@ public class PlayerController : Character
     /// <summary>
     /// <see cref="Update"/>でQが押されていたか保持する変数
     /// </summary>
-    private bool isKeyQPressed = false;
+    private bool isSwitchWeaponPressed = false;
 
     /// <summary>
     /// <see cref="Update"/>でEが押されていたか保持する変数
     /// </summary>
-    private bool isKeyEPressed = false;
+    private bool isPickWeaponPressed = false;
 
     /// <summary>
     /// エネルギーのチャージ時間カウント用変数
     /// </summary>
     private float chargeTimeCnt = 0;
-
-    private UIController uiController;
 
     /// <summary>
     /// HPがなくなって死ぬときの処理を入れておく。
@@ -128,22 +127,24 @@ public class PlayerController : Character
 
     private Character myShield;
 
-
-    public virtual void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rightWeaponTransform = head.transform;
         shield = (GameObject)Resources.Load("Shield");
 
-        CursorLock(true);
         if (pressButton == null)
         {
             pressButton = GameObject.Find("Canvas/PickUp View");
         }
-        pressButton.SetActive(false);
-        var tmp = GameObject.Find("Canvas/ShowEnergy Text2").GetComponent<TextMeshProUGUI>();
-        tmp.text = HP.ToString();
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+        
+    }
+
+    public virtual void Start()
+    {
+        CursorLock(true);
+        pressButton.SetActive(false);
 
         if (LeftWeapon != null){
             uiController.SlotUpdate(LeftWeapon, 2);
@@ -202,11 +203,11 @@ public class PlayerController : Character
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            isKeyQPressed = true;
+            isSwitchWeaponPressed = true;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            isKeyEPressed = true;
+            isPickWeaponPressed = true;
         }
 
 
@@ -257,7 +258,7 @@ public class PlayerController : Character
         //CursorLock(!pause);
         
         //武器拾う
-        if (isKeyEPressed&&NearWeapon!=null)
+        if (isPickWeaponPressed&&NearWeapon!=null)
         {
             PickUpWeapon(NearWeapon);
             NearWeapon = null;
@@ -277,9 +278,9 @@ public class PlayerController : Character
         }
 
 
-        if (isKeyQPressed)
+        if (isSwitchWeaponPressed)
         {
-            switchWeapon();
+            SwitchWeapon();
         }
 
         //wasdとかで動かす
@@ -355,8 +356,8 @@ public class PlayerController : Character
 
 
         isJumpPressed = false;
-        isKeyQPressed = false;
-        isKeyEPressed = false;
+        isSwitchWeaponPressed = false;
+        isPickWeaponPressed = false;
     }
 
     /// <summary>
@@ -488,7 +489,7 @@ public class PlayerController : Character
     {
         if (NowWeapon == WEAPON_LEFT)
         {
-            switchWeapon();
+            SwitchWeapon();
         }
         var nowIndex = WeaponList.FindIndex(match => match == RightWeapon);
         if (WeaponList.Count >= 2)
@@ -524,7 +525,7 @@ public class PlayerController : Character
         uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
     }
 
-    void switchWeapon()
+    void SwitchWeapon()
     {
         if (NowWeapon == WEAPON_RIGHT&&LeftWeapon!=null)
         {
@@ -544,6 +545,38 @@ public class PlayerController : Character
         }
     }
 
+    public void DropWeapon(Weapon weapon)
+    {
+        int index = WeaponList.FindIndex(match => weapon == match);
+        if(NowWeapon==WEAPON_RIGHT&&RightWeapon == weapon)
+        {
+            if (WeaponList.Count >= 1)
+            {
+                ChangeWeapon(1);
+            }
+            else
+            {
+                SwitchWeapon();
+            }
+        }
+        WeaponList.Remove(weapon);
+        weapon.transform.position = transform.position;
+        weapon.DropWeapon();
+        uiController.SlotUpdate(WeaponList);
+        uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
+
+        Debug.Log(WeaponList);
+    }
+
+    public void UpdateWeaponUI()
+    {
+
+        uiController.SlotUpdate(WeaponList);
+        if (NowWeapon == WEAPON_RIGHT)
+        {
+            uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
+        }
+    }
 
     //public void setPlayerHP(float hp)
     //{

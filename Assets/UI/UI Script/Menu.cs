@@ -7,11 +7,20 @@ using System;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] GameObject setting;
+
     [SerializeField] Slider mouseSensitivity;
 
     [SerializeField] Slider fieldOfView;
 
+    [SerializeField] GameObject _inventory;
+
+    [SerializeField] Inventory inventory;
+
+
     [NonSerialized] public bool isOpen = true;
+
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -25,18 +34,19 @@ public class Menu : MonoBehaviour
         
     }
 
-    public void Open()
+    public void Open(PlayerController player)
     {
+        this.player = player;
         gameObject.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         isOpen = true;
+        InventoryOpen();
     }
 
     public Dictionary<string, float> Exit()
     {
-        isOpen = false; 
         gameObject.SetActive(false);
         Dictionary<string, float> settings = new Dictionary<string, float>();
         //if (player != null) player.RotationSensitivity = mouseSensitivity.value;
@@ -46,6 +56,22 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        isOpen = false; 
         return settings;
+    }
+
+    public void InventoryOpen()
+    {
+        setting.SetActive(false);
+        //_inventory.SetActive(true);
+
+        //inventory.gameObject.SetActive(true);
+        inventory.Open(player);
+    }
+
+    public void SettingOpne()
+    {
+        setting.SetActive(true);
+        inventory.Exit();
     }
 }

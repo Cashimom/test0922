@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI aiming;
     [SerializeField] private TargetCountUI targetCountUI;
 
+    public PlayerController playerInventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,15 +62,23 @@ public class UIController : MonoBehaviour
 
     public void SlotUpdate(List<Weapon> weapons)
     {
-        for(int i = 0; i < weapons.Count; i++)
+        for(int i = 0; i < slotImages.Count-1; i++)
         {
-            if (weapons[i].image != null)
+            if (i < weapons.Count)
             {
-                slotImages[i].texture = weapons[i].image;
+                if (weapons[i].image != null)
+                {
+                    slotImages[i].texture = weapons[i].image;
+                }
+                else
+                {
+                    slotImages[i].texture = Resources.Load<Texture>("NoImage.png");
+                }
             }
             else
             {
-                slotImages[i].texture = Resources.Load<Texture>("NoImage.png");
+                slotImages[i].texture = null;
+
             }
         }
     }

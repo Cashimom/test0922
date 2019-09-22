@@ -254,8 +254,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
@@ -536,8 +536,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &77070713
 BoxCollider:
@@ -648,8 +648,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &79574482
 BoxCollider:
@@ -760,8 +760,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &127997969
 BoxCollider:
@@ -930,8 +930,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &166305738 stripped
 GameObject:
@@ -1224,8 +1224,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &218985487
 BoxCollider:
@@ -1394,8 +1394,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &219969221
 GameObject:
@@ -1448,8 +1448,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &219969224
 BoxCollider:
@@ -1560,8 +1560,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &227377448
 BoxCollider:
@@ -1736,8 +1736,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1001 &294305902
 PrefabInstance:
@@ -1838,18 +1838,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f9ce00ca2a6b85044851fbc474120504, type: 3}
---- !u!114 &297052651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810789366969833419, guid: 86cc6462615923149bca2402a4d6fdd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1684019573465074330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &323674021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2068,8 +2056,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &343320718
 GameObject:
@@ -2122,8 +2110,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &343320721
 BoxCollider:
@@ -2623,8 +2611,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &385482330
 GameObject:
@@ -2677,8 +2665,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &385482333
 BoxCollider:
@@ -2861,8 +2849,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &435235358
 BoxCollider:
@@ -2957,8 +2945,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &441444256 stripped
 GameObject:
@@ -2983,8 +2971,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &473423327
 GameObject:
@@ -3095,8 +3083,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -3155,8 +3143,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &486511730
 BoxCollider:
@@ -3422,6 +3410,24 @@ Transform:
   m_Father: {fileID: 711807768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &523046753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 941184182628500160, guid: 86cc6462615923149bca2402a4d6fdd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684019573465074330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &523046755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4745950630420786839, guid: 86cc6462615923149bca2402a4d6fdd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1684019573465074330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523046753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312619c497830184da371056e7e96e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &523470243
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,8 +3556,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 1576800339}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -3682,8 +3688,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &533066369
 BoxCollider:
@@ -3772,8 +3778,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &583859599
 GameObject:
@@ -3859,8 +3865,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &603640936
 BoxCollider:
@@ -4010,8 +4016,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &610842612
 GameObject:
@@ -4050,8 +4056,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 376316563}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -4216,8 +4222,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &621065598
 BoxCollider:
@@ -4386,8 +4392,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &633662442
 GameObject:
@@ -4426,8 +4432,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 50599616}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}
@@ -4558,8 +4564,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &637893740
 BoxCollider:
@@ -4795,8 +4801,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &678053524
 BoxCollider:
@@ -4907,8 +4913,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &682771332
 BoxCollider:
@@ -5077,8 +5083,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -5190,8 +5196,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &711629046
 BoxCollider:
@@ -5426,8 +5432,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &729864782
 GameObject:
@@ -5480,8 +5486,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &729864785
 BoxCollider:
@@ -5719,8 +5725,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &753875078
 GameObject:
@@ -5773,8 +5779,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &753875081
 BoxCollider:
@@ -5915,8 +5921,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &767008752
 BoxCollider:
@@ -6027,8 +6033,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &782930928
 BoxCollider:
@@ -6227,8 +6233,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &844869998
 GameObject:
@@ -6281,8 +6287,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &844870001
 BoxCollider:
@@ -11164,8 +11170,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &874237559
 BoxCollider:
@@ -11426,8 +11432,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1001 &909944730
 PrefabInstance:
@@ -11592,8 +11598,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &911849162
 GameObject:
@@ -11646,8 +11652,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &911849165
 BoxCollider:
@@ -11758,8 +11764,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &913228344
 BoxCollider:
@@ -11969,8 +11975,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &916056621
 BoxCollider:
@@ -12081,8 +12087,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &928806267
 BoxCollider:
@@ -12193,8 +12199,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &930686809
 BoxCollider:
@@ -12305,8 +12311,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &943455361
 BoxCollider:
@@ -12417,8 +12423,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 3
   moveVec: {x: 0, y: 2, z: 0}
@@ -12698,8 +12704,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &991784802
 BoxCollider:
@@ -12810,8 +12816,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &993224023
 BoxCollider:
@@ -12922,8 +12928,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1002714686
 BoxCollider:
@@ -13168,8 +13174,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1070554808
 BoxCollider:
@@ -13280,8 +13286,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 1, y: 0, z: 0}
@@ -13549,8 +13555,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1141561771
 BoxCollider:
@@ -13661,8 +13667,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1142142532
 BoxCollider:
@@ -13868,8 +13874,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1152766497
 BoxCollider:
@@ -14052,8 +14058,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1179150377
 BoxCollider:
@@ -14222,8 +14228,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1001 &1183688250
 PrefabInstance:
@@ -14337,8 +14343,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1184213094
 BoxCollider:
@@ -14449,8 +14455,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1191702585
 BoxCollider:
@@ -14743,8 +14749,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1213367688
 BoxCollider:
@@ -14855,8 +14861,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1215688510
 BoxCollider:
@@ -19778,8 +19784,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1242373283
 BoxCollider:
@@ -19929,8 +19935,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1256222827
 GameObject:
@@ -19983,8 +19989,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1256222830
 BoxCollider:
@@ -20310,8 +20316,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1001 &1298481093
 PrefabInstance:
@@ -20393,8 +20399,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 14
   moveVec: {x: -1, y: 0, z: 0}
@@ -20511,8 +20517,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1326864830
 GameObject:
@@ -20565,8 +20571,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1326864833
 BoxCollider:
@@ -20735,8 +20741,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!4 &1331481981 stripped
 Transform:
@@ -20853,8 +20859,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1352937613 stripped
 GameObject:
@@ -20913,8 +20919,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1358864801
 BoxCollider:
@@ -21025,8 +21031,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1362688941
 BoxCollider:
@@ -21195,8 +21201,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1365784203
 GameObject:
@@ -21249,8 +21255,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1365784206
 BoxCollider:
@@ -21426,8 +21432,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1389228726
 BoxCollider:
@@ -21538,8 +21544,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1396407299
 BoxCollider:
@@ -21946,8 +21952,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1001 &1469298229
 PrefabInstance:
@@ -22139,8 +22145,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!4 &1497695856 stripped
 Transform:
@@ -22199,8 +22205,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1501635877
 BoxCollider:
@@ -22369,8 +22375,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1508750883
 GameObject:
@@ -22423,8 +22429,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1508750886
 BoxCollider:
@@ -23047,8 +23053,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1617311447
 BoxCollider:
@@ -23159,8 +23165,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1628778457
 BoxCollider:
@@ -23329,8 +23335,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 10
   moveVec: {x: 0, y: 0, z: 0}
@@ -23430,8 +23436,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1664121325
 GameObject:
@@ -23495,8 +23501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menu: {fileID: 5496849936411373156}
   menu: {fileID: 5496849936411373159}
-  mouseSensitivity: {fileID: 297052651}
-  fieldOfView: {fileID: 1684019573465074331}
   player: {fileID: 1840487844}
   camera: {fileID: 1983877771}
 --- !u!4 &1678981263 stripped
@@ -23620,8 +23624,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!114 &1725013021 stripped
 MonoBehaviour:
@@ -23781,8 +23785,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1755832844
 BoxCollider:
@@ -23893,8 +23897,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1758608202
 BoxCollider:
@@ -24005,8 +24009,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1769518379
 BoxCollider:
@@ -24117,8 +24121,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1778107867
 BoxCollider:
@@ -24229,8 +24233,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1782541031
 BoxCollider:
@@ -24313,8 +24317,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1821597558
 GameObject:
@@ -24425,8 +24429,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1825203455
 GameObject:
@@ -24479,8 +24483,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1825203458
 BoxCollider:
@@ -24921,8 +24925,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &1912432256
 GameObject:
@@ -25066,8 +25070,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1918367721
 BoxCollider:
@@ -25190,8 +25194,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &1946216679
 BoxCollider:
@@ -25405,8 +25409,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &2024889644
 BoxCollider:
@@ -25575,8 +25579,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 2
   moveVec: {x: 0, y: 0, z: 1}
@@ -30462,8 +30466,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &2085497080 stripped
 GameObject:
@@ -30488,8 +30492,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!1 &2113507864
 GameObject:
@@ -30542,8 +30546,8 @@ MonoBehaviour:
   MaxHP: 100
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
 --- !u!65 &2113507867
 BoxCollider:
@@ -31315,21 +31319,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3521549277557410769, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: _inventory
+      value: 
+      objectReference: {fileID: 523046753}
+    - target: {fileID: 3521549277557410769, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 523046755}
+    - target: {fileID: 6016490362853399656, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_inputSource
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016490362853399656, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016490362853399656, guid: 86cc6462615923149bca2402a4d6fdd2,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1050870742737965752, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86cc6462615923149bca2402a4d6fdd2, type: 3}
---- !u!114 &1684019573465074331 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7566148385616865669, guid: 86cc6462615923149bca2402a4d6fdd2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1684019573465074330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1918341719591047890
 PrefabInstance:
   m_ObjectHideFlags: 0
