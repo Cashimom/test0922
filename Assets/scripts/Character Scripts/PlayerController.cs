@@ -565,7 +565,6 @@ public class PlayerController : Character
         uiController.SlotUpdate(WeaponList);
         uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
 
-        Debug.Log(WeaponList);
     }
 
     public void UpdateWeaponUI()
