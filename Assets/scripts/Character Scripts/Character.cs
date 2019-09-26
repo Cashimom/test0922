@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine.Serialization;
 
 /// <summary>
-/// キャラクターを作るときに継承させるクラス。
+/// キャラクターを作るときに継承させるクラス。\n
 /// extended in <seealso cref="PlayerController"/>
 /// <seealso cref="EnemyController"/>
 /// </summary>
@@ -25,13 +25,16 @@ public class Character : MonoBehaviour
     /// </summary>
     [SerializeField] private float FlyForce = 100;
 
-    //[FormerlySerializedAs("HP")]
+    /// <summary>
+    /// キャラクターのHPの上限
+    /// </summary>
+    [SerializeField] public float MaxHP = 100;
+
     private float hp;
     /// <summary>
     /// キャラクターのHP
     /// </summary>
     /// 
-    
     [SerializeField] public float HP {
         set {
             value = Mathf.Clamp(value, 0, MaxHP);
@@ -43,36 +46,9 @@ public class Character : MonoBehaviour
     }
     
     /// <summary>
-    /// キャラクターのHPの上限
-    /// </summary>
-    [SerializeField] public float MaxHP = 100;
-
-    /// <summary>
     /// キャラクターのエネルギーの上限
     /// </summary>
     [SerializeField] public float MaxEnergy = 100;
-
-    /// <summary>
-    /// 持っている武器
-    /// </summary>
-    [SerializeField] public Weapon RightWeapon;
-    
-    /// <summary>
-    /// 持っている武器2
-    /// </summary>
-    [SerializeField] public Weapon LeftWeapon;
-
-    /// <summary>
-    /// キャラクターのtransform.eulerAnglesを保存している変数。
-    /// used in <see cref="FollowPlayer"/>
-    /// </summary>
-    [NonSerialized] public Vector3 vector;
-
-    /// <summary>
-    /// <see cref="RightWeapon"/>を置く場所、
-    /// </summary>
-    [SerializeField] public Transform rightWeaponTransform;
-
 
     private float energy=100;
     /// <summary>
@@ -82,6 +58,32 @@ public class Character : MonoBehaviour
         set { this.energy = Math.Min(value , MaxEnergy); ChangeEnergyText(); }
         get { return this.energy; }
     }
+
+    /// <summary>
+    /// 持っている武器
+    /// </summary>
+    [SerializeField] public Weapon RightWeapon;
+    
+    /// <summary>
+    /// <see cref="RightWeapon"/>を置く場所、
+    /// </summary>
+    [SerializeField] public Transform rightWeaponTransform;
+
+    /// <summary>
+    /// 持っている武器2
+    /// </summary>
+    [SerializeField] public Weapon LeftWeapon;
+
+    public const int WEAPON_RIGHT = 1;
+    public const int WEAPON_LEFT = 2;
+    public int NowWeapon = WEAPON_RIGHT;
+
+    /// <summary>
+    /// キャラクターのtransform.eulerAnglesを保存している変数。
+    /// used in <see cref="FollowPlayer"/>
+    /// </summary>
+    [NonSerialized] public Vector3 vector;
+
 
     /// <summary>
     /// Rigidbodyを持っておく変数
@@ -95,9 +97,8 @@ public class Character : MonoBehaviour
 
     protected float boostTimeCnt = 0;
 
-    public const int WEAPON_RIGHT = 1;
-    public const int WEAPON_LEFT = 2;
-    public int NowWeapon = WEAPON_RIGHT;
+
+
 
 
     /// <summary>

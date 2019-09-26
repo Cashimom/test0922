@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// 設定を反映させたりする
 /// </summary>
 public class Setting : MonoBehaviour
 {
+    //[FormerlySerializedAs("menu")]
+    [SerializeField] GameObject _menu;
 
-    [SerializeField] GameObject menu;
+    [SerializeField] Menu menu;
 
-    [SerializeField] Slider mouseSensitivity;
+    //[SerializeField] Slider mouseSensitivity;
 
-    [SerializeField] Slider fieldOfView;
+    //[SerializeField] Slider fieldOfView;
 
     [SerializeField] PlayerController player;
 
@@ -23,7 +26,8 @@ public class Setting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        menu.SetActive(false);
+        //_menu.SetActive(false);
+        menu.Exit();
     }
 
     // Update is called once per frame
@@ -31,26 +35,28 @@ public class Setting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (menu.activeSelf) MenuExit();
+            if (menu.isOpen) MenuExit();
             else MenuOpen();
         }
     }
 
     void MenuOpen()
     {
-        menu.SetActive(true);
-        Time.timeScale = 0;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        menu.Open(player);
+        //_menu.SetActive(true);
+        //Time.timeScale = 0;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     void MenuExit()
     {
-        menu.SetActive(false);
-        if(player!=null)player.RotationSensitivity = mouseSensitivity.value;
-        if(camera!=null)camera.fieldOfView = fieldOfView.value;
-        Time.timeScale = 1;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        var setting = menu.Exit();
+        //_menu.SetActive(false);
+        if(player!=null)player.mouseSensitivity = setting["mouseSensitivity"];
+        if(camera!=null)camera.fieldOfView = setting["fieldOfView"];
+        //Time.timeScale = 1;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 }
