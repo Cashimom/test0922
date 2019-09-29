@@ -142,8 +142,9 @@ Transform:
   - {fileID: 294305903}
   - {fileID: 1656386774}
   - {fileID: 1126356108}
+  - {fileID: 665820483}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25512316
 GameObject:
@@ -296,7 +297,7 @@ Transform:
   - {fileID: 523470247}
   - {fileID: 177683439}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &50599613
 PrefabInstance:
@@ -483,7 +484,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77070710
 GameObject:
@@ -533,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -645,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -757,7 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -927,7 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -1171,7 +1172,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218985484
 GameObject:
@@ -1221,7 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -1391,7 +1392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -1445,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -1557,7 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -1733,7 +1734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -2053,7 +2054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -2107,7 +2108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -2608,7 +2609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -2662,7 +2663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -2846,7 +2847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -3140,7 +3141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -3685,7 +3686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -3775,7 +3776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -3811,8 +3812,9 @@ Transform:
   - {fileID: 915965589}
   - {fileID: 736888599}
   - {fileID: 1497695856}
+  - {fileID: 876581409}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603640933
 GameObject:
@@ -3862,7 +3864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4013,7 +4015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4219,7 +4221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4389,7 +4391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4561,7 +4563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4673,6 +4675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4744,6 +4750,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+--- !u!1001 &665820482
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4240422}
+    m_Modifications:
+    - target: {fileID: 7330652979954869161, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_Name
+      value: cannon2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02dcaca7b139cbd439d40c687c0309a4, type: 3}
+--- !u!4 &665820483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7330652979954869166, guid: 02dcaca7b139cbd439d40c687c0309a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 665820482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &674859573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2243484510635301584, guid: b65e5173fae885845936ef2185887e4e,
@@ -4798,7 +4879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -4910,7 +4991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5193,7 +5274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5429,7 +5510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5483,7 +5564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5722,7 +5803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5776,7 +5857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -5868,7 +5949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767008749
 GameObject:
@@ -5918,7 +5999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -6030,7 +6111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -6284,7 +6365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11167,7 +11248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11231,6 +11312,73 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874237556}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &876581408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 583859600}
+    m_Modifications:
+    - target: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_Name
+      value: Shotgun (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183688252, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+      propertyPath: maxAngle
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
+--- !u!4 &876581409 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1183688257, guid: 48389c54dbf62594e89851dd7b0dcb8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 876581408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897116898
 GameObject:
   m_ObjectHideFlags: 0
@@ -11429,7 +11577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11595,7 +11743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11649,7 +11797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11761,7 +11909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -11972,7 +12120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12084,7 +12232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12196,7 +12344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12308,7 +12456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12701,7 +12849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12813,7 +12961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -12925,7 +13073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -13171,7 +13319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -13416,7 +13564,7 @@ Transform:
   m_Children:
   - {fileID: 943492380}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1126356107
 PrefabInstance:
@@ -13428,6 +13576,10 @@ PrefabInstance:
     - target: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_Name
       value: gatling
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527282740425874, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4406713218063928, guid: ccaa9d729de89bb439ea19d7dc883418, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13552,7 +13704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -13664,7 +13816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -13871,7 +14023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14055,7 +14207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14225,7 +14377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14340,7 +14492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14452,7 +14604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14746,7 +14898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -14858,7 +15010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -19781,7 +19933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -19932,7 +20084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -19986,7 +20138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20313,7 +20465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20514,7 +20666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20568,7 +20720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20738,7 +20890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20856,7 +21008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -20916,7 +21068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21028,7 +21180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21198,7 +21350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21252,7 +21404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21379,7 +21531,7 @@ Transform:
   m_Children:
   - {fileID: 1091375761}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1389228723
 GameObject:
@@ -21429,7 +21581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21541,7 +21693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -21681,7 +21833,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427435795
 GameObject:
@@ -21949,7 +22101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -22142,7 +22294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -22202,7 +22354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -22372,7 +22524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -22426,7 +22578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -22518,7 +22670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539849726
 GameObject:
@@ -22743,7 +22895,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576095413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21ca5f773153900409d0ba452cb29d54, type: 3}
   m_Name: 
@@ -23050,7 +23202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -23162,7 +23314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -23621,7 +23773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -23782,7 +23934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -23894,7 +24046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24006,7 +24158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24118,7 +24270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24230,7 +24382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24314,7 +24466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24426,7 +24578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24480,7 +24632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -24922,7 +25074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -25067,7 +25219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -25191,7 +25343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -25406,7 +25558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -30463,7 +30615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -30543,7 +30695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 100
-  MaxHP: 100
+  MaxHP: 1000
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
@@ -30674,7 +30826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &126878904414639837
 PrefabInstance:
@@ -30687,6 +30839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Body(Player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707513, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
@@ -31491,7 +31648,7 @@ PrefabInstance:
     - target: {fileID: 2243484510635301584, guid: b65e5173fae885845936ef2185887e4e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2243484510635301584, guid: b65e5173fae885845936ef2185887e4e,
         type: 3}
@@ -31560,7 +31717,7 @@ PrefabInstance:
     - target: {fileID: 1746324410780992817, guid: a9c2897dc4000a44eb55e455b4c94841,
         type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1746324410780992817, guid: a9c2897dc4000a44eb55e455b4c94841,
         type: 3}
@@ -31579,75 +31736,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9c2897dc4000a44eb55e455b4c94841, type: 3}
---- !u!1001 &2550028245786250765
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 213785052164156894, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Rocket_Shotgun
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 568.0983
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 26.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -239.22046
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5684464440659314406, guid: ef32557af84a6c4408d5509313efaae3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef32557af84a6c4408d5509313efaae3, type: 3}
 --- !u!1001 &2569603259079440477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31925,7 +32013,7 @@ PrefabInstance:
     - target: {fileID: 5520535355855645877, guid: bf9be206ec23dd2499b0e674bb017e56,
         type: 3}
       propertyPath: fireTick
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5520535355855645882, guid: bf9be206ec23dd2499b0e674bb017e56,
         type: 3}
@@ -32108,7 +32196,7 @@ PrefabInstance:
     - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8941128537739663559, guid: f36acbcdaa21cc443b1f50c5819784ea,
         type: 3}

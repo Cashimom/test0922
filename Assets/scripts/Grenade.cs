@@ -8,6 +8,8 @@ public class Grenade : RocketScript
 
     [SerializeField] public bool adsorption=false;
 
+    [SerializeField] public float explodeAfter = 0.5f;
+
     public enum CollideType
     {
         nomal,
@@ -33,6 +35,7 @@ public class Grenade : RocketScript
     {
         area.action = OnTriggerEnater_;
         rb=GetComponent<Rigidbody>();
+        area.gameObject.SetActive(false);
         //GetComponent<FixedJoint>().
     }
 
@@ -44,22 +47,25 @@ public class Grenade : RocketScript
         {
             rb.AddForce(new Vector3(0, -1000, 0));
         }
-        if (flyTime >= TimeLimit&&!exploded)
+        if (flyTime >= TimeLimit&& flyTime < TimeLimit + explodeDelay)
         {
-            explode();
-            //Destroy(gameObject);
+            if (!exploded)
+            {
+                explode();
+                //Destroy(gameObject);
+            }
+            else
+            {
+                area.transform.localScale = new Vector3(1, 1, 1) * (float)Mathf.Pow((flyTime - TimeLimit) / (explodeDelay), 2) * 100 * ((collidType == CollideType.flash) ? 0.5f : 1f);
+                //area.transform.Rotate(new Vector3(0, 90*Time.deltaTime*Random.value*10, 0));
+            }
         }
-        if (exploded)
-        {
-            area.transform.localScale = new Vector3(1,1,1)*(flyTime-TimeLimit)/(explodeDelay)*100*((collidType == CollideType.flash)?0.5f:1f);
-            area.transform.Rotate(new Vector3(0, 90*Time.deltaTime*Random.value*10, 0));
-        }
-
-        if (flyTime >= TimeLimit + explodeDelay)
+        if (flyTime >= TimeLimit + explodeDelay + explodeAfter)
         {
             Destroy(gameObject);
         }
-        
+        //Debug.Log(Mathf.Pow((flyTime - TimeLimit) / (explodeDelay), 5f));
+
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -63,8 +63,8 @@ MonoBehaviour:
     type: 3}
   _Weapon: {fileID: 1183688251, guid: 48389c54dbf62594e89851dd7b0dcb8b, type: 3}
   _Target: {fileID: 0}
-  monsterCount: 20
-  range: 200
+  monsterCount: 10
+  range: 100
 --- !u!1 &2243484511521099357
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +174,8 @@ MonoBehaviour:
   MaxHP: 500
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 0}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   cycle: 5
   moveVec: {x: 0, y: 0, z: 0}

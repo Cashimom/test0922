@@ -110,11 +110,11 @@ public class EnemyController : Character
                     var len = target.transform.position - RightWeapon.ShotTransform.position;
                     if (len.magnitude > 75)
                     {
-                        move(new Vector3(UnityEngine.Random.value * 5 - 1f, 0, (float)Math.Sqrt(len.magnitude) / 10), 1.6f);
+                        move(new Vector3(UnityEngine.Random.value*8-4, 0, (float)Math.Sqrt(len.magnitude) / 10), 1.6f);
                     }
                     else
                     {
-                        move(new Vector3(((UnityEngine.Random.value * 3) - 1f)
+                        move(new Vector3((UnityEngine.Random.value*5-2.5f)
                             , UnityEngine.Random.Range(-1, 1) * 0.2f, 0), 1.6f);
                     }
                 }
@@ -143,13 +143,13 @@ public class EnemyController : Character
                 RaycastHit hit;
                 if (Physics.Raycast(RightWeapon.ShotTransform.position, RightWeapon.ShotTransform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity)&&((hit.point-target.transform.position).magnitude <= 10||(hit.collider.gameObject!=null&&hit.collider.gameObject.layer==9)))
                 {
-                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                    //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     RightWeapon.Fire1();
 
                 }
                 else
                 {
-                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+                    //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
                 }
                 
             }
