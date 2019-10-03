@@ -20,6 +20,8 @@ public class UIController : MonoBehaviour
 
     public PlayerController playerInventory;
 
+    private Color damageColor = new Color((float)0xe5/255f, (float)0x39 /255f, (float)0x35 /255f);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,11 +116,11 @@ public class UIController : MonoBehaviour
     {
         HPSlider.value = now / max;
         var fill =HPSlider.transform.Find("Fill Area/Fill").GetComponent<Image>();
-        if (fill.color != new Color(1, 0.3f, 0.3f))
-            fill.color = new Color(1, 0.3f, 0.3f);
+        if (fill.color !=damageColor)
+            fill.color = damageColor;
         StartCoroutine(DelayMethod(0.1f, () =>
         {
-            fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
+            fill.color = new Color((float)0x43 / 255f, (float)0xA0 / 255f, (float)0x47 /255f);
         }));
     }
     public void Health(float now, float max)
@@ -129,7 +131,7 @@ public class UIController : MonoBehaviour
             fill.color = new Color(0.3f, 0.6f, 0.6f);
         StartCoroutine(DelayMethod(0.1f, () =>
         {
-            fill.color = new Color((float)0x17 / 255f, (float)0xB4 / 255f, 0);
+            fill.color = new Color((float)0x43 / 255f, (float)0xA0 / 255f, (float)0x47 / 255f);
         }));
     }
 

@@ -110,7 +110,7 @@ public class EnemyController : Character
                     var len = target.transform.position - RightWeapon.ShotTransform.position;
                     if (len.magnitude > 75)
                     {
-                        move(new Vector3(UnityEngine.Random.value*8-4, 0, (float)Math.Sqrt(len.magnitude) / 10), 1.6f);
+                        move(new Vector3(UnityEngine.Random.value*8-4, 0, (float)Math.Sqrt(len.magnitude) / 50), 1.6f);
                     }
                     else
                     {

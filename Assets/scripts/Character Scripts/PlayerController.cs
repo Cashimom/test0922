@@ -90,6 +90,7 @@ public class PlayerController : Character
 
     private int jobIndex;
 
+    [SerializeField] public float deathAltitude = -400;
 
 
     private GameObject shield;
@@ -352,6 +353,12 @@ public class PlayerController : Character
         {
             myShield.transform.position = head.transform.position + head.transform.forward * 10;
             myShield.transform.rotation = transform.rotation * head.transform.localRotation;
+        }
+
+        //高度が基準より低ければ死
+        if (transform.position.y < deathAltitude)
+        {
+            dieFunc();
         }
 
 
