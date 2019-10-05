@@ -60,4 +60,9 @@ public class GatlingScript : Weapon
 
         }
     }
+
+    public override void setWeaponInfo()
+    {
+        base.setWeaponInfo();
+    }
 }

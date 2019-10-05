@@ -19,7 +19,14 @@ public class WeaponSlot : MonoBehaviour , IBeginDragHandler,IDragHandler,IEndDra
         set
         {
             _weapon=value;
-            image.texture = _weapon.image;
+            if (value != null)
+            {
+                image.texture = _weapon.image;
+            }
+            else
+            {
+                image.texture = null;
+            }
         }
     }
 

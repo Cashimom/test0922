@@ -71,4 +71,11 @@ public class ShotgunScript : Weapon
             anime.Play("Reload");
         }
     }
+
+    public override void setWeaponInfo()
+    {
+        base.setWeaponInfo();
+        weaponInfoList.Add("Ammunition", Ammunition.ToString());
+        weaponInfoList.Add("Angle", maxAngle.ToString());
+    }
 }

@@ -70,4 +70,9 @@ public class ShotRocket : Weapon
 
         }
     }
+
+    public override void setWeaponInfo()
+    {
+        base.setWeaponInfo();
+    }
 }

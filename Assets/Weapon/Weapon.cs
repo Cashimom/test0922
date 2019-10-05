@@ -57,26 +57,13 @@ public class Weapon : MonoBehaviour
 
     private Character nearCharacter;
 
-    /*
-     エネミーに武器を持たせる方法
-         .3Dオブジェクトをどっかに置く
-         .tagをUntagからCharacterにする
-         .EnemyControllerをadd Component
-         .HPとかプロパティをいじくる
+    public Dictionary<string, string> weaponInfoList=new Dictionary<string, string>();
 
-         .stage2_set -> Weapon　から武器のプレハブをインスタンス化する
-         .
-
-         .武器を持たせたいEnemyControllerのweaponに武器のオブジェクトをD&D
-         .EnemyControllerのtargetにプレイヤーのインスタンスをD&D
-
-         .武器のオブジェクトのcharacterにさっきのEnemyをD&D
-         終わり
-         
-    */
 
     // Use this for initialization
     public void Start () {
+
+        setWeaponInfo();
         if (character is PlayerController)
         {
             isPlayer = true;
@@ -184,5 +171,13 @@ public class Weapon : MonoBehaviour
     {
         isHave = false;
         gameObject.SetActive(false);
+    }
+
+    virtual public void setWeaponInfo()
+    {
+        weaponInfoList.Add("Blaze", (1f / fireTick).ToString() + "");
+        var rocketScript = rocket.GetComponent<RocketScript>();
+        weaponInfoList.Add("Damage", rocketScript.explodeDamageValue.ToString());
+        weaponInfoList.Add("Range", (rocketScript.TimeLimit * rocketScript.moveSpeed * 10).ToString());
     }
 }

@@ -14,7 +14,7 @@ public class RocketScript : MonoBehaviour
     /// <summary>
     /// 移動スピード
     /// </summary>
-    [SerializeField] protected float moveSpeed = 1.0f;
+    [SerializeField] public float moveSpeed = 1.0f;
 
     /// <summary>
     /// ヒットした時に出すパーティクル
@@ -24,17 +24,17 @@ public class RocketScript : MonoBehaviour
     /// <summary>
     /// characterにヒットした時のダメージ
     /// </summary>
-    [SerializeField] protected float explodeDamageValue = 10.0f;
+    [SerializeField] public float explodeDamageValue = 10.0f;
 
     /// <summary>
     /// 弾が存在できる時間(射程)
     /// </summary>
-    [SerializeField] protected float TimeLimit = 10;
+    [SerializeField] public float TimeLimit = 10;
 
     /// <summary>
     /// ヒットしたあと弾が残る時間
     /// </summary>
-    [SerializeField] protected float explodeDelay = 5 / 6;
+    [SerializeField] public float explodeDelay = 5 / 6;
 
     [NonSerialized] public Character parent;
     

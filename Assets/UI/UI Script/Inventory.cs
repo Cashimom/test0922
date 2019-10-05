@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] WeaponSlot slot2;
 
+    [SerializeField] WeaponInfoPanel infoPanel1;
+
+    [SerializeField] WeaponInfoPanel infoPanel2;
+
     private PlayerController player;
 
     [NonSerialized] public WeaponSlot dragging;
@@ -45,10 +49,22 @@ public class Inventory : MonoBehaviour
     void SlotUpdate()
     {
 
-        if (player.WeaponList.Count >= 1) slot1.weapon = player.WeaponList[0];
-        else slot1.image.texture = null;
-        if (player.WeaponList.Count >= 2) slot2.weapon = player.WeaponList[1];
-        else slot2.image.texture = null;
+        if (player.WeaponList.Count >= 1)
+        {
+            infoPanel1.weapon = slot1.weapon = player.WeaponList[0];
+        }
+        else
+        {
+            infoPanel1.weapon = slot1.weapon= null;
+        }
+        if (player.WeaponList.Count >= 2)
+        {
+            infoPanel2.weapon = slot2.weapon = player.WeaponList[1];
+        }
+        else
+        {
+            infoPanel2.weapon = slot2.weapon = null;
+        }
 
         player.UpdateWeaponUI();
     }
