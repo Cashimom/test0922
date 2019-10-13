@@ -37,6 +37,8 @@ public class RocketScript : MonoBehaviour
     [SerializeField] public float explodeDelay = 5 / 6;
 
     [NonSerialized] public Character parent;
+
+    [NonSerialized] public Vector3 v0 = new Vector3(0,0,0);
     
     /// <summary>
     /// Rigidbodyが保存されてる変数
@@ -86,7 +88,7 @@ public class RocketScript : MonoBehaviour
         if (!isCollisionEntered)
         {
             //transform.Translate(0, 0, 1 * moveSpeed);
-            rb.AddForce(transform.forward*10*moveSpeed);
+            rb.AddForce(transform.forward*10*moveSpeed+v0);
         }
         else
         {

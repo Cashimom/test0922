@@ -110,26 +110,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   FlyForce: 200
-  HP: 50
   MaxHP: 50
   MaxEnergy: 100
   RightWeapon: {fileID: 0}
-  LeftWeapon: {fileID: 0}
   rightWeaponTransform: {fileID: 131347339920959126}
+  LeftWeapon: {fileID: 0}
   NowWeapon: 1
   body: {fileID: 126878902727707458}
   head: {fileID: 128169749615304222}
   pressButton: {fileID: 0}
-  WeaponList: []
-  RotationSensitivity: 500
+  mouseSensitivity: 500
   jumpForce: 50
   OnFloorHeight: 2.2
+  WeaponList: []
   pause: 0
   playerJob: {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415,
     type: 3}
   jobs:
   - {fileID: 5768295302789221076, guid: d016392c9d630e347b09b84ff702c7bf, type: 3}
   - {fileID: 5414815412383221203, guid: 24531778e3627e640b0f962c74585415, type: 3}
+  deathAltitude: -400
 --- !u!114 &126878902727707512
 MonoBehaviour:
   m_ObjectHideFlags: 0

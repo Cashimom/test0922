@@ -94,6 +94,7 @@ public class Weapon : MonoBehaviour
         if(character is PlayerController)fire.layer = 11;
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
+        rs.v0 = character.GetComponent<Rigidbody>().velocity;
         return rs;
     }
 

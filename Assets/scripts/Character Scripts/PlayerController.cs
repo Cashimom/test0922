@@ -368,7 +368,7 @@ public class PlayerController : Character
     }
 
     /// <summary>
-    /// 基本移動。RigidBodyを使った移動にしている。
+    /// 基本移動。RigidBodyを使った移動
     /// see <see cref="Character.move(Vector3, float)"/>
     /// </summary>
     /// <param name="vector3">移動する方向</param>
@@ -377,10 +377,18 @@ public class PlayerController : Character
     {
         //transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
         //body.transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
-        //rb.AddForce(vector3 * shift*0.00001f,ForceMode.Force);
-        float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
-        float mz= (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI) - (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
-        rb.MovePosition(rb.position + (new Vector3( mx, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, mz)));
+        
+        var vec2 = new Vector2(rb.velocity.x, rb.velocity.z);
+        debugText(vec2.magnitude.ToString()+"\n" +(200f / ((vec2.magnitude + 1f) / 5)).ToString());
+        var addVel = (transform.rotation * vector3) * shift * (1000f/((vec2.magnitude+1f))) * Time.deltaTime;
+        if((new Vector2(addVel.x, addVel.z)).magnitude < 40|| (vec2 + new Vector2(addVel.x, addVel.z)).magnitude < 40)
+        {
+            rb.velocity += addVel;
+        }
+            //rb.AddForce((transform.rotation* vector3) * shift*(200f),ForceMode.Force);
+        //float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
+        //float mz= (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y / 180 * Mathf.PI) - (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
+        //rb.MovePosition(rb.position + (new Vector3( mx, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, mz)));
         //transform.localPosition= new Vector3(0, 1.7f, 0);
         var a = head.transform.eulerAngles;
         a.z = 0.0f;
