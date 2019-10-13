@@ -16,6 +16,7 @@ public class DropPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
 
     public void OnDrop(PointerEventData eventData)
     {
+        inventory.dragging.ReturnToFirstPos();
         inventory.WeaponDrop(inventory.dragging.weapon);
         image.color = originalColor;
     }

@@ -52,18 +52,22 @@ public class Inventory : MonoBehaviour
         if (player.WeaponList.Count >= 1)
         {
             infoPanel1.weapon = slot1.weapon = player.WeaponList[0];
+            slot1.gameObject.SetActive(true);
         }
         else
         {
             infoPanel1.weapon = slot1.weapon= null;
+            slot1.gameObject.gameObject.SetActive(false);
         }
         if (player.WeaponList.Count >= 2)
         {
             infoPanel2.weapon = slot2.weapon = player.WeaponList[1];
+            slot2.gameObject.SetActive(true);
         }
         else
         {
             infoPanel2.weapon = slot2.weapon = null;
+            slot2.gameObject.SetActive(false);
         }
 
         player.UpdateWeaponUI();
