@@ -379,20 +379,21 @@ public class PlayerController : Character
         //body.transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
         float maxMagnitude = 40;
         var rbVec2 = new Vector2(rb.velocity.x, rb.velocity.z);
-        var vec2 = new Vector2(vector3.x, vector3.z);
+        //var vec2 = new Vector2(vector3.x, vector3.z);
         //var pls = (new Vector2(Mathf.Abs(vec2.x), Mathf.Abs(vec2.y)) + vec2) / 2;
         //var mns = (-new Vector2(Mathf.Abs(vec2.x), Mathf.Abs(vec2.y)) + vec2) / 2;
         //var pVel = (1000f - (25 * pls.magnitude + 1f));
         //var mVel = (1000f - (25 * mns.magnitude + 1f));
 
-        var rbVel = (transform.rotation * vector3) * shift * (1000f - (25 * rbVec2.magnitude + 1f)) * Time.deltaTime;
-        var vecVel = (transform.rotation * vector3) * shift * (1000f - (25 * vec2.magnitude + 1f)) * Time.deltaTime;
+        var rbVel = (transform.rotation * vector3) * shift * 25* (90/*95.80835f謎の定数、この値を超えるとshiftブーストが発生する*/ - rbVec2.magnitude) * Time.deltaTime;
+        //var vecVel = (transform.rotation * vector3) * shift * (1000f - 25*vec2.magnitude ) * Time.deltaTime;
+        //rbVel += vecVel;
         debugText(rbVec2.magnitude.ToString() + "\n" + (rbVel).ToString());
         //rb.velocity = new Vector3((rbVel + vecVel).x, rb.velocity.y, (rbVel + vecVel).z);
         if (/*(new Vector2(addVel.x, addVel.z)).magnitude < 40||*/ rbVec2.magnitude < maxMagnitude)
         {
             //rb.velocity += rbVel+vecVel;
-            rb.velocity = new Vector3((rbVel + vecVel).x,rb.velocity.y ,(rbVel + vecVel).z);
+            rb.velocity = new Vector3(rbVel.x,rb.velocity.y ,rbVel.z);
         }
             //rb.AddForce((transform.rotation* vector3) * shift*(200f),ForceMode.Force);
         //float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
