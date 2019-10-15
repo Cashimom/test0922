@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
+using CodeHelper;
 
 /// <summary>
 /// プレイヤーの処理を実装しているクラス
@@ -375,6 +376,7 @@ public class PlayerController : Character
     /// <param name="shift">スピードの倍率</param>
     public override void move(Vector3 vector3, float shift)
     {
+        vector3 = vector3.normalized;
         //transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
         //body.transform.Translate(vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.y * Time.deltaTime * 5.0f * moveSpeed * shift, vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift);
         float maxMagnitude = 40;
@@ -385,15 +387,16 @@ public class PlayerController : Character
         //var pVel = (1000f - (25 * pls.magnitude + 1f));
         //var mVel = (1000f - (25 * mns.magnitude + 1f));
 
-        var rbVel = (transform.rotation * vector3) * shift * 25* (90/*95.80835f謎の定数、この値を超えるとshiftブーストが発生する*/ - rbVec2.magnitude) * Time.deltaTime;
+        //var rbVel = (transform.rotation * vector3) * shift * 25* (90/*95.80835f謎の定数、この値を超えるとshiftブーストが発生する*/ - rbVec2.magnitude) * Time.deltaTime;
+        var rbVel = (transform.rotation * vector3) * shift * maxMagnitude * Mathf.Clamp01((float)Math.Log((rbVec2.magnitude + 2),maxMagnitude)) ;
         //var vecVel = (transform.rotation * vector3) * shift * (1000f - 25*vec2.magnitude ) * Time.deltaTime;
         //rbVel += vecVel;
         debugText(rbVec2.magnitude.ToString() + "\n" + (rbVel).ToString());
         //rb.velocity = new Vector3((rbVel + vecVel).x, rb.velocity.y, (rbVel + vecVel).z);
-        if (/*(new Vector2(addVel.x, addVel.z)).magnitude < 40||*/ rbVec2.magnitude < maxMagnitude)
+        if (/*(new Vector2(addVel.x, addVel.z)).magnitude < 40||*/ rbVec2.magnitude < maxMagnitude*1.1)
         {
             //rb.velocity += rbVel+vecVel;
-            rb.velocity = new Vector3(rbVel.x,rb.velocity.y ,rbVel.z);
+            rb.velocity = vec.lerp(rb.velocity,new Vector3(rbVel.x,rb.velocity.y ,rbVel.z),0.2f);
         }
             //rb.AddForce((transform.rotation* vector3) * shift*(200f),ForceMode.Force);
         //float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);

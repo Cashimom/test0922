@@ -29,13 +29,13 @@ public class TargetCountUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textUpdate(value, maxValue);
+        //textUpdate(value, maxValue);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        TargetPointerUpdate();
+        //TargetPointerUpdate();
     }
 
     public void TargetPointerStart(List<GameObject> targets,Camera camera)

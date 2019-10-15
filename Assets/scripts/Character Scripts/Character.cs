@@ -214,16 +214,16 @@ public class Character : MonoBehaviour
             }
 
         }
-        StartCoroutine(DelayMethod(0.1f, () =>
-        {
+        //StartCoroutine(DelayMethod(0.1f, () =>
+        //{
             
-            if (!boostFlg)
-                //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
-                /*var vel = rb.velocity;
-                vel.x = vel.z = 0;
-                rb.velocity = vel;*/
-        }));
+        //    if (!boostFlg)
+        //        //rb.AddForce(new Vector3(0, -0.00003f, 0), ForceMode.Impulse);
+        //        rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        //        /*var vel = rb.velocity;
+        //        vel.x = vel.z = 0;
+        //        rb.velocity = vel;*/
+        //}));
 
     }
 
