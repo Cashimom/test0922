@@ -393,10 +393,13 @@ public class PlayerController : Character
         //rbVel += vecVel;
         debugText(rbVec2.magnitude.ToString() + "\n" + (rbVel).ToString());
         //rb.velocity = new Vector3((rbVel + vecVel).x, rb.velocity.y, (rbVel + vecVel).z);
-        if (/*(new Vector2(addVel.x, addVel.z)).magnitude < 40||*/ rbVec2.magnitude < maxMagnitude*1.1)
+        if (rbVec2.magnitude < maxMagnitude*1.1)
         {
             //rb.velocity += rbVel+vecVel;
-            rb.velocity = vec.lerp(rb.velocity,new Vector3(rbVel.x,rb.velocity.y ,rbVel.z),0.2f);
+
+            //FPSによって移動速度が変わらないようにする
+            var ratio = 1f - Mathf.Pow(1f - 0.2f, 60f * Time.deltaTime);
+            rb.velocity = vec.lerp(rb.velocity,new Vector3(rbVel.x,rb.velocity.y ,rbVel.z),ratio);
         }
             //rb.AddForce((transform.rotation* vector3) * shift*(200f),ForceMode.Force);
         //float mx = (vector3.x * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Cos(transform.rotation.eulerAngles.y/180*Mathf.PI) + (vector3.z * Time.deltaTime * 5.0f * moveSpeed * shift) * (float)Math.Sin(transform.rotation.eulerAngles.y / 180 * Mathf.PI);
