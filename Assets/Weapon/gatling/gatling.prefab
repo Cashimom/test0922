@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 95480433881090438}
   - component: {fileID: 65800134390728960}
   - component: {fileID: 114467099633521646}
-  - component: {fileID: 5831710011219164181}
+  - component: {fileID: 1535110760016515342}
   m_Layer: 0
   m_Name: gatling
   m_TagString: Untagged
@@ -164,8 +164,9 @@ MonoBehaviour:
   WeaponTransformDistance: 0
   fireTick: 0.1
   image: {fileID: 2800000, guid: 67c019b4b6c4d0c45af996eb7b3aa280, type: 3}
+  fireSound: {fileID: 1535110760016515342}
   isHave: 0
---- !u!82 &5831710011219164181
+--- !u!82 &1535110760016515342
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,10 +176,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 343cc2e4f7c6c5e449188aaa9dd5f722, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 48be760a89e566f42821c239f92f2f93, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.441
-  m_Pitch: 3
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -186,9 +187,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0.26
-  rolloffMode: 1
+  MaxDistance: 2000
+  Pan2D: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -198,21 +199,12 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -1.1201619
-      outSlope: -1.1201619
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.8228055
-    - serializedVersion: 3
-      time: 0.26187712
-      value: 0.32100117
-      inSlope: -1.0175463
-      outSlope: -1.0175463
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.55373263
-      outWeight: 0.21163595
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
@@ -230,7 +222,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.632
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

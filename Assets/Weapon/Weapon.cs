@@ -39,6 +39,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] public Texture image;
 
+    [SerializeField] public AudioSource fireSound;
+
     /// <summary>
     /// <see cref="character"/>が持っているかどうか。
     /// 
@@ -95,6 +97,10 @@ public class Weapon : MonoBehaviour
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
         rs.v0 = character.GetComponent<Rigidbody>().velocity;
+        if (fireSound!=null)
+        {
+            fireSound.Play();
+        }
         return rs;
     }
 

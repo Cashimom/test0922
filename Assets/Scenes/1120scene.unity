@@ -450,6 +450,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  fireSound: {fileID: 0}
   isHave: 0
 --- !u!65 &50599617
 BoxCollider:
@@ -2497,6 +2498,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  fireSound: {fileID: 0}
   isHave: 0
 --- !u!65 &376316564
 BoxCollider:
@@ -20565,6 +20567,7 @@ MonoBehaviour:
   WeaponTransformDistance: 11
   fireTick: 0.1
   image: {fileID: 0}
+  fireSound: {fileID: 0}
   isHave: 0
 --- !u!65 &1257585925
 BoxCollider:
@@ -22098,7 +22101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb75a8f76f6d5b48a3ab02942e1df96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 30, y: 30, z: 30}
+  size: {x: 15, y: 15, z: 15}
   target: {fileID: 2243484510635301586, guid: b65e5173fae885845936ef2185887e4e, type: 3}
   targetCnt: 3
   spawner: {fileID: 436069664}
@@ -22117,10 +22120,10 @@ MonoBehaviour:
   - {fileID: 276909875}
   generateWhenStart: 0
   builtsProbability:
-  - 20
-  - 1
-  - 1
-  - 1
+  - 14
+  - 2
+  - 2
+  - 4
   builtsMaterial:
   - {fileID: 0}
   - {fileID: 2100000, guid: 033f50e29b70a384a829d7c52b0d389b, type: 2}
@@ -23268,6 +23271,7 @@ MonoBehaviour:
   WeaponTransformDistance: 8
   fireTick: 0.1
   image: {fileID: 0}
+  fireSound: {fileID: 0}
   isHave: 0
 --- !u!65 &1576800340
 BoxCollider:
@@ -31165,7 +31169,7 @@ PrefabInstance:
     - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
       propertyPath: m_Drag
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 126878902727707515, guid: 09aa53c041814464fb501ec80dc4e828,
         type: 3}
@@ -31231,6 +31235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126878902727707512, guid: 09aa53c041814464fb501ec80dc4e828,
+        type: 3}
+      propertyPath: localGravity.y
+      value: -50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09aa53c041814464fb501ec80dc4e828, type: 3}
