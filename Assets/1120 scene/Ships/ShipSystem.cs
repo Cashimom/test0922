@@ -90,7 +90,7 @@ public class ShipSystem : MonoBehaviour
         uiController = GameObject.Find("Canvas").GetComponent<UIController>();
         List<GameObject> a = new List<GameObject>();
         if(generator!=null)
-            targetObjects.AddRange(generator.generate());
+            targetObjects.AddRange(generator.Generate());
         foreach (var i in targetObjects)
         {
             a.Add(i.savingObject);

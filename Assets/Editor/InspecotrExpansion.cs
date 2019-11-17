@@ -177,7 +177,7 @@ public class InspecotrExpansion : Editor
     //previewの用意
     private void previewSetup()
     {
-        previewObject = expansion.getBuiltObject((StageGenerator.Built)previewNumber);
+        previewObject = expansion.GetBuiltObject((StageGenerator.Built)previewNumber);
 
         //previewObject.hideFlags = HideFlags.HideAndDontSave;
         previewObject.SetActive(true);
