@@ -27,7 +27,7 @@ Material:
     - _Glossiness: 0.5
     - _Metallic: 0
     - _Period: 1
-    - _StartTime: 149.9159
+    - _StartTime: 145.55719
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.29015183, a: 1}
     - _Move: {r: 0, g: 0, b: 0, a: 1}

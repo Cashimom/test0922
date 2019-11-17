@@ -35,7 +35,7 @@ public class TargetCountUI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //TargetPointerUpdate();
+        TargetPointerUpdate();
     }
 
     public void TargetPointerStart(List<GameObject> targets,Camera camera)
