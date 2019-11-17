@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Floor
   m_Shader: {fileID: 4800000, guid: d06ddbfd216ea8943a02fd1bf3b54557, type: 3}
-  m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF _STOCHASTIC_ALBEDO
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF _STOCHASTIC_ALBEDO
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -184,7 +184,7 @@ Material:
     - _DetailNormalColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
     - _DetailNormalColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
     - _DetailNormalMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     - _EmissionColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}

@@ -117,6 +117,11 @@ public class PlayerController : Character
     private bool isPickWeaponPressed = false;
 
     /// <summary>
+    /// <see cref="Update"/>でマウスホイールがスクロールされていたか保持する変数
+    /// </summary>
+    private float mouseScrollWheel;
+
+    /// <summary>
     /// エネルギーのチャージ時間カウント用変数
     /// </summary>
     private float chargeTimeCnt = 0;
@@ -211,10 +216,11 @@ public class PlayerController : Character
         {
             isPickWeaponPressed = true;
         }
+        mouseScrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
 
         //gravity,速度制限付き！
-        if(rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
+        if (rb.velocity.y > -8)rb.AddForce(-rb.transform.up * 50, ForceMode.Acceleration);
 
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -269,11 +275,11 @@ public class PlayerController : Character
         //武器入れ替え
         if (NowWeapon == WEAPON_RIGHT)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            if (mouseScrollWheel > 0)
             {
                 ChangeWeapon(1);
             }
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            else if (mouseScrollWheel < 0)
             {
                 ChangeWeapon(-1);
             }

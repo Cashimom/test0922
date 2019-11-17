@@ -96,11 +96,16 @@ public class Weapon : MonoBehaviour
         if(character is PlayerController)fire.layer = 11;
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
+<<<<<<< HEAD
         rs.v0 = character.GetComponent<Rigidbody>().velocity;
         if (fireSound!=null)
         {
             fireSound.Play();
         }
+=======
+        if(character.GetComponent<Rigidbody>()!=null)
+            rs.v0 = character.GetComponent<Rigidbody>().velocity;
+>>>>>>> 公開するやつ
         return rs;
     }
 

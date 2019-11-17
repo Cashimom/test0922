@@ -153,7 +153,7 @@ public class ShipSystem : MonoBehaviour
                     AllFinish = true;
                 }
             }
-            uiController.setTargetCount(enemies.Count, spawnCnt);
+            uiController.setTargetCount(spawnCnt- enemies.Count, spawnCnt);
         }
     }
 
