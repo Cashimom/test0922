@@ -162,7 +162,7 @@ public class Character : MonoBehaviour
             }
 
             var vel = rb.velocity;
-            rb.AddForce(-(vel * 2.0f), ForceMode.Force);
+            rb.AddForce(-(vel * 2f), ForceMode.Force);
         }
     }
 

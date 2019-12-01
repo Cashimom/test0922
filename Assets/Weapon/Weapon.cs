@@ -39,8 +39,6 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] public Texture image;
 
-    [SerializeField] public AudioSource fireSound;
-
     /// <summary>
     /// <see cref="character"/>が持っているかどうか。
     /// 
@@ -98,6 +96,7 @@ public class Weapon : MonoBehaviour
         rs.parent = character;
 <<<<<<< HEAD
         rs.v0 = character.GetComponent<Rigidbody>().velocity;
+<<<<<<< HEAD
         if (fireSound!=null)
         {
             fireSound.Play();
@@ -106,6 +105,8 @@ public class Weapon : MonoBehaviour
         if(character.GetComponent<Rigidbody>()!=null)
             rs.v0 = character.GetComponent<Rigidbody>().velocity;
 >>>>>>> 公開するやつ
+=======
+>>>>>>> parent of 4bc09b9... 音追加テスト
         return rs;
     }
 
