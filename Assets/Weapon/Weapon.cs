@@ -95,6 +95,7 @@ public class Weapon : MonoBehaviour
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
 <<<<<<< HEAD
+<<<<<<< HEAD
         rs.v0 = character.GetComponent<Rigidbody>().velocity;
 <<<<<<< HEAD
         if (fireSound!=null)
@@ -107,6 +108,10 @@ public class Weapon : MonoBehaviour
 >>>>>>> 公開するやつ
 =======
 >>>>>>> parent of 4bc09b9... 音追加テスト
+=======
+        if(character.GetComponent<Rigidbody>()!=null)
+            rs.v0 = character.GetComponent<Rigidbody>().velocity;
+>>>>>>> d8e741232ddfa30bda9800fcdc0feda1ecb44817
         return rs;
     }
 

@@ -21963,6 +21963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   size: {x: 15, y: 15, z: 15}
 =======
   size: {x: 20, y: 20, z: 20}
@@ -21970,6 +21971,9 @@ MonoBehaviour:
 =======
   size: {x: 30, y: 30, z: 30}
 >>>>>>> parent of 4bc09b9... 音追加テスト
+=======
+  size: {x: 20, y: 20, z: 20}
+>>>>>>> d8e741232ddfa30bda9800fcdc0feda1ecb44817
   target: {fileID: 2243484510635301586, guid: b65e5173fae885845936ef2185887e4e, type: 3}
   targetCnt: 3
   spawner: {fileID: 436069664}
@@ -21990,6 +21994,7 @@ MonoBehaviour:
   builtsProbability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - 14
   - 2
   - 2
@@ -22002,6 +22007,9 @@ MonoBehaviour:
 >>>>>>> 公開するやつ
 =======
   - 20
+=======
+  - 10
+>>>>>>> d8e741232ddfa30bda9800fcdc0feda1ecb44817
   - 1
   - 1
   - 1
