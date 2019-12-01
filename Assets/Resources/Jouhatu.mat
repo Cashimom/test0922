@@ -28,10 +28,14 @@ Material:
     - _Metallic: 0
     - _Period: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _StartTime: 3.4234998
 =======
     - _StartTime: 145.55719
 >>>>>>> 公開するやつ
+=======
+    - _StartTime: 1088.5394
+>>>>>>> 忘れてたやつ
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.29015183, a: 1}
     - _Move: {r: 0, g: 0, b: 0, a: 1}
