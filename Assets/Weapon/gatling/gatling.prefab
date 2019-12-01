@@ -176,10 +176,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_audioClip: {fileID: 8300000, guid: 3a2d1b4d54f1faa4a886aad2b7ac24bb, type: 3}
 =======
   m_audioClip: {fileID: 8300000, guid: 343cc2e4f7c6c5e449188aaa9dd5f722, type: 3}
 >>>>>>> parent of 4bc09b9... 音追加テスト
+=======
+  m_audioClip: {fileID: 8300000, guid: 48be760a89e566f42821c239f92f2f93, type: 3}
+>>>>>>> parent of 0b5753d... cannonの音
   m_PlayOnAwake: 0
   m_Volume: 0.441
   m_Pitch: 3
