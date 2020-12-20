@@ -68,11 +68,11 @@ public class SavingObject : MonoBehaviour
         var _monster = Instantiate(monster, position: pos, rotation: Quaternion.Euler(pos));
         var eneCon = _monster.GetComponent<EnemyController>();
         var weap = Instantiate(weapon);
-        //weap.layer = 12;
-        //foreach (Transform o in weap.transform)
-        //{
-        //    o.gameObject.layer = 12;
-        //}
+        weap.layer = 12;
+        foreach (Transform o in weap.transform)
+        {
+            o.gameObject.layer = 12;
+        }
         var _weapon = weap.GetComponent<Weapon>();
         _weapon.character = eneCon;
         //weapon.WeaponTransformDistance = 11;
