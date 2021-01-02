@@ -17,19 +17,19 @@ public class PlayerInput:MonoBehaviour
 
     public float moveForward
     {
-        get { return Mathf.Clamp01(Input.GetAxis("Vertical")); }
+        get { return Mathf.Clamp01(Input.GetAxis("Vertical"))* (Input.GetButton("Vertical") ? 1 : 0); }
     }
     public float moveBack
     {
-        get { return Mathf.Clamp01(-Input.GetAxis("Vertical")); }
+        get { return Mathf.Clamp01(-Input.GetAxis("Vertical"))* (Input.GetButton("Vertical") ? 1 : 0); }
     }
     public float moveRight 
     { 
-        get { return Mathf.Clamp01(Input.GetAxis("Horizontal")); }
+        get { return Mathf.Clamp01(Input.GetAxis("Horizontal"))* (Input.GetButton("Horizontal") ? 1 : 0); }
     }
     public float moveLeft
     {
-        get { return Mathf.Clamp01(-Input.GetAxis("Horizontal")); }
+        get { return Mathf.Clamp01(-Input.GetAxis("Horizontal"))* (Input.GetButton("Horizontal") ? 1 : 0); }
     }
 
     private bool Jump=false;
