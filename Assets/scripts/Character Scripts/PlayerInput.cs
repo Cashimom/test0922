@@ -44,21 +44,21 @@ public class PlayerInput:MonoBehaviour
         get { return(Rise= Input.GetKey(KeyCode.LeftShift)); }
     }
 
-    public bool boostForward
+    public int boostForward
     {
-        get { return (Rise && Jump && moveForward > 0); }
+        get { return (Rise && Jump && moveForward > 0)?1:0; }
     }
-    public bool boostRight
+    public int boostRight
     {
-        get { return (Rise && Jump && moveRight > 0); }
+        get { return (Rise && Jump && moveRight > 0)?1:0; }
     }
-    public bool boostLeft
+    public int boostLeft
     {
-        get { return (Rise && Jump && moveLeft > 0); }
+        get { return (Rise && Jump && moveLeft > 0)?1:0; }
     }
-    public bool boostBack
+    public int boostBack
     {
-        get { return (Rise && Jump && moveBack > 0); }
+        get { return (Rise && Jump && moveBack > 0)?1:0; }
     }
 
     public float rotationHorizontal

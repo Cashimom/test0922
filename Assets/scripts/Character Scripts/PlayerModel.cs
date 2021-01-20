@@ -19,6 +19,45 @@ public class PlayerModel : MonoBehaviour
 
     private Rigidbody rb;
 
+    private Weapon nearWeapon;
+    /// <summary>
+    /// 拾うことができる近くのアイテム。
+    /// setterで<see cref="pressButton"/>を切り替え。
+    /// set in <see cref="Weapon.OnTriggerEnter(Collider)"/>
+    ///  and <see cref="Weapon.OnTriggerExit(Collider)"/>
+    /// </summary>
+    public Weapon NearWeapon
+    {
+        set
+        {
+            this.nearWeapon = value;
+            //TODO:
+            /*
+            if (value != null)
+            {
+                
+                if (pressButton != null)
+                {
+                    pressButton.SetActive(true);
+                    pressButton.transform.Find("Weapon Image").GetComponent<RawImage>().texture = nearWeapon.image;
+                }
+            }
+            else
+            {
+                if (pressButton != null)
+                {
+                    pressButton.SetActive(false);
+                }
+            }
+            */
+
+        }
+        get
+        {
+            return this.nearWeapon;
+        }
+    }
+
     //Jumpする強さ
     [SerializeField] private float jumpForce = 50;
 
@@ -27,6 +66,24 @@ public class PlayerModel : MonoBehaviour
 
     // 2段ジャンプのフラグ
     private bool secondJumpFlg = false;
+
+    // キャラクターのHPの上限
+    [SerializeField] public float MaxHP = 100;
+
+    private float hp;
+    // キャラクターのHP
+    [SerializeField]
+    public float HP
+    {
+        set
+        {
+            value = Mathf.Clamp(value, 0, MaxHP);
+            float delta = hp - value;
+            hp = value;
+            //ChangeHPText(value, delta);
+        }
+        get { return hp; }
+    }
 
     // キャラクターのエネルギーの上限
     [SerializeField] public float MaxEnergy = 100;
@@ -73,11 +130,21 @@ public class PlayerModel : MonoBehaviour
     // 表示されている
     private Character myShield;
 
+
     // Use this for initialization
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        HP = MaxHP;
 
+    }
+
+    private void Start()
+    {
+        if (LeftWeapon != null)
+        {
+            LeftWeapon.isHave = false;
+        }
     }
 
     // Update is called once per frame
@@ -112,7 +179,7 @@ public class PlayerModel : MonoBehaviour
         
         var a = head.transform.eulerAngles;
         a.z = 0.0f;
-        //vector = a;
+        vector = a;
         head.transform.eulerAngles = a;
         var b = transform.eulerAngles;
         b.z = 0.0f;
@@ -254,7 +321,7 @@ public class PlayerModel : MonoBehaviour
     /// <paramref name="picked"/>を拾う
     /// </summary>
     /// <param name="picked">拾うWeapon</param>
-    public void PickUpWeapon(Weapon picked)
+    public void WeaponPickUp(Weapon picked)
     {
 
         //枠がいっぱいなら手持ちと交換
@@ -291,11 +358,11 @@ public class PlayerModel : MonoBehaviour
     /// 武器を持ち替える
     /// </summary>
     /// <param name="sign">持ち替える方向(正負)</param>
-    public void ChangeWeapon(int sign)
+    public void WeaponChange(int sign)
     {
         if (NowWeapon == WEAPON_LEFT)
         {
-            SwitchWeapon();
+            WeaponSwitch();
         }
         var nowIndex = WeaponList.FindIndex(match => match == RightWeapon);
         if (WeaponList.Count >= 2)
@@ -333,7 +400,7 @@ public class PlayerModel : MonoBehaviour
     }
 
 
-    void SwitchWeapon()
+    public void WeaponSwitch()
     {
         if (NowWeapon == WEAPON_RIGHT && LeftWeapon != null)
         {
@@ -368,6 +435,33 @@ public class PlayerModel : MonoBehaviour
         {
             myShield.die();
             myShield = null;
+        }
+    }
+
+    public void EnergyChargeOnFloor()
+    {
+        RaycastHit objectHit;
+        bool isHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out objectHit, OnFloorHeight);
+        if (isHit)
+        {
+            //chargeTimeCnt += Time.deltaTime;
+
+            //if (chargeTimeCnt > 0.1)
+            //{
+            //    if(Energy<MaxEnergy)
+            //        Energy += 1;
+            //    chargeTimeCnt = 0;
+            //}
+            if (Energy < MaxEnergy)
+                Energy += 10 * Time.deltaTime;
+
+            if (secondJumpFlg)
+                secondJumpFlg = false;
+        }
+        else
+        {
+            if (Energy < MaxEnergy)
+                Energy += 1 * Time.deltaTime;
         }
     }
 }
