@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Players;
 
 /// <summary>
 /// 武器に継承させるクラス。
@@ -25,7 +26,7 @@ public class Weapon : MonoBehaviour
     /// <summary>
     /// 武器を持っている<see cref="Character"/>
     /// </summary>
-    [SerializeField] public Character character;
+    [SerializeField] public PlayerController2 character;
 
     /// <summary>
     /// エネミーが武器持つときにを浮かせる位置
@@ -57,7 +58,7 @@ public class Weapon : MonoBehaviour
     /// </summary>
     protected float fireTime = 0.0f;
 
-    private Character nearCharacter;
+    private PlayerWeapon nearCharacter;
 
     public Dictionary<string, string> weaponInfoList=new Dictionary<string, string>();
 
@@ -66,7 +67,7 @@ public class Weapon : MonoBehaviour
     public void Start () {
 
         setWeaponInfo();
-        if (character is PlayerController)
+        if (character is PlayerController2)
         {
             isPlayer = true;
         }
@@ -93,7 +94,7 @@ public class Weapon : MonoBehaviour
     public RocketScript Fire()
     {
         var fire = Instantiate(rocket, ShotTransform.position + ShotTransform.forward * 2, ShotTransform.rotation);
-        if(character is PlayerController)fire.layer = 11;
+        if(character is PlayerController2)fire.layer = 11;
         var rs= fire.GetComponent<RocketScript>();
         rs.parent = character;
         if (fireSound!=null)
@@ -115,18 +116,18 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var pc = other.gameObject.GetComponent<PlayerController>();
+        var pc = other.gameObject.GetComponent<PlayerController2>();
         if (pc != null&&!isHave)
         {
             pc.NearWeapon = this;
             //character = pc;
             nearCharacter = pc;
-        }
+        }   
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var pc = other.gameObject.GetComponent<PlayerController>();
+        var pc = other.gameObject.GetComponent<PlayerController2>();
         if (pc != null && !isHave) 
         {
             pc.NearWeapon = null;
@@ -148,10 +149,10 @@ public class Weapon : MonoBehaviour
     /// <summary>
     /// キャラクターに<see cref="this"/>を拾わせる
     /// </summary>
-    public void PickWeapon()
+    public void PickWeapon(PlayerController2 pc)
     {
-        character = nearCharacter;
-        isPlayer = (character is PlayerController);
+        character = pc;
+        isPlayer = (character is PlayerController2);
         if (!isPlayer)
         {
             gameObject.layer = 12;
@@ -164,10 +165,10 @@ public class Weapon : MonoBehaviour
     /// <summary>
     /// キャラクターに<see cref="this"/>を持たせる
     /// </summary>
-    public void HaveWeapon()
+    public void HaveWeapon(PlayerController2 pc)
     {
 
-        PickWeapon();
+        PickWeapon(pc);
         isHave = true;
         gameObject.SetActive(true);
     }

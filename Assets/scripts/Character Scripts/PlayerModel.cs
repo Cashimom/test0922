@@ -317,6 +317,7 @@ public class PlayerModel : MonoBehaviour
         transform.Rotate(0, rotX, 0);
     }
 
+    /*
     /// <summary>
     /// <paramref name="picked"/>を拾う
     /// </summary>
@@ -421,6 +422,7 @@ public class PlayerModel : MonoBehaviour
             //uiController.SetActiveSlot(WeaponList.FindIndex(m => m == RightWeapon));
         }
     }
+    */
 
     public void Sheld()
     {
