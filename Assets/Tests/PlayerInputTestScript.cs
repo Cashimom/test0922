@@ -11,13 +11,13 @@ namespace Tests
     public class PlayerInputTestScript
     {
         GameObject go;
-        Players.PlayerInput pi;
+        PlayerInput pi;
 
         [OneTimeSetUp]
         public void FirstSetUp()
         {
             go = new GameObject();
-            pi = go.AddComponent<Players.PlayerInput>();
+            pi = go.AddComponent<PlayerInput>();
         }
 
         // A Test behaves as an ordinary method

@@ -11,7 +11,7 @@ using CodeHelper;
 /// <summary>
 /// キーボードの入力を受け取ってプレイヤーの動作のフラグを立てる
 /// </summary>
-public class PlayerInput:MonoBehaviour
+public class OldPlayerInput:MonoBehaviour
 {
     public float mouseSensitivity = 500f;
 
