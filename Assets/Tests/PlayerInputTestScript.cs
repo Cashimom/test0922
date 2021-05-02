@@ -10,44 +10,147 @@ namespace Tests
 {
     public class PlayerInputTestScript
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void PlayerInputTestScriptSimplePasses()
+        GameObject go;
+        Players.PlayerInput pi;
+
+        [OneTimeSetUp]
+        public void FirstSetUp()
         {
-            // Use the Assert class to test conditions
+            go = new GameObject();
+            pi = go.AddComponent<Players.PlayerInput>();
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator PlayerInputTestScriptWithEnumeratorPasses()
+        // A Test behaves as an ordinary method
+        [Test]
+        public void aaOperationTest()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            var go = new GameObject();
-            var pi=go.AddComponent<Players.PlayerInput>();
+            Assert.That(true);
+        }
 
-            pi.moveDirection.Subscribe(vec3 => {
-                Assert.That(vec3.z>0.1);
-            });
+
+        [UnityTest]
+        public IEnumerator ReceiveInputMoveDirection()
+        {
+            pi.moveDirection.Subscribe(x => {
+                Debug.Log($"Move {x}");
+                Assert.That(true);
+            }).AddTo(go);
 
             yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
-            //yield return new WaitForFixedUpdate();
 
-            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputBoostDirection()
+        {
+            pi.boostDirection.Subscribe(x => {
+                Debug.Log($"Boost {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+        
+        [UnityTest]
+        public IEnumerator ReceiveInputRotationDirection()
+        {
+            pi.rotationDirection.Subscribe(x => {
+                Debug.Log($"Rotation {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputRise()
+        {
+            pi.isRise.Subscribe(x => {
+                Debug.Log($"isRise {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputUse()
+        {
+            pi.isRise.Subscribe(x => {
+                Debug.Log($"isUse {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputJump()
+        {
+            pi.isJump.Subscribe(x => {
+                Debug.Log($"isJump {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputFire1()
+        {
+            pi.isFire1.Subscribe(x => {
+                Debug.Log($"isFire1 {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputFire2()
+        {
+            pi.isFire2.Subscribe(x => {
+                Debug.Log($"isFire2 {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
+        }
+
+        [UnityTest]
+        public IEnumerator ReceiveInputWeaponChange()
+        {
+            pi.weaponChange.Subscribe(x => {
+                Debug.Log($"weaponChange {x}");
+                Assert.That(true);
+            }).AddTo(go);
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+
         }
 
         public class MyMonoBehaviourTest : MonoBehaviour, IMonoBehaviourTest
         {
             private int frameCount;
+            private int inputCount;
             public bool IsTestFinished
             {
-                get { return frameCount > 1000; }
+                get { return inputCount > 5||frameCount>5000; }
             }
 
             void Update()
             {
+                if (Input.anyKeyDown)
+                    inputCount++;
                 frameCount++;
+
             }
         }
     }

@@ -2,7 +2,8 @@
     "name": "Tests",
     "references": [
         "UnityEngine.TestRunner",
-        "TestAssembly"
+        "TestAssembly",
+        "UniRx"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

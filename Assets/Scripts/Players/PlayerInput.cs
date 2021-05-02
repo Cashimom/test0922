@@ -32,7 +32,7 @@ namespace Players
         public ReadOnlyReactiveProperty<bool> isFire1=> _isFire1.ToReadOnlyReactiveProperty<bool>();
 
         private BoolReactiveProperty _isFire2=new BoolReactiveProperty();
-        public ReadOnlyReactiveProperty<bool> isFire2=> isFire2.ToReadOnlyReactiveProperty<bool>();
+        public ReadOnlyReactiveProperty<bool> isFire2=> _isFire2.ToReadOnlyReactiveProperty<bool>();
 
         private IntReactiveProperty _weaponChange=new IntReactiveProperty();
         public ReadOnlyReactiveProperty<int> weaponChange=> _weaponChange.ToReadOnlyReactiveProperty<int>();
@@ -48,16 +48,28 @@ namespace Players
         // Update is called once per frame
         void Update()
         {
-            _moveDirection.Value = new Vector3(
-                Mathf.Clamp01(Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0)
-                - Mathf.Clamp01(-Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0),
-                0,
-                Mathf.Clamp01(Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0)
-                - Mathf.Clamp01(-Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0));
+            var moveRight = Mathf.Clamp01(Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
+            var moveLeft = Mathf.Clamp01(-Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
+            var moveFront = Mathf.Clamp01(Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
+            var moveBack= Mathf.Clamp01(-Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
+            _moveDirection.Value = new Vector3(moveRight- moveLeft,0,moveFront-moveBack);
+
+            _rotationDirection.Value = new Vector2(Input.GetAxis("Mouse X") * Time.deltaTime, -Input.GetAxis("Mouse Y") * Time.deltaTime);
 
             _isRise.Value= Input.GetKey(KeyCode.LeftShift);
             _isJump.Value = Input.GetButtonDown("Jump");
             _isUse.Value = Input.GetKey(KeyCode.E);
+
+
+            if (_isRise.Value && _isJump.Value)
+            {
+                if(_moveDirection.Value!=Vector3.zero)
+                    _boostDirection.Value = new Vector3(Mathf.Sign(moveRight - moveLeft), 0, Mathf.Sign(moveFront - moveBack));
+                else
+                {
+                    _boostDirection.Value = new Vector3(0, 1, 0);
+                }
+            }
 
             if (Input.GetButtonDown("Fire1"))
             {
