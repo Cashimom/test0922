@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using Players;
+using UniRx;
 
 namespace Tests
 {
@@ -22,7 +24,31 @@ namespace Tests
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
+            var go = new GameObject();
+            var pi=go.AddComponent<Players.PlayerInput>();
+
+            pi.moveDirection.Subscribe(vec3 => {
+                Assert.That(vec3.z>0.1);
+            });
+
+            yield return new MonoBehaviourTest<MyMonoBehaviourTest>();
+            //yield return new WaitForFixedUpdate();
+
             yield return null;
+        }
+
+        public class MyMonoBehaviourTest : MonoBehaviour, IMonoBehaviourTest
+        {
+            private int frameCount;
+            public bool IsTestFinished
+            {
+                get { return frameCount > 1000; }
+            }
+
+            void Update()
+            {
+                frameCount++;
+            }
         }
     }
 }

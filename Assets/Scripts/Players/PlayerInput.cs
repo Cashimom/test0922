@@ -10,59 +10,32 @@ namespace Players
     public class PlayerInput : MonoBehaviour
     {
 
-        private Vector3ReactiveProperty _moveDirection;
-        public ReadOnlyReactiveProperty<Vector3> moveDirection
-        {
-            get { return _moveDirection.ToReadOnlyReactiveProperty<Vector3>(); }
-        }
+        private Vector3ReactiveProperty _moveDirection= new Vector3ReactiveProperty();
+        public ReadOnlyReactiveProperty<Vector3> moveDirection => _moveDirection.ToReadOnlyReactiveProperty<Vector3>();
 
-        private Vector3ReactiveProperty _boostDirection;
-        public ReadOnlyReactiveProperty<Vector3> boostDirection
-        {
-            get { return _boostDirection.ToReadOnlyReactiveProperty<Vector3>(); }
-        }
+        private Vector3ReactiveProperty _boostDirection= new Vector3ReactiveProperty();
+        public ReadOnlyReactiveProperty<Vector3> boostDirection=> _boostDirection.ToReadOnlyReactiveProperty<Vector3>();
 
-        private Vector2ReactiveProperty _rotationDirection;
-        public ReadOnlyReactiveProperty<Vector2> rotationDirection
-        {
-            get { return _rotationDirection.ToReadOnlyReactiveProperty<Vector2>(); }
-        }
+        private Vector2ReactiveProperty _rotationDirection=new Vector2ReactiveProperty();
+        public ReadOnlyReactiveProperty<Vector2> rotationDirection=> _rotationDirection.ToReadOnlyReactiveProperty<Vector2>();
 
-        private BoolReactiveProperty _isRise;
-        public ReadOnlyReactiveProperty<bool> isRise
-        {
-            get { return _isRise.ToReadOnlyReactiveProperty<bool>(); }
-        }
+        private BoolReactiveProperty _isRise=new BoolReactiveProperty();
+        public ReadOnlyReactiveProperty<bool> isRise=> _isRise.ToReadOnlyReactiveProperty<bool>();
 
-        private BoolReactiveProperty _isUse;
-        public ReadOnlyReactiveProperty<bool> isUse
-        {
-            get { return _isUse.ToReadOnlyReactiveProperty<bool>(); }
-        }
+        private BoolReactiveProperty _isUse=new BoolReactiveProperty();
+        public ReadOnlyReactiveProperty<bool> isUse=> _isUse.ToReadOnlyReactiveProperty<bool>();
 
-        private BoolReactiveProperty _isJump;
-        public ReadOnlyReactiveProperty<bool> isJump
-        {
-            get { return _isJump.ToReadOnlyReactiveProperty<bool>(); }
-        }
+        private BoolReactiveProperty _isJump=new BoolReactiveProperty();
+        public ReadOnlyReactiveProperty<bool> isJump=> _isJump.ToReadOnlyReactiveProperty<bool>();
 
-        private BoolReactiveProperty _isFire1;
-        public ReadOnlyReactiveProperty<bool> isFire1
-        {
-            get { return _isFire1.ToReadOnlyReactiveProperty<bool>(); }
-        }
+        private BoolReactiveProperty _isFire1=new BoolReactiveProperty();
+        public ReadOnlyReactiveProperty<bool> isFire1=> _isFire1.ToReadOnlyReactiveProperty<bool>();
 
-        private BoolReactiveProperty _isFire2;
-        public ReadOnlyReactiveProperty<bool> isFire2
-        {
-            get { return isFire2.ToReadOnlyReactiveProperty<bool>(); }
-        }
+        private BoolReactiveProperty _isFire2=new BoolReactiveProperty();
+        public ReadOnlyReactiveProperty<bool> isFire2=> isFire2.ToReadOnlyReactiveProperty<bool>();
 
-        private IntReactiveProperty _weaponChange;
-        public ReadOnlyReactiveProperty<int> weaponChange
-        {
-            get { return _weaponChange.ToReadOnlyReactiveProperty<int>(); }
-        }
+        private IntReactiveProperty _weaponChange=new IntReactiveProperty();
+        public ReadOnlyReactiveProperty<int> weaponChange=> _weaponChange.ToReadOnlyReactiveProperty<int>();
 
 
 
