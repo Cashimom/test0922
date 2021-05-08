@@ -12,7 +12,7 @@ public class PlayerController2 : Character
 {
     [SerializeField] private PlayerModel playerModel;
 
-    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private OldPlayerInput playerInput;
 
     [SerializeField] public PlayerWeapon playerWeapon;
 
