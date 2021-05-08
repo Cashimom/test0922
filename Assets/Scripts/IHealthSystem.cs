@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UniRx;
 
 public interface IHealthSystem
 {
-    public bool Damage(float value);
-    public void Recovery(float value);
+    ReadOnlyReactiveProperty<float> health { get; }
+    bool Damage(float value);
+    void Recovery(float value);
 }

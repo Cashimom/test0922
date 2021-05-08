@@ -48,27 +48,31 @@ namespace Players
         // Update is called once per frame
         void Update()
         {
-            var moveRight = Mathf.Clamp01(Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
-            var moveLeft = Mathf.Clamp01(-Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
-            var moveFront = Mathf.Clamp01(Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
-            var moveBack= Mathf.Clamp01(-Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
+            var moveFront = Mathf.Clamp01(Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
+            var moveBack = Mathf.Clamp01(-Input.GetAxis("Vertical")) * (Input.GetButton("Vertical") ? 1 : 0);
+            var moveRight = Mathf.Clamp01(Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
+            var moveLeft= Mathf.Clamp01(-Input.GetAxis("Horizontal")) * (Input.GetButton("Horizontal") ? 1 : 0);
             _moveDirection.Value = new Vector3(moveRight- moveLeft,0,moveFront-moveBack);
 
             _rotationDirection.Value = new Vector2(Input.GetAxis("Mouse X") * Time.deltaTime, -Input.GetAxis("Mouse Y") * Time.deltaTime);
 
             _isRise.Value= Input.GetKey(KeyCode.LeftShift);
-            _isJump.Value = Input.GetButtonDown("Jump");
             _isUse.Value = Input.GetKey(KeyCode.E);
 
 
-            if (_isRise.Value && _isJump.Value)
+            if (_isRise.Value && Input.GetButtonDown("Jump"))
             {
                 if(_moveDirection.Value!=Vector3.zero)
-                    _boostDirection.Value = new Vector3(Mathf.Sign(moveRight - moveLeft), 0, Mathf.Sign(moveFront - moveBack));
+                    _boostDirection.Value = new Vector3(moveRight - moveLeft, 0, moveFront - moveBack);
                 else
                 {
                     _boostDirection.Value = new Vector3(0, 1, 0);
                 }
+            }
+            else
+            {
+                _isJump.Value = Input.GetButtonDown("Jump");
+
             }
 
             if (Input.GetButtonDown("Fire1"))
@@ -90,6 +94,8 @@ namespace Players
             }
 
             _weaponChange.Value = (int)Mathf.Sign(Input.GetAxis("Mouse ScrollWheel"));
+
+            _boostDirection.Value = Vector3.zero;
 
         }
     }

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UniRx;
 
 public interface IEnergySystem
 {
-    public bool Consume(float value);
-    public bool CanConsume(float value);
-    public void Charge(float value);
+    ReadOnlyReactiveProperty<float> energy { get; }
+    bool Consume(float value);
+    bool CanConsume(float value);
+    void Charge(float value);
 }
