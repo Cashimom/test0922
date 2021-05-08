@@ -710,6 +710,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1754850117}
+  - component: {fileID: 1754850118}
+  - component: {fileID: 1754850119}
+  - component: {fileID: 1754850121}
+  - component: {fileID: 1754850120}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -733,6 +737,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754850118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754850116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb06c45df0f90954b8ba76779ec90585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1754850119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754850116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d51a54c8531db4693aaddb99d9b5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: 0
+  _defence: 0
+  _weight: 100
+  _health:
+    value: 100
+  _maxHealth: 100
+  _energy:
+    value: 100
+  _maxEnergy: 0
+--- !u!54 &1754850120
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754850116}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &1754850121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754850116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6892931ba00c049a779ce0d688dbd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 1754850120}
 --- !u!1 &1758995644
 GameObject:
   m_ObjectHideFlags: 0
