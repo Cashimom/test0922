@@ -60,7 +60,7 @@ namespace Players
             _isUse.Value = Input.GetKey(KeyCode.E);
 
 
-            if (_isRise.Value && Input.GetButtonDown("Jump"))
+            if (_isRise.Value && Input.GetButton("Jump"))
             {
                 if(_moveDirection.Value!=Vector3.zero)
                     _boostDirection.Value = new Vector3(moveRight - moveLeft, 0, moveFront - moveBack);
